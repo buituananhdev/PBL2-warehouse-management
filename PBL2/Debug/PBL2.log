@@ -1,0 +1,5 @@
+﻿  Login.cpp
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Login.h(232,1): warning C4102: 'SignIn': unreferenced label
+  MainForm.cpp
+  Generating Code...
+LINK : fatal error LNK1104: cannot open file 'D:\WorkSpace\PBL2_GUI\PBL2\Debug\PBL2.exe'

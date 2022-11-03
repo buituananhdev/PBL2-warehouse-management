@@ -1,0 +1,6 @@
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\x64\Release\PBL2.vcxproj.AssemblyReference.cache
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\x64\Release\PBL2.vcxproj.SuggestedBindingRedirects.cache
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\x64\Release\PBL2.Login.resources
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\x64\Release\PBL2.MainForm.resources
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\x64\Release\PBL2.vcxproj.GenerateResource.cache
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\x64\Release\PBL2.View_Form.resources

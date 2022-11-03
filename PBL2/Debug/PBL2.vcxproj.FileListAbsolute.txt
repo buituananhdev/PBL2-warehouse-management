@@ -1,0 +1,4 @@
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Debug\PBL2.vcxproj.AssemblyReference.cache
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Debug\PBL2.vcxproj.SuggestedBindingRedirects.cache
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Debug\PBL2.Login.resources
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Debug\PBL2.vcxproj.GenerateResource.cache
