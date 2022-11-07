@@ -115,6 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Add_Form.cpp" />
     <ClCompile Include="Date.cpp" />
     <ClCompile Include="Laptop.cpp" />
     <ClCompile Include="Login.cpp" />
@@ -127,6 +128,9 @@
     <ClCompile Include="View_Form.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Add_Form.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Date.h" />
     <ClInclude Include="Laptop.h" />
     <ClInclude Include="Login.h">
@@ -158,6 +162,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Add_Form.resx">
+      <DependentUpon>Add_Form.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.h</DependentUpon>
     </EmbeddedResource>
@@ -167,6 +174,17 @@
     <EmbeddedResource Include="View_Form.resx">
       <DependentUpon>View_Form.h</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Interop.Excel.1.9">
+      <VersionMinor>9</VersionMinor>
+      <VersionMajor>1</VersionMajor>
+      <Guid>00020813-0000-0000-c000-000000000046</Guid>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

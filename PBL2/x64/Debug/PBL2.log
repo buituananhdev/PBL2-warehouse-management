@@ -1,12 +1,9 @@
-﻿  Laptop.cpp
+﻿  Add_Form.cpp
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Add_Form.h(2,9): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   Login.cpp
-D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Login.h(237,1): warning C4102: 'SignIn': unreferenced label
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Add_Form.h(2,9): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Login.h(255,1): warning C4102: 'SignIn': unreferenced label
   MainForm.cpp
-  Manage.cpp
-  Product.cpp
-  SmartPhone.cpp
-  SmartWatch.cpp
-  User.cpp
-  View_Form.cpp
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Add_Form.h(2,9): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   Generating Code...
 LINK : fatal error LNK1104: cannot open file 'D:\WorkSpace\PBL2_GUI\PBL2\x64\Debug\PBL2.exe'

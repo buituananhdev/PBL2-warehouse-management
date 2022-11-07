@@ -9,4 +9,8 @@ public:
 	SmartPhone();
 	SmartPhone(string, string, string, string, double, double, string, double, int, string, string);
 	~SmartPhone();
+	void setRam(string&);
+	string getRam();
+	void setRom(string&);
+	string getRom();
 };

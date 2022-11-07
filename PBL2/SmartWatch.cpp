@@ -16,3 +16,15 @@ SmartWatch::SmartWatch(string ID, string name, string brand, string color, doubl
 SmartWatch::~SmartWatch() {
 
 }
+void SmartWatch::setSize(string& nSize) {
+	this->size = nSize;
+}
+string SmartWatch::getSize() {
+	return this->size;
+}
+void SmartWatch::setBatteryTime(string& nBT) {
+	this->batteryTime = nBT;
+}
+string SmartWatch::getBatteryTime() {
+	return this->batteryTime;
+}

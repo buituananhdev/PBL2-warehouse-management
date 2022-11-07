@@ -1,6 +1,7 @@
 ﻿#pragma once
+#include "Manage.h"
+#include "Add_Form.h"
 #include "View_Form.h"
-
 namespace PBL2 {
 
 	using namespace System;
@@ -16,6 +17,144 @@ namespace PBL2 {
 	public ref class MainForm : public System::Windows::Forms::Form
 	{
 	public:
+		void Load_Data_Of_Laptop() {
+			string temp;
+			int temp1;
+			double temp2;
+			ifstream data_lib;
+			data_lib.open("db_laptop.csv");
+			for (int i = 0; i < 100; i++)
+			{
+				if (data_lib.eof())
+				{
+					break;
+				}
+				getline(data_lib, temp, ',');
+				listLT[i].setID(temp);
+				getline(data_lib, temp, ',');
+				listLT[i].setName(temp);
+				getline(data_lib, temp, ',');
+				listLT[i].setBrand(temp);
+				getline(data_lib, temp, ',');
+				listLT[i].setColor(temp);
+				data_lib >> temp2;
+				data_lib.ignore(1, ',');
+				listLT[i].setPriceF(temp2);
+				data_lib >> temp2;
+				data_lib.ignore(1, ',');
+				listLT[i].setPriceE(temp2);
+				data_lib >> temp1;
+				data_lib.ignore(1, ',');
+				listLT[i].setAmount(temp1);
+				data_lib >> temp1;
+				data_lib.ignore(1, ',');
+				listLT[i].setSales(temp1);
+				data_lib >> temp2;
+				data_lib.ignore(1, ',');
+				listLT[i].setRevenue(temp2);
+				getline(data_lib, temp, ',');
+				listLT[i].setStatus(temp);
+				getline(data_lib, temp, ',');
+				listLT[i].setInputDatetmp(temp);
+				getline(data_lib, temp, ',');
+				listLT[i].setCard(temp);
+				getline(data_lib, temp, '\n');
+				listLT[i].setWeight(temp);
+			}
+			data_lib.close();
+		}
+		void Load_Data_Of_Smartphone() {
+			string temp;
+			int temp1;
+			double temp2;
+			ifstream data_lib;
+			data_lib.open("db_smartphone.csv");
+			for (int i = 0; i < 100; i++)
+			{
+				if (data_lib.eof())
+				{
+					break;
+				}
+				getline(data_lib, temp, ',');
+				listSP[i].setID(temp);
+				getline(data_lib, temp, ',');
+				listSP[i].setName(temp);
+				getline(data_lib, temp, ',');
+				listSP[i].setBrand(temp);
+				getline(data_lib, temp, ',');
+				listSP[i].setColor(temp);
+				data_lib >> temp2;
+				data_lib.ignore(1, ',');
+				listSP[i].setPriceF(temp2);
+				data_lib >> temp2;
+				data_lib.ignore(1, ',');
+				listLT[i].setPriceE(temp2);
+				data_lib >> temp1;
+				data_lib.ignore(1, ',');
+				listSP[i].setAmount(temp1);
+				data_lib >> temp1;
+				data_lib.ignore(1, ',');
+				listSP[i].setSales(temp1);
+				data_lib >> temp2;
+				data_lib.ignore(1, ',');
+				listSP[i].setRevenue(temp2);
+				getline(data_lib, temp, ',');
+				listSP[i].setStatus(temp);
+				getline(data_lib, temp, ',');
+				listSP[i].setInputDatetmp(temp);
+				getline(data_lib, temp, ',');
+				listSP[i].setRam(temp);
+				getline(data_lib, temp, '\n');
+				listSP[i].setRom(temp);
+			}
+			data_lib.close();
+		}
+		void Load_Data_Of_Smartwatch() {
+			string temp;
+			int temp1;
+			double temp2;
+			ifstream data_lib;
+			data_lib.open("db_smartwatch.csv");
+			for (int i = 0; i < 100; i++)
+			{
+				if (data_lib.eof())
+				{
+					break;
+				}
+				getline(data_lib, temp, ',');
+				listSW[i].setID(temp);
+				getline(data_lib, temp, ',');
+				listSW[i].setName(temp);
+				getline(data_lib, temp, ',');
+				listSW[i].setBrand(temp);
+				getline(data_lib, temp, ',');
+				listSW[i].setColor(temp);
+				data_lib >> temp2;
+				data_lib.ignore(1, ',');
+				listSW[i].setPriceF(temp2);
+				data_lib >> temp2;
+				data_lib.ignore(1, ',');
+				listLT[i].setPriceE(temp2);
+				data_lib >> temp1;
+				data_lib.ignore(1, ',');
+				listSW[i].setAmount(temp1);
+				data_lib >> temp1;
+				data_lib.ignore(1, ',');
+				listSW[i].setSales(temp1);
+				data_lib >> temp2;
+				data_lib.ignore(1, ',');
+				listSW[i].setRevenue(temp2);
+				getline(data_lib, temp, ',');
+				listSW[i].setStatus(temp);
+				getline(data_lib, temp, ',');
+				listSW[i].setInputDatetmp(temp);
+				getline(data_lib, temp, ',');
+				listSW[i].setBatteryTime(temp);
+				getline(data_lib, temp, '\n');
+				listSW[i].setSize(temp);
+			}
+			data_lib.close();
+		}
 		Form^ Main_Form;
 		MainForm(Form^ tmpForm)
 		{
@@ -42,24 +181,59 @@ namespace PBL2 {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::PictureBox^ pictureBox1;
-	private: System::Windows::Forms::MenuStrip^ menuStrip1;
-	private: System::Windows::Forms::ToolStripMenuItem^ xemToolStripMenuItem;
+
+
+	private: System::Windows::Forms::Button^ btn_Logout;
+
+	private: System::Windows::Forms::Button^ btn_Export;
+
+	private: System::Windows::Forms::Button^ btn_Import;
+
+
+
+	private: System::Windows::Forms::Button^ btn_Search;
+
+	private: System::Windows::Forms::Button^ btn_Delete;
+
+	private: System::Windows::Forms::Button^ btn_Update;
+
+	private: System::Windows::Forms::Button^ btn_Add;
+
+	private: System::Windows::Forms::Button^ btn_View;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Panel^ panel1;
 
 
 
 
-	private: System::Windows::Forms::ToolStripMenuItem^ thêmToolStripMenuItem;
 
 
 
-	private: System::Windows::Forms::ToolStripMenuItem^ xóaToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ toolStripMenuItem1;
-	private: System::Windows::Forms::ToolStripMenuItem^ cậpNhậtToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ tìmKiếmToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ sắpXếpToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ nhậpKhoToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ xuấtKhoToolStripMenuItem;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -79,142 +253,179 @@ namespace PBL2 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MainForm::typeid));
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
-			this->xemToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->thêmToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->xóaToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->toolStripMenuItem1 = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->cậpNhậtToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->tìmKiếmToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->sắpXếpToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->nhậpKhoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->xuấtKhoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
-			this->menuStrip1->SuspendLayout();
+			this->btn_Logout = (gcnew System::Windows::Forms::Button());
+			this->btn_Export = (gcnew System::Windows::Forms::Button());
+			this->btn_Import = (gcnew System::Windows::Forms::Button());
+			this->btn_Search = (gcnew System::Windows::Forms::Button());
+			this->btn_Delete = (gcnew System::Windows::Forms::Button());
+			this->btn_Update = (gcnew System::Windows::Forms::Button());
+			this->btn_Add = (gcnew System::Windows::Forms::Button());
+			this->btn_View = (gcnew System::Windows::Forms::Button());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
-			// pictureBox1
+			// btn_Logout
 			// 
-			this->pictureBox1->BackColor = System::Drawing::Color::Gold;
-			this->pictureBox1->Dock = System::Windows::Forms::DockStyle::Bottom;
-			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(0, 495);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(932, 46);
-			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->pictureBox1->TabIndex = 0;
-			this->pictureBox1->TabStop = false;
-			// 
-			// menuStrip1
-			// 
-			this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(9) {
-				this->xemToolStripMenuItem,
-					this->thêmToolStripMenuItem, this->xóaToolStripMenuItem, this->toolStripMenuItem1, this->cậpNhậtToolStripMenuItem, this->tìmKiếmToolStripMenuItem,
-					this->sắpXếpToolStripMenuItem, this->nhậpKhoToolStripMenuItem, this->xuấtKhoToolStripMenuItem
-			});
-			this->menuStrip1->Location = System::Drawing::Point(0, 0);
-			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(932, 36);
-			this->menuStrip1->TabIndex = 1;
-			this->menuStrip1->Text = L"menuStrip1";
-			// 
-			// xemToolStripMenuItem
-			// 
-			this->xemToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->btn_Logout->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->xemToolStripMenuItem->Name = L"xemToolStripMenuItem";
-			this->xemToolStripMenuItem->Size = System::Drawing::Size(65, 32);
-			this->xemToolStripMenuItem->Text = L"&Xem";
-			this->xemToolStripMenuItem->Click += gcnew System::EventHandler(this, &MainForm::xemToolStripMenuItem_Click);
+			this->btn_Logout->Location = System::Drawing::Point(45, 513);
+			this->btn_Logout->Name = L"btn_Logout";
+			this->btn_Logout->Size = System::Drawing::Size(170, 57);
+			this->btn_Logout->TabIndex = 0;
+			this->btn_Logout->Text = L"Log out";
+			this->btn_Logout->UseVisualStyleBackColor = true;
+			this->btn_Logout->Click += gcnew System::EventHandler(this, &MainForm::btn_Logout_Click);
 			// 
-			// thêmToolStripMenuItem
+			// btn_Export
 			// 
-			this->thêmToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->btn_Export->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->thêmToolStripMenuItem->Name = L"thêmToolStripMenuItem";
-			this->thêmToolStripMenuItem->Size = System::Drawing::Size(74, 32);
-			this->thêmToolStripMenuItem->Text = L"&Thêm";
+			this->btn_Export->Location = System::Drawing::Point(45, 450);
+			this->btn_Export->Name = L"btn_Export";
+			this->btn_Export->Size = System::Drawing::Size(170, 57);
+			this->btn_Export->TabIndex = 0;
+			this->btn_Export->Text = L"Export Goods";
+			this->btn_Export->UseVisualStyleBackColor = true;
 			// 
-			// xóaToolStripMenuItem
+			// btn_Import
 			// 
-			this->xóaToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->btn_Import->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->xóaToolStripMenuItem->Name = L"xóaToolStripMenuItem";
-			this->xóaToolStripMenuItem->Size = System::Drawing::Size(60, 32);
-			this->xóaToolStripMenuItem->Text = L"&Xóa";
+			this->btn_Import->Location = System::Drawing::Point(45, 387);
+			this->btn_Import->Name = L"btn_Import";
+			this->btn_Import->Size = System::Drawing::Size(170, 57);
+			this->btn_Import->TabIndex = 0;
+			this->btn_Import->Text = L"Import Goods";
+			this->btn_Import->UseVisualStyleBackColor = true;
 			// 
-			// toolStripMenuItem1
+			// btn_Search
 			// 
-			this->toolStripMenuItem1->Name = L"toolStripMenuItem1";
-			this->toolStripMenuItem1->Size = System::Drawing::Size(23, 32);
-			this->toolStripMenuItem1->Text = L"&";
-			// 
-			// cậpNhậtToolStripMenuItem
-			// 
-			this->cậpNhậtToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->btn_Search->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->cậpNhậtToolStripMenuItem->Name = L"cậpNhậtToolStripMenuItem";
-			this->cậpNhậtToolStripMenuItem->Size = System::Drawing::Size(104, 32);
-			this->cậpNhậtToolStripMenuItem->Text = L"&Cập nhật";
+			this->btn_Search->Location = System::Drawing::Point(45, 324);
+			this->btn_Search->Name = L"btn_Search";
+			this->btn_Search->Size = System::Drawing::Size(170, 57);
+			this->btn_Search->TabIndex = 0;
+			this->btn_Search->Text = L"Search";
+			this->btn_Search->UseVisualStyleBackColor = true;
 			// 
-			// tìmKiếmToolStripMenuItem
+			// btn_Delete
 			// 
-			this->tìmKiếmToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->btn_Delete->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->tìmKiếmToolStripMenuItem->Name = L"tìmKiếmToolStripMenuItem";
-			this->tìmKiếmToolStripMenuItem->Size = System::Drawing::Size(105, 32);
-			this->tìmKiếmToolStripMenuItem->Text = L"&Tìm kiếm";
+			this->btn_Delete->Location = System::Drawing::Point(45, 260);
+			this->btn_Delete->Name = L"btn_Delete";
+			this->btn_Delete->Size = System::Drawing::Size(170, 57);
+			this->btn_Delete->TabIndex = 0;
+			this->btn_Delete->Text = L"Delete";
+			this->btn_Delete->UseVisualStyleBackColor = true;
 			// 
-			// sắpXếpToolStripMenuItem
+			// btn_Update
 			// 
-			this->sắpXếpToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->btn_Update->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->sắpXếpToolStripMenuItem->Name = L"sắpXếpToolStripMenuItem";
-			this->sắpXếpToolStripMenuItem->Size = System::Drawing::Size(95, 32);
-			this->sắpXếpToolStripMenuItem->Text = L"&Sắp xếp";
+			this->btn_Update->Location = System::Drawing::Point(45, 197);
+			this->btn_Update->Name = L"btn_Update";
+			this->btn_Update->Size = System::Drawing::Size(170, 57);
+			this->btn_Update->TabIndex = 0;
+			this->btn_Update->Text = L"Update ";
+			this->btn_Update->UseVisualStyleBackColor = true;
 			// 
-			// nhậpKhoToolStripMenuItem
+			// btn_Add
 			// 
-			this->nhậpKhoToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->btn_Add->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->nhậpKhoToolStripMenuItem->Name = L"nhậpKhoToolStripMenuItem";
-			this->nhậpKhoToolStripMenuItem->Size = System::Drawing::Size(112, 32);
-			this->nhậpKhoToolStripMenuItem->Text = L"&Nhập kho";
+			this->btn_Add->Location = System::Drawing::Point(45, 133);
+			this->btn_Add->Name = L"btn_Add";
+			this->btn_Add->Size = System::Drawing::Size(170, 57);
+			this->btn_Add->TabIndex = 0;
+			this->btn_Add->Text = L"Add New Product";
+			this->btn_Add->UseVisualStyleBackColor = true;
+			this->btn_Add->Click += gcnew System::EventHandler(this, &MainForm::btn_Add_Click);
 			// 
-			// xuấtKhoToolStripMenuItem
+			// btn_View
 			// 
-			this->xuấtKhoToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->btn_View->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->xuấtKhoToolStripMenuItem->Name = L"xuấtKhoToolStripMenuItem";
-			this->xuấtKhoToolStripMenuItem->Size = System::Drawing::Size(104, 32);
-			this->xuấtKhoToolStripMenuItem->Text = L"&Xuất kho";
+			this->btn_View->Location = System::Drawing::Point(45, 69);
+			this->btn_View->Name = L"btn_View";
+			this->btn_View->Size = System::Drawing::Size(170, 57);
+			this->btn_View->TabIndex = 0;
+			this->btn_View->Text = L"View Information";
+			this->btn_View->UseVisualStyleBackColor = true;
+			this->btn_View->Click += gcnew System::EventHandler(this, &MainForm::btn_View_Click);
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(44, 10);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(171, 41);
+			this->label1->TabIndex = 1;
+			this->label1->Text = L"All Feature";
+			// 
+			// panel1
+			// 
+			this->panel1->BackColor = System::Drawing::Color::PeachPuff;
+			this->panel1->Controls->Add(this->label1);
+			this->panel1->Controls->Add(this->btn_Logout);
+			this->panel1->Controls->Add(this->btn_Export);
+			this->panel1->Controls->Add(this->btn_Import);
+			this->panel1->Controls->Add(this->btn_Search);
+			this->panel1->Controls->Add(this->btn_Delete);
+			this->panel1->Controls->Add(this->btn_Update);
+			this->panel1->Controls->Add(this->btn_Add);
+			this->panel1->Controls->Add(this->btn_View);
+			this->panel1->Dock = System::Windows::Forms::DockStyle::Left;
+			this->panel1->Location = System::Drawing::Point(0, 0);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(266, 673);
+			this->panel1->TabIndex = 1;
 			// 
 			// MainForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(7, 17);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(932, 541);
-			this->Controls->Add(this->pictureBox1);
-			this->Controls->Add(this->menuStrip1);
+			this->ClientSize = System::Drawing::Size(1186, 673);
+			this->Controls->Add(this->panel1);
+			this->Font = (gcnew System::Drawing::Font(L"Segoe UI", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->MaximizeBox = false;
 			this->Name = L"MainForm";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Manage Application";
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
-			this->menuStrip1->ResumeLayout(false);
-			this->menuStrip1->PerformLayout();
+			this->Load += gcnew System::EventHandler(this, &MainForm::MainForm_Load);
+			this->panel1->ResumeLayout(false);
+			this->panel1->PerformLayout();
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 #pragma endregion
-	
-
-private: System::Void xemToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void btn_View_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
 	View_Form^ tmpView_Form = gcnew View_Form(this);
 	tmpView_Form->Show();
+}
+private: System::Void btn_Logout_Click(System::Object^ sender, System::EventArgs^ e) {
+	MessageBox::Show("You will log out!"
+		, "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	this->Hide();
+	Main_Form->Show();
+}
+private: System::Void btn_Add_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	Add_Form^ tmpView_Form = gcnew Add_Form(this);
+	tmpView_Form->Show();
+}
+private: System::Void MainForm_Load(System::Object^ sender, System::EventArgs^ e) {
+	Load_Data_Of_Smartwatch();
+	Load_Data_Of_Smartphone();
+	Load_Data_Of_Laptop();
 }
 };
 }

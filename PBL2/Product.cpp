@@ -96,3 +96,15 @@ void Product::setSales(int& nSales) {
 void Product::setRevenue(double& nRevenue) {
 	this->revenue = nRevenue;
 }
+void Product::setInputDatetmp(string& n) {
+	this->inputDatetmp = n;
+}
+string Product::getInputDatetmp() {
+	return this->inputDatetmp;
+}
+void Product::setPriceE(double& nPriceE) {
+	this->priceE = nPriceE;
+}
+double Product::getPriceE() {
+	return this->priceE;
+}

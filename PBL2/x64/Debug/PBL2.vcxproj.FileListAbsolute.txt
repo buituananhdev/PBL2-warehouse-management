@@ -4,3 +4,4 @@ D:\WorkSpace\PBL2_GUI\PBL2\PBL2\x64\Debug\PBL2.Login.resources
 D:\WorkSpace\PBL2_GUI\PBL2\PBL2\x64\Debug\PBL2.vcxproj.GenerateResource.cache
 D:\WorkSpace\PBL2_GUI\PBL2\PBL2\x64\Debug\PBL2.MainForm.resources
 D:\WorkSpace\PBL2_GUI\PBL2\PBL2\x64\Debug\PBL2.View_Form.resources
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\x64\Debug\PBL2.vcxproj.ResolveComReference.cache

@@ -2,6 +2,7 @@
 #include <fstream>
 Manage list_User[100];
 string _Username;
+
 /*void ReadFile_User() {
 	string temp;
 	int tempConvert;

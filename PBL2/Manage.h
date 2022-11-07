@@ -5,9 +5,13 @@
 #include "SmartWatch.h"
 #include <vector>
 #include <fstream>
-extern vector<Laptop*> list;
+#define MAX 9999
+extern Laptop listLT[MAX];
+extern SmartPhone listSP[MAX];
+extern SmartWatch listSW[MAX];
 extern int length;
-
+void Save_Data_SmartPhone();
+int NumOfDV(string filename);
 class Manage {
 private:
 	string username;
@@ -17,11 +21,12 @@ public:
 	void setPassword(string&);
 	string getUsername();
 	string getPassword();
-	void Load_Data_Of_Device(string);
+	void Load_Data_Of_SP();
+	
 	void WriteFile(string);
 	void ShowInfor();
 	void setLength(int);
-	void Add();
+	void Add_New_Laptop(string, string, string, string, double, double, string, double, int, string, string);
 	int Update(string);
 	int Delete(string);
 	int Search(string);

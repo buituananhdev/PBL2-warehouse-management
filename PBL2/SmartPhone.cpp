@@ -31,3 +31,15 @@ SmartPhone::SmartPhone(string ID, string name, string brand, string color, doubl
 	this->ram = ram;
 	this->rom = rom;
 }
+string SmartPhone::getRam() {
+	return this->ram;
+}
+void SmartPhone::setRam(string& nRam) {
+	this->ram = nRam;
+}
+string SmartPhone::getRom() {
+	return this->rom;
+}
+void SmartPhone::setRom(string& nRom) {
+	this->rom = nRom;
+}

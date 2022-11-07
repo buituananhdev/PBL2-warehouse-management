@@ -52,7 +52,15 @@ namespace PBL2 {
 			user.close();
 		}
 	public:
-
+		Form^ Login_Form;
+		Login(Form^ tmpForm)
+		{
+			Login_Form = tmpForm;
+			InitializeComponent();
+			//
+			//TODO: Add the constructor code here
+			//
+		}
 		Login(void)
 		{
 			InitializeComponent();
@@ -74,15 +82,20 @@ namespace PBL2 {
 		}
 	private: System::Windows::Forms::Button^ btn_Login;
 
-	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::GroupBox^ groupBox1;
+
+
 	private: System::Windows::Forms::TextBox^ txt_Password;
 
 	private: System::Windows::Forms::TextBox^ txt_Username;
+	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::Panel^ panel2;
+	private: System::Windows::Forms::Panel^ panel3;
 
-	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::Label^ label1;
+
+
+
+
 	protected:
 
 	private:
@@ -100,136 +113,125 @@ namespace PBL2 {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Login::typeid));
 			this->btn_Login = (gcnew System::Windows::Forms::Button());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->txt_Password = (gcnew System::Windows::Forms::TextBox());
 			this->txt_Username = (gcnew System::Windows::Forms::TextBox());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			this->groupBox1->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->panel1->SuspendLayout();
+			this->panel2->SuspendLayout();
+			this->panel3->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// btn_Login
 			// 
-			this->btn_Login->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->btn_Login->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+			this->btn_Login->BackColor = System::Drawing::Color::PeachPuff;
+			this->btn_Login->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->btn_Login->Location = System::Drawing::Point(445, 473);
+			this->btn_Login->Location = System::Drawing::Point(519, 515);
 			this->btn_Login->Name = L"btn_Login";
-			this->btn_Login->Size = System::Drawing::Size(134, 41);
+			this->btn_Login->Size = System::Drawing::Size(185, 47);
 			this->btn_Login->TabIndex = 0;
-			this->btn_Login->Text = L"Xác nhận";
-			this->btn_Login->UseVisualStyleBackColor = true;
+			this->btn_Login->Text = L"LogIn";
+			this->btn_Login->UseVisualStyleBackColor = false;
 			this->btn_Login->Click += gcnew System::EventHandler(this, &Login::btn_Login_Click);
-			// 
-			// label1
-			// 
-			this->label1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 28.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(399, 132);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(245, 53);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"Đăng nhập";
-			// 
-			// groupBox1
-			// 
-			this->groupBox1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->groupBox1->Controls->Add(this->txt_Password);
-			this->groupBox1->Controls->Add(this->txt_Username);
-			this->groupBox1->Controls->Add(this->label3);
-			this->groupBox1->Controls->Add(this->label2);
-			this->groupBox1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->groupBox1->Location = System::Drawing::Point(257, 214);
-			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(484, 244);
-			this->groupBox1->TabIndex = 2;
-			this->groupBox1->TabStop = false;
-			this->groupBox1->Text = L"Nhập thông tin để đăng nhập";
 			// 
 			// txt_Password
 			// 
 			this->txt_Password->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->txt_Password->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txt_Password->BackColor = System::Drawing::Color::WhiteSmoke;
+			this->txt_Password->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->txt_Password->Font = (gcnew System::Drawing::Font(L"Segoe UI Light", 13.8F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txt_Password->Location = System::Drawing::Point(173, 145);
+			this->txt_Password->Location = System::Drawing::Point(12, 14);
 			this->txt_Password->Name = L"txt_Password";
-			this->txt_Password->Size = System::Drawing::Size(276, 28);
+			this->txt_Password->Size = System::Drawing::Size(321, 31);
 			this->txt_Password->TabIndex = 1;
+			this->txt_Password->Text = L"PassWord";
 			this->txt_Password->UseSystemPasswordChar = true;
+			this->txt_Password->Click += gcnew System::EventHandler(this, &Login::txt_Password_Click);
 			// 
 			// txt_Username
 			// 
 			this->txt_Username->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->txt_Username->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txt_Username->BackColor = System::Drawing::Color::WhiteSmoke;
+			this->txt_Username->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->txt_Username->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txt_Username->Location = System::Drawing::Point(173, 68);
+			this->txt_Username->Location = System::Drawing::Point(11, 14);
 			this->txt_Username->Name = L"txt_Username";
-			this->txt_Username->Size = System::Drawing::Size(276, 28);
+			this->txt_Username->Size = System::Drawing::Size(321, 31);
 			this->txt_Username->TabIndex = 1;
+			this->txt_Username->Text = L"Your Name";
+			this->txt_Username->Click += gcnew System::EventHandler(this, &Login::txt_Username_Click);
 			// 
-			// label3
+			// panel1
 			// 
-			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Times New Roman", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(43, 145);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(129, 25);
-			this->label3->TabIndex = 0;
-			this->label3->Text = L"Password : ";
+			this->panel1->BackColor = System::Drawing::Color::WhiteSmoke;
+			this->panel1->Controls->Add(this->txt_Username);
+			this->panel1->Location = System::Drawing::Point(450, 307);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(346, 62);
+			this->panel1->TabIndex = 2;
 			// 
-			// label2
+			// panel2
 			// 
-			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Times New Roman", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(43, 68);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(134, 25);
-			this->label2->TabIndex = 0;
-			this->label2->Text = L"Username : ";
+			this->panel2->BackColor = System::Drawing::Color::WhiteSmoke;
+			this->panel2->Controls->Add(this->txt_Password);
+			this->panel2->Location = System::Drawing::Point(450, 419);
+			this->panel2->Name = L"panel2";
+			this->panel2->Size = System::Drawing::Size(346, 62);
+			this->panel2->TabIndex = 3;
 			// 
-			// pictureBox1
+			// panel3
 			// 
-			this->pictureBox1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->pictureBox1->BackColor = System::Drawing::Color::Gold;
-			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(1, 0);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(980, 100);
-			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->pictureBox1->TabIndex = 1;
-			this->pictureBox1->TabStop = false;
+			this->panel3->BackColor = System::Drawing::Color::PeachPuff;
+			this->panel3->Controls->Add(this->label1);
+			this->panel3->Dock = System::Windows::Forms::DockStyle::Top;
+			this->panel3->Location = System::Drawing::Point(0, 0);
+			this->panel3->Name = L"panel3";
+			this->panel3->Size = System::Drawing::Size(1186, 59);
+			this->panel3->TabIndex = 4;
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 13.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(33, 14);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(710, 31);
+			this->label1->TabIndex = 0;
+			this->label1->Text = L"ỨNG DỤNG QUẢN LÝ CỬA HÀNG BÁN LẺ SẢN PHẨM CÔNG NGHỆ";
 			// 
 			// Login
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(7, 17);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->ClientSize = System::Drawing::Size(980, 554);
-			this->Controls->Add(this->pictureBox1);
-			this->Controls->Add(this->groupBox1);
-			this->Controls->Add(this->label1);
+			this->BackColor = System::Drawing::Color::White;
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->ClientSize = System::Drawing::Size(1186, 673);
+			this->Controls->Add(this->panel3);
+			this->Controls->Add(this->panel2);
+			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->btn_Login);
+			this->Font = (gcnew System::Drawing::Font(L"Segoe UI", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->MaximizeBox = false;
 			this->Name = L"Login";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Login";
-			this->groupBox1->ResumeLayout(false);
-			this->groupBox1->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			this->panel1->ResumeLayout(false);
+			this->panel1->PerformLayout();
+			this->panel2->ResumeLayout(false);
+			this->panel2->PerformLayout();
+			this->panel3->ResumeLayout(false);
+			this->panel3->PerformLayout();
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 #pragma endregion
@@ -252,11 +254,13 @@ namespace PBL2 {
 			else if (list_User[i].getUsername() == tempStr && list_User[i].getPassword() == tempStr2)
 			{
 				found++;
-				MessageBox::Show("Welcome " + gcnew String(list_User[i].getUsername().c_str())
+				MessageBox::Show("Login as " + gcnew String(list_User[i].getUsername().c_str())
 					, "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
 				this->Hide();
 				MainForm^ MainForm_Form = gcnew MainForm(this);
 				MainForm_Form->Show();
+				txt_Username->Text = "Your Name";
+				txt_Password->Text = "PassWord";
 				_Username = list_User[i].getUsername();
 				break;
 			}
@@ -267,5 +271,15 @@ namespace PBL2 {
 				, MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 	}
-	};
+private: System::Void txt_Username_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (txt_Username->Text == "Your Name") {
+		txt_Username->Text = "";
+	}
+}
+private: System::Void txt_Password_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (txt_Password->Text == "PassWord") {
+		txt_Password->Text = "";
+	}
+}
+};
 }

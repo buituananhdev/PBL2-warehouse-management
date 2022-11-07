@@ -16,19 +16,33 @@ Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=
 	hash=None, flags=None
 Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
+Assembly Interop.Microsoft.Office.Interop.Excel.1.9, Version=1.9.*, Culture=Invariant Language (Invariant Country): 
+	hash=None, flags=None
+Class PBL2.Add_Form: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.Form AddFormW : Public
 Class PBL2.View_Form: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
-    System.Data.DataTable All_Device : Public
-    Int32 IndexCounter : Public
-    Int32 turn : Public
+    System.Data.DataTable Smartphone_Device : Public
+    System.Data.DataTable Laptop_Device : Public
+    System.Data.DataTable Smartwatch_Device : Public
+    Int32 IndexCounterLT : Public
+    Int32 IndexCounterSP : Public
+    Int32 IndexCounterSW : Public
     System.Windows.Forms.Form Main_Form : Public
   Methods:
-    NumOfDV(basic_string<char\,std::char_traits<char>\,std::allocator<char> >*): PrivateScope, Public, HideBySig
-    Load_Data_Of_Device(basic_string<char\,std::char_traits<char>\,std::allocator<char> >*): PrivateScope, Public, HideBySig
-    CreateNewRow(): PrivateScope, Public, HideBySig
+    Load_Data_Of_Laptop(): PrivateScope, Public, HideBySig
+    Load_Data_Of_Smartphone(): PrivateScope, Public, HideBySig
+    Load_Data_Of_Smartwatch(): PrivateScope, Public, HideBySig
+    CreateNewRow_LT(): PrivateScope, Public, HideBySig
+    CreateNewRow_SP(): PrivateScope, Public, HideBySig
+    CreateNewRow_SW(): PrivateScope, Public, HideBySig
 Class PBL2.MainForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -38,3 +52,6 @@ Class PBL2.MainForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
 Class PBL2.Login: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.Form Login_Form : Public

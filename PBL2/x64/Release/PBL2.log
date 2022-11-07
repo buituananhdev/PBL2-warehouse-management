@@ -1,7 +1,2 @@
-﻿  Login.cpp
-D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Login.h(237,1): warning C4102: 'SignIn': unreferenced label
-  MainForm.cpp
-  View_Form.cpp
-  Generating Code...
-  Date.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+﻿  Add_Form.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   PBL2.vcxproj -> D:\WorkSpace\PBL2_GUI\PBL2\x64\Release\PBL2.exe
