@@ -203,9 +203,9 @@ namespace PBL2 {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label1->Location = System::Drawing::Point(33, 14);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(710, 31);
+			this->label1->Size = System::Drawing::Size(680, 30);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"ỨNG DỤNG QUẢN LÝ CỬA HÀNG BÁN LẺ SẢN PHẨM CÔNG NGHỆ";
+			this->label1->Text = L"STORE MANAGEMENT APPLICATION OF TECHNOLOGY PRODUCTS";
 			// 
 			// Login
 			// 

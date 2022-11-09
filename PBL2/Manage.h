@@ -10,8 +10,15 @@ extern Laptop listLT[MAX];
 extern SmartPhone listSP[MAX];
 extern SmartWatch listSW[MAX];
 extern int length;
+extern vector<Product*> list;
 void Save_Data_SmartPhone();
+void Save_Data_Laptop();
+void Save_Data_SmartWatch();
+void Load_Data_Of_Laptop();
+void Load_Data_Of_Smartphone();
+void Load_Data_Of_Smartwatch();
 int NumOfDV(string filename);
+int* Search(string name);
 class Manage {
 private:
 	string username;

@@ -17,3 +17,12 @@ string Laptop::getCard() {
 string Laptop::getWeight() {
 	return this->weight;
 }
+void Laptop::ReadFILE(ifstream& filein) {
+	Product::ReadFILE(filein);
+	getline(filein, card, ',');
+	getline(filein, weight,'\n');
+}
+void Laptop::WriteFILE(ostream& fileout) {
+	Product::WriteFILE(fileout);
+	fileout << card << ',' << weight << endl;
+}

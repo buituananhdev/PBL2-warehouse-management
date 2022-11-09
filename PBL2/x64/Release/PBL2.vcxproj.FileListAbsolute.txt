@@ -6,3 +6,6 @@ D:\WorkSpace\PBL2_GUI\PBL2\PBL2\x64\Release\PBL2.vcxproj.GenerateResource.cache
 D:\WorkSpace\PBL2_GUI\PBL2\PBL2\x64\Release\PBL2.View_Form.resources
 D:\WorkSpace\PBL2_GUI\PBL2\PBL2\x64\Release\PBL2.vcxproj.ResolveComReference.cache
 D:\WorkSpace\PBL2_GUI\PBL2\PBL2\x64\Release\PBL2.Add_Form.resources
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\x64\Release\PBL2.Update_Form.resources
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\x64\Release\PBL2.Search_Form.resources
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\x64\Release\PBL2.vcxproj.CopyComplete

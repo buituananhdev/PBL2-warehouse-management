@@ -33,9 +33,6 @@
     <ClCompile Include="SmartWatch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Date.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Login.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -46,6 +43,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Add_Form.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Update_Form.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Search_Form.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Date.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -68,9 +74,6 @@
     <ClInclude Include="SmartWatch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Date.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Login.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -81,6 +84,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Add_Form.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Update_Form.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Search_Form.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Date.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -95,6 +107,9 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="db_smartwatch.csv">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Test.xlsx">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

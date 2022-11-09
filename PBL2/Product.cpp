@@ -108,3 +108,23 @@ void Product::setPriceE(double& nPriceE) {
 double Product::getPriceE() {
 	return this->priceE;
 }
+
+void Product::ReadFILE(ifstream& filein) {
+	getline(filein, ID, ',');
+	getline(filein, name, ',');
+	getline(filein, brand, ',');
+	getline(filein, color, ',');
+	filein >> priceF;
+	filein.seekg(1, 1);
+	filein >> amount;
+	filein.seekg(1, 1);
+	filein >> sales;
+	filein.seekg(1, 1);
+	filein >> revenue;
+	filein.seekg(1, 1);
+	getline(filein, status, ',');
+	getline(filein, inputDatetmp, ',');
+}
+void Product::WriteFILE(ostream& fileout) {
+	fileout << ID << ',' << name << ',' << brand << ',' << color << ',' << priceF << ',' << amount << ',' << sales << ',' << revenue << ',' << status << ',' << inputDatetmp << ',';
+}

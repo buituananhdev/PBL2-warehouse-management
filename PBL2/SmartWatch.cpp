@@ -28,3 +28,12 @@ void SmartWatch::setBatteryTime(string& nBT) {
 string SmartWatch::getBatteryTime() {
 	return this->batteryTime;
 }
+void SmartWatch::ReadFILE(ifstream& filein) {
+	Product::ReadFILE(filein);
+	getline(filein, batteryTime, ',');
+	getline(filein, size,'\n');
+}
+void SmartWatch::WriteFILE(ostream& fileout) {
+	Product::WriteFILE(fileout);
+	fileout << batteryTime << "," << size << endl;
+}

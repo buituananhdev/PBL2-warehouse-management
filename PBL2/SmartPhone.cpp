@@ -43,3 +43,12 @@ string SmartPhone::getRom() {
 void SmartPhone::setRom(string& nRom) {
 	this->rom = nRom;
 }
+void SmartPhone::ReadFILE(ifstream& filein) {
+	Product::ReadFILE(filein);
+	getline(filein, ram, ',');
+	getline(filein, rom,'\n');
+}
+void SmartPhone::WriteFILE(ostream& fileout) {
+	Product::WriteFILE(fileout);
+	fileout << ram << ',' << rom << endl;
+}

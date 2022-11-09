@@ -1,7 +1,22 @@
 ﻿  Login.cpp
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Add_Form.h(3,9): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Add_Form.h(761,22): warning C4018: '<': signed/unsigned mismatch
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Add_Form.h(777,22): warning C4018: '<': signed/unsigned mismatch
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Add_Form.h(813,15): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Add_Form.h(849,15): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Add_Form.h(886,15): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
 D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Login.h(239,1): warning C4102: 'SignIn': unreferenced label
   MainForm.cpp
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Add_Form.h(3,9): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Add_Form.h(761,22): warning C4018: '<': signed/unsigned mismatch
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Add_Form.h(777,22): warning C4018: '<': signed/unsigned mismatch
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Add_Form.h(813,15): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Add_Form.h(849,15): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Add_Form.h(886,15): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Manage.cpp
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Manage.cpp(283,9): warning C4101: 'temp2': unreferenced local variable
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Manage.cpp(282,6): warning C4101: 'temp1': unreferenced local variable
   View_Form.cpp
   Generating Code...
-  Date.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  Add_Form.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   PBL2.vcxproj -> D:\WorkSpace\PBL2_GUI\PBL2\Release\PBL2.exe

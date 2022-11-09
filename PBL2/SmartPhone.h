@@ -13,4 +13,6 @@ public:
 	string getRam();
 	void setRom(string&);
 	string getRom();
+	void ReadFILE(ifstream&);
+	void WriteFILE(ostream&);
 };

@@ -1,5 +1,7 @@
 ﻿#pragma once
 #include "Manage.h"
+#include <windows.h>
+#define Excel  Microsoft::Office::Interop::Excel
 namespace PBL2 {
 
 	using namespace System;
@@ -189,7 +191,7 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 			this->btn_Back->Name = L"btn_Back";
 			this->btn_Back->Size = System::Drawing::Size(224, 37);
 			this->btn_Back->TabIndex = 3;
-			this->btn_Back->Text = L"Quay lại";
+			this->btn_Back->Text = L"Back";
 			this->btn_Back->UseVisualStyleBackColor = true;
 			this->btn_Back->Click += gcnew System::EventHandler(this, &View_Form::btn_Back_Click);
 			// 
@@ -231,8 +233,9 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 			this->btn_ExportToExcel->Name = L"btn_ExportToExcel";
 			this->btn_ExportToExcel->Size = System::Drawing::Size(224, 37);
 			this->btn_ExportToExcel->TabIndex = 6;
-			this->btn_ExportToExcel->Text = L"Xuất ra file";
+			this->btn_ExportToExcel->Text = L"Import To File";
 			this->btn_ExportToExcel->UseVisualStyleBackColor = true;
+			this->btn_ExportToExcel->Click += gcnew System::EventHandler(this, &View_Form::btn_ExportToExcel_Click);
 			// 
 			// panel1
 			// 
@@ -288,17 +291,17 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 	{
 		if (Laptop_Device->Rows->Count <= 0) {
 			Laptop_Device->Columns->Add("ID");
-			Laptop_Device->Columns->Add("Ten");
-			Laptop_Device->Columns->Add("Hang");
-			Laptop_Device->Columns->Add("Mau");
-			Laptop_Device->Columns->Add("Gia");
-			Laptop_Device->Columns->Add("So luong ton");
-			Laptop_Device->Columns->Add("Doanh so");
-			Laptop_Device->Columns->Add("Doanh thu");
-			Laptop_Device->Columns->Add("Trang thai");
-			Laptop_Device->Columns->Add("Ngay nhap kho");
-			Laptop_Device->Columns->Add("Card");
-			Laptop_Device->Columns->Add("Trong luong");
+			Laptop_Device->Columns->Add("Name");
+			Laptop_Device->Columns->Add("Brand");
+			Laptop_Device->Columns->Add("Color");
+			Laptop_Device->Columns->Add("Price");
+			Laptop_Device->Columns->Add("Quantity in stock");
+			Laptop_Device->Columns->Add("Sales");
+			Laptop_Device->Columns->Add("Revenue");
+			Laptop_Device->Columns->Add("Status");
+			Laptop_Device->Columns->Add("Input day");
+			Laptop_Device->Columns->Add("Graphics card");
+			Laptop_Device->Columns->Add("Weight");
 			string tmpPriceF = to_string(listLT[IndexCounterLT].getPriceF());
 			string tmpAmount = to_string(listLT[IndexCounterLT].getAmount());
 			string tmpSales = to_string(listLT[IndexCounterLT].getSales());
@@ -329,15 +332,15 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 	{
 		if (Smartphone_Device->Rows->Count <= 0) {
 			Smartphone_Device->Columns->Add("ID");
-			Smartphone_Device->Columns->Add("Ten");
-			Smartphone_Device->Columns->Add("Hang");
-			Smartphone_Device->Columns->Add("Mau");
-			Smartphone_Device->Columns->Add("Gia");
-			Smartphone_Device->Columns->Add("So luong ton");
-			Smartphone_Device->Columns->Add("Doanh so");
-			Smartphone_Device->Columns->Add("Doanh thu");
-			Smartphone_Device->Columns->Add("Trang thai");
-			Smartphone_Device->Columns->Add("Ngay nhap kho");
+			Smartphone_Device->Columns->Add("Name");
+			Smartphone_Device->Columns->Add("Brand");
+			Smartphone_Device->Columns->Add("Color");
+			Smartphone_Device->Columns->Add("Price");
+			Smartphone_Device->Columns->Add("Quantity in stock");
+			Smartphone_Device->Columns->Add("Sales");
+			Smartphone_Device->Columns->Add("Revenue");
+			Smartphone_Device->Columns->Add("Status");
+			Smartphone_Device->Columns->Add("Input day");
 			Smartphone_Device->Columns->Add("RAM");
 			Smartphone_Device->Columns->Add("ROM");
 			string tmpPriceF = to_string(listSP[IndexCounterSP].getPriceF());
@@ -371,16 +374,16 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 	{
 		if (Smartwatch_Device->Rows->Count <= 0) {
 			Smartwatch_Device->Columns->Add("ID");
-			Smartwatch_Device->Columns->Add("Ten");
-			Smartwatch_Device->Columns->Add("Hang");
-			Smartwatch_Device->Columns->Add("Mau");
-			Smartwatch_Device->Columns->Add("Gia");
-			Smartwatch_Device->Columns->Add("So luong ton");
-			Smartwatch_Device->Columns->Add("Doanh so");
-			Smartwatch_Device->Columns->Add("Doanh thu");
-			Smartwatch_Device->Columns->Add("Trang thai");
-			Smartwatch_Device->Columns->Add("Ngay nhap kho");
-			Smartwatch_Device->Columns->Add("Thoi luong pin");
+			Smartwatch_Device->Columns->Add("Name");
+			Smartwatch_Device->Columns->Add("Brand");
+			Smartwatch_Device->Columns->Add("Color");
+			Smartwatch_Device->Columns->Add("Price");
+			Smartwatch_Device->Columns->Add("Quantity in stock");
+			Smartwatch_Device->Columns->Add("Sales");
+			Smartwatch_Device->Columns->Add("Revenue");
+			Smartwatch_Device->Columns->Add("Status");
+			Smartwatch_Device->Columns->Add("Input day");
+			Smartwatch_Device->Columns->Add("Battery life");
 			Smartwatch_Device->Columns->Add("Size");
 			string tmpPriceF = to_string(listSW[IndexCounterSW].getPriceF());
 			string tmpAmount = to_string(listSW[IndexCounterSW].getAmount());
@@ -414,6 +417,7 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 		Main_Form->Show();
 	}
 	private: System::Void btn_Show_Laptop_Click(System::Object^ sender, System::EventArgs^ e) {
+		Load_Data_Of_Laptop();
 		dataGridView2->Show();
 		dataGridView1->Hide();
 		dataGridView3->Hide();
@@ -423,6 +427,7 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 		}
 	}
 	private: System::Void btn_Show_Smartphone_Click(System::Object^ sender, System::EventArgs^ e) {
+		Load_Data_Of_Smartphone();
 		dataGridView1->Show();
 		dataGridView2->Hide();
 		dataGridView3->Hide();
@@ -432,6 +437,7 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 		}
 	}
 private: System::Void btn_Show_SmartWatch_Click(System::Object^ sender, System::EventArgs^ e) {
+	Load_Data_Of_Smartwatch();
 	dataGridView3->Show();
 	dataGridView1->Hide();
 	dataGridView2->Hide();
@@ -440,6 +446,54 @@ private: System::Void btn_Show_SmartWatch_Click(System::Object^ sender, System::
 		CreateNewRow_SW();
 	}
 }
+	private: System::Void btn_ExportToExcel_Click(System::Object^ sender, System::EventArgs^ e) {
+		/* Excel::Application^ excel = gcnew Excel::ApplicationClass();
+		Excel::Workbook^ workbook = gcnew Excel::WorkbookClass();
+		Excel::Workbook^ worksheet = gcnew Excel::WorkbookClass();
+		workbook = excel->Workbooks->Add(Type::Missing);
+		excel->Visible = false;
+		excel->DisplayAlerts = false;
+		Excel::Application^ app = gcnew Excel::ApplicationClass();
+		app->Visible = false;
+		//tạo mới một Workbooks bằng phương thức add()
+		Excel::Workbook^ workbook = app->Workbooks->Add(System::Type::Missing);
+
+		Excel::Worksheet^ worksheet = safe_cast<Excel::Worksheet^>(app->ActiveSheet);
+		worksheet->Name = "Test";
+		//worksheet = (Excel::Worksheet); workbook->Sheets["Sheet1"];
+		for (int i = 0; i < dataGridView1->ColumnCount; i++)
+		{
+			worksheet->Cells[1, i + 1] = dataGridView1->Columns[i]->HeaderText;
+		}
+		// export nội dung trong DataGridView
+		for (int i = 0; i < dataGridView1->RowCount; i++)
+		{
+			for (int j = 0; j < dataGridView1->ColumnCount; j++)
+			{
+				worksheet->Cells[i + 2, j + 1] = dataGridView1->Rows[i]->Cells[j]->Value->ToString();
+			}
+		}
+		// sử dụng phương thức SaveAs() để lưu workbook với filename
+		workbook->SaveAs(System::Environment::CurrentDirectory + "Test/Test.xlsx",
+			System::Type::Missing, System::Type::Missing, System::Type::Missing,
+			false, false,
+			Excel::XlSaveAsAccessMode::xlShared,
+			false, false,
+			System::Type::Missing, System::Type::Missing, System::Type::Missing
+		);
+		//đóng workbook
+		workbook->Close(false, System::Type::Missing, System::Type::Missing);
+		System::Runtime::InteropServices::Marshal::ReleaseComObject(workbook);
+
+		app->Quit();
+
+		System::Runtime::InteropServices::Marshal::ReleaseComObject(app);
+		MessageBox::Show("Export to file successfully", "Success", MessageBoxButtons::OK
+			, MessageBoxIcon::Information);
+		}*/
+		//Copy the file to a new folder and rename it.
+
+		//CopyFile("D:/WorkSpace/PBL2_GUI/PBL2/PBL2/db_laptop.csv", "D:D:/WorkSpace/PBL2_GUI/PBL2/PBL2Test/Test.csv", true)
+	}
 };
 }
-

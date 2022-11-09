@@ -46,13 +46,13 @@ ostream& operator << (ostream& out, Date a) {
 }
 
 istream& operator >> (istream& in, Date& a) {
-		cout << "(Vui long nhap ngay thang nam la cac gia tri hop le!)\n";
-		cout << "\nNhap ngay: ";
-		getline(in, a.dd); fflush(stdin);
-		cout << "\nNhap thang: ";
-		getline(in, a.mm); fflush(stdin);
-		cout << "\nNhap nam: ";
-		getline(in, a.yy); fflush(stdin);
+	cout << "(Vui long nhap ngay thang nam la cac gia tri hop le!)\n";
+	cout << "\nNhap ngay: ";
+	getline(in, a.dd); fflush(stdin);
+	cout << "\nNhap thang: ";
+	getline(in, a.mm); fflush(stdin);
+	cout << "\nNhap nam: ";
+	getline(in, a.yy); fflush(stdin);
 	return in;
 }
 void Date::operator = (const Date& a) {

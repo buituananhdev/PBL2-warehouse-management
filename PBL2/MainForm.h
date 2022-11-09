@@ -2,6 +2,8 @@
 #include "Manage.h"
 #include "Add_Form.h"
 #include "View_Form.h"
+#include "Search_Form.h"
+#include "Update_Form.h"
 namespace PBL2 {
 
 	using namespace System;
@@ -17,144 +19,7 @@ namespace PBL2 {
 	public ref class MainForm : public System::Windows::Forms::Form
 	{
 	public:
-		void Load_Data_Of_Laptop() {
-			string temp;
-			int temp1;
-			double temp2;
-			ifstream data_lib;
-			data_lib.open("db_laptop.csv");
-			for (int i = 0; i < 100; i++)
-			{
-				if (data_lib.eof())
-				{
-					break;
-				}
-				getline(data_lib, temp, ',');
-				listLT[i].setID(temp);
-				getline(data_lib, temp, ',');
-				listLT[i].setName(temp);
-				getline(data_lib, temp, ',');
-				listLT[i].setBrand(temp);
-				getline(data_lib, temp, ',');
-				listLT[i].setColor(temp);
-				data_lib >> temp2;
-				data_lib.ignore(1, ',');
-				listLT[i].setPriceF(temp2);
-				data_lib >> temp2;
-				data_lib.ignore(1, ',');
-				listLT[i].setPriceE(temp2);
-				data_lib >> temp1;
-				data_lib.ignore(1, ',');
-				listLT[i].setAmount(temp1);
-				data_lib >> temp1;
-				data_lib.ignore(1, ',');
-				listLT[i].setSales(temp1);
-				data_lib >> temp2;
-				data_lib.ignore(1, ',');
-				listLT[i].setRevenue(temp2);
-				getline(data_lib, temp, ',');
-				listLT[i].setStatus(temp);
-				getline(data_lib, temp, ',');
-				listLT[i].setInputDatetmp(temp);
-				getline(data_lib, temp, ',');
-				listLT[i].setCard(temp);
-				getline(data_lib, temp, '\n');
-				listLT[i].setWeight(temp);
-			}
-			data_lib.close();
-		}
-		void Load_Data_Of_Smartphone() {
-			string temp;
-			int temp1;
-			double temp2;
-			ifstream data_lib;
-			data_lib.open("db_smartphone.csv");
-			for (int i = 0; i < 100; i++)
-			{
-				if (data_lib.eof())
-				{
-					break;
-				}
-				getline(data_lib, temp, ',');
-				listSP[i].setID(temp);
-				getline(data_lib, temp, ',');
-				listSP[i].setName(temp);
-				getline(data_lib, temp, ',');
-				listSP[i].setBrand(temp);
-				getline(data_lib, temp, ',');
-				listSP[i].setColor(temp);
-				data_lib >> temp2;
-				data_lib.ignore(1, ',');
-				listSP[i].setPriceF(temp2);
-				data_lib >> temp2;
-				data_lib.ignore(1, ',');
-				listLT[i].setPriceE(temp2);
-				data_lib >> temp1;
-				data_lib.ignore(1, ',');
-				listSP[i].setAmount(temp1);
-				data_lib >> temp1;
-				data_lib.ignore(1, ',');
-				listSP[i].setSales(temp1);
-				data_lib >> temp2;
-				data_lib.ignore(1, ',');
-				listSP[i].setRevenue(temp2);
-				getline(data_lib, temp, ',');
-				listSP[i].setStatus(temp);
-				getline(data_lib, temp, ',');
-				listSP[i].setInputDatetmp(temp);
-				getline(data_lib, temp, ',');
-				listSP[i].setRam(temp);
-				getline(data_lib, temp, '\n');
-				listSP[i].setRom(temp);
-			}
-			data_lib.close();
-		}
-		void Load_Data_Of_Smartwatch() {
-			string temp;
-			int temp1;
-			double temp2;
-			ifstream data_lib;
-			data_lib.open("db_smartwatch.csv");
-			for (int i = 0; i < 100; i++)
-			{
-				if (data_lib.eof())
-				{
-					break;
-				}
-				getline(data_lib, temp, ',');
-				listSW[i].setID(temp);
-				getline(data_lib, temp, ',');
-				listSW[i].setName(temp);
-				getline(data_lib, temp, ',');
-				listSW[i].setBrand(temp);
-				getline(data_lib, temp, ',');
-				listSW[i].setColor(temp);
-				data_lib >> temp2;
-				data_lib.ignore(1, ',');
-				listSW[i].setPriceF(temp2);
-				data_lib >> temp2;
-				data_lib.ignore(1, ',');
-				listLT[i].setPriceE(temp2);
-				data_lib >> temp1;
-				data_lib.ignore(1, ',');
-				listSW[i].setAmount(temp1);
-				data_lib >> temp1;
-				data_lib.ignore(1, ',');
-				listSW[i].setSales(temp1);
-				data_lib >> temp2;
-				data_lib.ignore(1, ',');
-				listSW[i].setRevenue(temp2);
-				getline(data_lib, temp, ',');
-				listSW[i].setStatus(temp);
-				getline(data_lib, temp, ',');
-				listSW[i].setInputDatetmp(temp);
-				getline(data_lib, temp, ',');
-				listSW[i].setBatteryTime(temp);
-				getline(data_lib, temp, '\n');
-				listSW[i].setSize(temp);
-			}
-			data_lib.close();
-		}
+		
 		Form^ Main_Form;
 		MainForm(Form^ tmpForm)
 		{
@@ -310,6 +175,7 @@ namespace PBL2 {
 			this->btn_Search->TabIndex = 0;
 			this->btn_Search->Text = L"Search";
 			this->btn_Search->UseVisualStyleBackColor = true;
+			this->btn_Search->Click += gcnew System::EventHandler(this, &MainForm::btn_Search_Click);
 			// 
 			// btn_Delete
 			// 
@@ -332,6 +198,7 @@ namespace PBL2 {
 			this->btn_Update->TabIndex = 0;
 			this->btn_Update->Text = L"Update ";
 			this->btn_Update->UseVisualStyleBackColor = true;
+			this->btn_Update->Click += gcnew System::EventHandler(this, &MainForm::btn_Update_Click);
 			// 
 			// btn_Add
 			// 
@@ -426,6 +293,16 @@ private: System::Void MainForm_Load(System::Object^ sender, System::EventArgs^ e
 	Load_Data_Of_Smartwatch();
 	Load_Data_Of_Smartphone();
 	Load_Data_Of_Laptop();
+}
+private: System::Void btn_Search_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	Search_Form^ tmpView_Form = gcnew Search_Form(this);
+	tmpView_Form->Show();
+}
+private: System::Void btn_Update_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	Update_Form^ tmpView_Form = gcnew Update_Form(this);
+	tmpView_Form->Show();
 }
 };
 }

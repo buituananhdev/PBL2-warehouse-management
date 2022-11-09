@@ -9,8 +9,10 @@ public:
 	SmartWatch();
 	SmartWatch(string, string, string, string, double, double, string, double, int, string);
 	~SmartWatch();
-	void setSize(string&);
-	string getSize();
-	void setBatteryTime(string&);
-	string getBatteryTime();
+	virtual void setSize(string&);
+	virtual string getSize();
+	virtual void setBatteryTime(string&);
+	virtual string getBatteryTime();
+	void ReadFILE(ifstream& filein);
+	void WriteFILE(ostream&);
 };

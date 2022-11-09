@@ -13,5 +13,6 @@ public:
 	void setWeight(string&);
 	string getCard();
 	string getWeight();
-
+	void ReadFILE(ifstream&);
+	void WriteFILE(ostream&);
 };
