@@ -4,6 +4,8 @@
 #include "View_Form.h"
 #include "Search_Form.h"
 #include "Update_Form.h"
+#include "Delete_Form.h"
+#include "Import_Form.h"
 namespace PBL2 {
 
 	using namespace System;
@@ -164,6 +166,7 @@ namespace PBL2 {
 			this->btn_Import->TabIndex = 0;
 			this->btn_Import->Text = L"Import Goods";
 			this->btn_Import->UseVisualStyleBackColor = true;
+			this->btn_Import->Click += gcnew System::EventHandler(this, &MainForm::btn_Import_Click);
 			// 
 			// btn_Search
 			// 
@@ -187,6 +190,7 @@ namespace PBL2 {
 			this->btn_Delete->TabIndex = 0;
 			this->btn_Delete->Text = L"Delete";
 			this->btn_Delete->UseVisualStyleBackColor = true;
+			this->btn_Delete->Click += gcnew System::EventHandler(this, &MainForm::btn_Delete_Click);
 			// 
 			// btn_Update
 			// 
@@ -302,6 +306,16 @@ private: System::Void btn_Search_Click(System::Object^ sender, System::EventArgs
 private: System::Void btn_Update_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
 	Update_Form^ tmpView_Form = gcnew Update_Form(this);
+	tmpView_Form->Show();
+}
+private: System::Void btn_Delete_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	Delete_Form^ tmpView_Form = gcnew Delete_Form(this);
+	tmpView_Form->Show();
+}
+private: System::Void btn_Import_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	Import_Form^ tmpView_Form = gcnew Import_Form(this);
 	tmpView_Form->Show();
 }
 };

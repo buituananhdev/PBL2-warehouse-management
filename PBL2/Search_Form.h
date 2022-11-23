@@ -16,6 +16,9 @@ namespace PBL2 {
 	{
 	public:
 		DataTable^ Search_Device = gcnew DataTable();
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::ComboBox^ comboBox1;
+	public:
 	public:
 		Form^ Main_Form;
 		Search_Form(Form^ tmpForm)
@@ -55,7 +58,8 @@ namespace PBL2 {
 
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
 	private: System::Windows::Forms::Label^ label_ShowIndexSearch;
-	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ btn_Back;
+
 
 	private:
 		/// <summary>
@@ -78,7 +82,9 @@ namespace PBL2 {
 			this->btn_Search = (gcnew System::Windows::Forms::PictureBox());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->label_ShowIndexSearch = (gcnew System::Windows::Forms::Label());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->btn_Back = (gcnew System::Windows::Forms::Button());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btn_Search))->BeginInit();
@@ -92,7 +98,7 @@ namespace PBL2 {
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel1->Location = System::Drawing::Point(0, 0);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(1186, 100);
+			this->panel1->Size = System::Drawing::Size(1289, 100);
 			this->panel1->TabIndex = 0;
 			// 
 			// label1
@@ -100,7 +106,7 @@ namespace PBL2 {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 28.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(382, 20);
+			this->label1->Location = System::Drawing::Point(479, 20);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(428, 62);
 			this->label1->TabIndex = 0;
@@ -110,7 +116,7 @@ namespace PBL2 {
 			// 
 			this->txt_Search->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->txt_Search->Font = (gcnew System::Drawing::Font(L"Segoe UI", 11.8F));
-			this->txt_Search->Location = System::Drawing::Point(15, 9);
+			this->txt_Search->Location = System::Drawing::Point(13, 6);
 			this->txt_Search->Name = L"txt_Search";
 			this->txt_Search->Size = System::Drawing::Size(479, 27);
 			this->txt_Search->TabIndex = 1;
@@ -122,18 +128,18 @@ namespace PBL2 {
 			this->panel2->BackColor = System::Drawing::Color::White;
 			this->panel2->Controls->Add(this->btn_Search);
 			this->panel2->Controls->Add(this->txt_Search);
-			this->panel2->Location = System::Drawing::Point(323, 146);
+			this->panel2->Location = System::Drawing::Point(415, 154);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(552, 46);
+			this->panel2->Size = System::Drawing::Size(551, 36);
 			this->panel2->TabIndex = 2;
 			// 
 			// btn_Search
 			// 
 			this->btn_Search->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
 			this->btn_Search->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_Search.Image")));
-			this->btn_Search->Location = System::Drawing::Point(504, 0);
+			this->btn_Search->Location = System::Drawing::Point(507, -1);
 			this->btn_Search->Name = L"btn_Search";
-			this->btn_Search->Size = System::Drawing::Size(47, 46);
+			this->btn_Search->Size = System::Drawing::Size(44, 38);
 			this->btn_Search->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->btn_Search->TabIndex = 3;
 			this->btn_Search->TabStop = false;
@@ -142,11 +148,11 @@ namespace PBL2 {
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(12, 247);
+			this->dataGridView1->Location = System::Drawing::Point(40, 303);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(1162, 340);
+			this->dataGridView1->Size = System::Drawing::Size(1219, 284);
 			this->dataGridView1->TabIndex = 3;
 			// 
 			// label_ShowIndexSearch
@@ -160,23 +166,46 @@ namespace PBL2 {
 			this->label_ShowIndexSearch->TabIndex = 4;
 			this->label_ShowIndexSearch->Text = L".";
 			// 
-			// button1
+			// btn_Back
 			// 
-			this->button1->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 11.8F, System::Drawing::FontStyle::Bold));
-			this->button1->Location = System::Drawing::Point(536, 612);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(130, 40);
-			this->button1->TabIndex = 5;
-			this->button1->Text = L"Back";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &Search_Form::button1_Click);
+			this->btn_Back->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 11.8F, System::Drawing::FontStyle::Bold));
+			this->btn_Back->Location = System::Drawing::Point(578, 607);
+			this->btn_Back->Name = L"btn_Back";
+			this->btn_Back->Size = System::Drawing::Size(130, 50);
+			this->btn_Back->TabIndex = 5;
+			this->btn_Back->Text = L"Back";
+			this->btn_Back->UseVisualStyleBackColor = true;
+			this->btn_Back->Click += gcnew System::EventHandler(this, &Search_Form::button1_Click);
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(36, 267);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(467, 23);
+			this->label2->TabIndex = 6;
+			this->label2->Text = L"Here is the information of the product you are looking for...";
+			// 
+			// comboBox1
+			// 
+			this->comboBox1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 11.8F));
+			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"ID", L"Name", L"Price" });
+			this->comboBox1->Location = System::Drawing::Point(238, 156);
+			this->comboBox1->Name = L"comboBox1";
+			this->comboBox1->Size = System::Drawing::Size(154, 36);
+			this->comboBox1->TabIndex = 7;
 			// 
 			// Search_Form
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(7, 17);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1186, 673);
-			this->Controls->Add(this->button1);
+			this->ClientSize = System::Drawing::Size(1289, 673);
+			this->Controls->Add(this->comboBox1);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->btn_Back);
 			this->Controls->Add(this->label_ShowIndexSearch);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->panel2);
@@ -205,54 +234,12 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	Main_Form->Show();
 }
 private: System::Void txt_Search_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (txt_Search->Text != "") {
+	if (txt_Search->Text == "What are you looking for...") {
 		txt_Search->Text = "";
 	}
 }
 private: System::Void btn_Search_Click(System::Object^ sender, System::EventArgs^ e) {
-	/*SmartPhone arrayFound[MAX];
-	int foundSP = 0;
-	char indexSP[100];
-	std::string tempStrIndex = marshal_as<std::string>(txt_Search->Text);
-	char tempStrIndex1[100];
-	strcpy(tempStrIndex1, tempStrIndex.c_str());
-	for (int i = 0; i < 100; i++) {
-		strcpy(indexSP, listSP[i].name.c_str());
-		string index1 = strupr(indexSP);
-		string index2 = strupr(tempStrIndex1);
-		if (strstr(index1.c_str(), index2.c_str())) {
-			foundSP = 1;
-			if (Search_Device->Rows->Count <= 0) {
-				Search_Device->Columns->Add("ID");
-				Search_Device->Columns->Add("Ten");
-				Search_Device->Columns->Add("Hang");
-				Search_Device->Columns->Add("Mau");
-				Search_Device->Columns->Add("Gia");
-				Search_Device->Columns->Add("So luong ton");
-				Search_Device->Columns->Add("Doanh so");
-				Search_Device->Columns->Add("Doanh thu");
-				Search_Device->Columns->Add("Trang thai");
-				Search_Device->Columns->Add("Ngay nhap kho");
-				Search_Device->Columns->Add("");
-				Search_Device->Columns->Add("");
-				string tmpPriceF = to_string(listSP[i].getPriceF());
-				string tmpAmount = to_string(listSP[i].getAmount());
-				string tmpSales = to_string(listSP[i].getSales());
-				string tmpRevenue = to_string(listSP[i].getRevenue());
-
-				Search_Device->Rows->Add(gcnew String(listSP[i].getID().c_str()), gcnew String(listSP[i].getName().c_str()), gcnew String(listSP[i].getBrand().c_str())
-					, gcnew String(listSP[i].getColor().c_str()), gcnew String(tmpPriceF.c_str()), gcnew String(tmpAmount.c_str()), gcnew String(tmpSales.c_str())
-					, gcnew String(tmpRevenue.c_str()), gcnew String(listSP[i].getStatus().c_str()), gcnew String(listSP[i].getInputDatetmp().c_str()), gcnew String(listSP[i].getRam().c_str()), gcnew String(listSP[i].getRom().c_str()));
-				dataGridView1->DataSource = Search_Device;
-				i++;
-			}
-			break;
-		}
-	}
-	if (foundSP == 0) {
-		MessageBox::Show("Sorry we couldn't find any matches for your keywords" + txt_Search->Text, "Error", MessageBoxButtons::OK
-			, MessageBoxIcon::Error);
-	} */
+	
 	
 }
 };

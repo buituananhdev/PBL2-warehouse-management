@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "User.h"
+//#include "User.h"
 #include "Manage.h"
 #include "MainForm.h"
 #include<fstream>
@@ -51,6 +51,8 @@ namespace PBL2 {
 			}
 			user.close();
 		}
+	private: System::Windows::Forms::Panel^ panel3;
+	private: System::Windows::Forms::Label^ label1;
 	public:
 		Form^ Login_Form;
 		Login(Form^ tmpForm)
@@ -89,12 +91,6 @@ namespace PBL2 {
 	private: System::Windows::Forms::TextBox^ txt_Username;
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Panel^ panel2;
-	private: System::Windows::Forms::Panel^ panel3;
-
-	private: System::Windows::Forms::Label^ label1;
-
-
-
 
 	protected:
 
@@ -193,17 +189,17 @@ namespace PBL2 {
 			this->panel3->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel3->Location = System::Drawing::Point(0, 0);
 			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(1186, 59);
+			this->panel3->Size = System::Drawing::Size(1186, 63);
 			this->panel3->TabIndex = 4;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 13.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 13.8F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(33, 14);
+			this->label1->Location = System::Drawing::Point(34, 16);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(680, 30);
+			this->label1->Size = System::Drawing::Size(711, 31);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"STORE MANAGEMENT APPLICATION OF TECHNOLOGY PRODUCTS";
 			// 
@@ -236,7 +232,6 @@ namespace PBL2 {
 		}
 #pragma endregion
 	private: System::Void btn_Login_Click(System::Object^ sender, System::EventArgs^ e) {
-	SignIn:
 		Load_Data_Of_User();
 		std::string tempStr = marshal_as<std::string>(txt_Username->Text);
 		std::string tempStr2 = marshal_as<std::string>(txt_Password->Text);
@@ -261,7 +256,7 @@ namespace PBL2 {
 				MainForm_Form->Show();
 				txt_Username->Text = "Your Name";
 				txt_Password->Text = "PassWord";
-				_Username = list_User[i].getUsername();
+				//_Username = list_User[i].getUsername();
 				break;
 			}
 		}
@@ -271,15 +266,15 @@ namespace PBL2 {
 				, MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 	}
-private: System::Void txt_Username_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (txt_Username->Text == "Your Name") {
-		txt_Username->Text = "";
+	private: System::Void txt_Username_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (txt_Username->Text == "Your Name") {
+			txt_Username->Text = "";
+		}
 	}
-}
-private: System::Void txt_Password_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (txt_Password->Text == "PassWord") {
-		txt_Password->Text = "";
+	private: System::Void txt_Password_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (txt_Password->Text == "PassWord") {
+			txt_Password->Text = "";
+		}
 	}
-}
-};
+	};
 }

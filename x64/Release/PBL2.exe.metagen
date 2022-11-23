@@ -1,4 +1,6 @@
   PBL2.Add_Form.resources - Embedded, ContainedInManifestFile, 
+  PBL2.Delete_Form.resources - Embedded, ContainedInManifestFile, 
+  PBL2.Import_Form.resources - Embedded, ContainedInManifestFile, 
   PBL2.Login.resources - Embedded, ContainedInManifestFile, 
   PBL2.MainForm.resources - Embedded, ContainedInManifestFile, 
   PBL2.Search_Form.resources - Embedded, ContainedInManifestFile, 
@@ -35,6 +37,30 @@ Class PBL2.Add_Form: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     CreateNewRow_LT(): PrivateScope, Public, HideBySig
     CreateNewRow_SP(): PrivateScope, Public, HideBySig
     CreateNewRow_SW(): PrivateScope, Public, HideBySig
+Class PBL2.Delete_Form: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Data.DataTable Smartphone_Device : Public
+    System.Data.DataTable Laptop_Device : Public
+    System.Data.DataTable Smartwatch_Device : Public
+    Int32 indexDelete : Public
+    Int32 CheckTypeDelete : Public
+    System.Windows.Forms.Form Main_Form : Public
+  Methods:
+    CreateNewRow_LT(Int32): PrivateScope, Public, HideBySig
+    CreateNewRow_SP(Int32): PrivateScope, Public, HideBySig
+    CreateNewRow_SW(Int32): PrivateScope, Public, HideBySig
+Class PBL2.Invoice_Form: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class PBL2.Import_Form: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.Form Main_Form : Public
 Class PBL2.View_Form: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -64,6 +90,16 @@ Class PBL2.Update_Form: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     System.Windows.Forms.Form Main_Form : Public
+    System.Data.DataTable Smartphone_Device : Public
+    System.Data.DataTable Laptop_Device : Public
+    System.Data.DataTable Smartwatch_Device : Public
+    Int32 IndexCounterLT : Public
+    Int32 IndexCounterSP : Public
+    Int32 IndexCounterSW : Public
+  Methods:
+    CreateNewRow_LT(): PrivateScope, Public, HideBySig
+    CreateNewRow_SP(): PrivateScope, Public, HideBySig
+    CreateNewRow_SW(): PrivateScope, Public, HideBySig
 Class PBL2.MainForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

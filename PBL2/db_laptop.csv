@@ -1,10 +1,3 @@
-LT01,Asusvivobook,Asus,Black,8000,1256,23,4567,Còn hàng,4-11-2022,RTX3090ti,2.0kg
-LT02,Lenovo Legion 5,Lenovo,White,3000,345,2,6000,Con hang,4-11-2022,RTX4090 super,2.5kg
-LT03,Asusvivobook,Asus,Black,8000,1256,23,4567,Con hang,4-11-2022,RTX3090ti,2.0kg
-LT04,Lenovo Legion 5,Lenovo,White,3000,345,2,6000,Con hang,4-11-2022,RTX4090 super,2.5kg
-LT05,Macbook Pro M2 2022,Apple,White,3.4e+07,0,0,0,Het hang,7-11-2022,Card onboard,1.4 kg
-LT06,Dell Gaming G15 ,Dell,Black,2.45e+07,0,0,0,Het hang,7-11-2022,RTX 3050 4GB,2 kg
-2,2,2,2,0,0,0,0,Out of stock,23:18 9-11-2022,2,2
-3,4,5,6,0,0,0,0,Out of stock,23:18 9-11-2022,3,8
-2,2,2,2,0,0,0,0,Out of stock,23:29 9-11-2022,2,2
-5,5,5,5,0,0,0,0,Out of stock,23:37 9-11-2022,5,5
+LT01,Asusvivobook,Asus,900,8000,1256,23,4567,Còn hàng,04-11-22,RTX3090ti,2.0kg
+LT02,Macbook Pro M2 2022,Apple,7890,3.4e+07,0,0,0,Het hang,07-11-22,Card onboard,1.4 kg
+LT03,Dell Gaming G15,Dell,567,2.45e+07,0,0,0,Het hang,07-11-22,RTX 3050 4GB,2 kg

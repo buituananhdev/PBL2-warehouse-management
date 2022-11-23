@@ -116,7 +116,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Add_Form.cpp" />
-    <ClCompile Include="Date.cpp" />
+    <ClCompile Include="Delete_Form.cpp" />
+    <ClCompile Include="Import_Form.cpp" />
+    <ClCompile Include="Invoice_Form.cpp" />
     <ClCompile Include="Laptop.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="MainForm.cpp" />
@@ -133,7 +135,15 @@
     <ClInclude Include="Add_Form.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Date.h" />
+    <ClInclude Include="Delete_Form.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Import_Form.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Invoice_Form.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Laptop.h" />
     <ClInclude Include="Login.h">
       <FileType>CppForm</FileType>
@@ -161,7 +171,6 @@
     <None Include="db_smartphone.csv" />
     <None Include="db_smartwatch.csv" />
     <None Include="db_user.csv" />
-    <None Include="Test.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Office.Interop.Excel">
@@ -176,6 +185,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Add_Form.resx">
       <DependentUpon>Add_Form.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Delete_Form.resx">
+      <DependentUpon>Delete_Form.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Import_Form.resx">
+      <DependentUpon>Import_Form.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.h</DependentUpon>

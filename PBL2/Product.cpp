@@ -1,5 +1,5 @@
 #include "Product.h"
-#include "Date.h"
+//#include "Date.h"
 #include <iostream>
 #include <string.h>
 #include <string>
@@ -11,7 +11,6 @@ Product::Product() {
 	this->ID = "\0";
 	this->name = "\0";
 	this->brand = "\0";
-	this->color = "\0";
 	this->priceF = 0;
 	this->amount = 0;
 	this->sales = 0;
@@ -22,7 +21,6 @@ Product::Product(string ID, string name, string brand, string color, double pric
 	this->ID = ID;
 	this->name = name;
 	this->brand = brand;
-	this->color = color;
 	this->priceF = priceF;
 	this->status = status;
 	this->amount = amount;
@@ -48,12 +46,6 @@ void Product::setBrand(string& nBrand) {
 }
 string	Product::getBrand() {
 	return brand;
-}
-void Product::setColor(string& nColor) {
-	this->color = nColor;
-}
-string Product::getColor() {
-	return color;
 }
 void Product::setPriceF(double& nPriceF) {
 	this->priceF = nPriceF;
@@ -113,8 +105,9 @@ void Product::ReadFILE(ifstream& filein) {
 	getline(filein, ID, ',');
 	getline(filein, name, ',');
 	getline(filein, brand, ',');
-	getline(filein, color, ',');
 	filein >> priceF;
+	filein.seekg(1, 1);
+	filein >> priceE;
 	filein.seekg(1, 1);
 	filein >> amount;
 	filein.seekg(1, 1);
@@ -126,5 +119,5 @@ void Product::ReadFILE(ifstream& filein) {
 	getline(filein, inputDatetmp, ',');
 }
 void Product::WriteFILE(ostream& fileout) {
-	fileout << ID << ',' << name << ',' << brand << ',' << color << ',' << priceF << ',' << amount << ',' << sales << ',' << revenue << ',' << status << ',' << inputDatetmp << ',';
+	fileout << ID << ',' << name << ',' << brand << ',' << priceF << ',' << priceE << ',' << amount << ',' << sales << ',' << revenue << ',' << status << ',' << inputDatetmp << ',';
 }

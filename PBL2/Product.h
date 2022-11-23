@@ -1,5 +1,5 @@
 #pragma once
-#include "Date.h"
+//#include "Date.h"
 #include <iostream>
 #include <string.h>
 #include <ctime>
@@ -10,14 +10,13 @@ public:
 	string ID;
 	string name;
 	string brand;
-	string color;
 	double priceF;
 	double priceE;
 	int amount;
 	int sales;
 	double revenue;
 	string status;
-	Date inputDate;
+	//Date inputDate;
 	string inputDatetmp;
 public:
 	Product();
@@ -29,10 +28,10 @@ public:
 	virtual string getName();
 	virtual void setBrand(string&);
 	virtual string getBrand();
-	virtual void setColor(string&);
-	virtual string getColor();
 	virtual void setPriceF(double&);
 	virtual double getPriceF();
+	virtual void setPriceE(double&);
+	virtual double getPriceE();
 	virtual void setStatus(string&);
 	virtual string getStatus();
 	virtual void setAmount(int&);
@@ -46,8 +45,6 @@ public:
 	virtual void UpdateAmount(int);
 	virtual void setInputDatetmp(string&);
 	virtual string getInputDatetmp();
-	virtual void setPriceE(double&);
-	virtual double getPriceE();
 	virtual void ReadFILE(ifstream&);
 	virtual void WriteFILE(ostream&);
 };

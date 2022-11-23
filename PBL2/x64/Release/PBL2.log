@@ -1,19 +1,17 @@
-﻿  Add_Form.cpp
-D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Add_Form.h(3,9): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Add_Form.h(768,15): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Add_Form.h(801,15): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Add_Form.h(834,15): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+﻿  Import_Form.cpp
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Import_Form.h(4,9): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   Login.cpp
 D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Add_Form.h(3,9): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Add_Form.h(768,15): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Add_Form.h(801,15): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Add_Form.h(834,15): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Login.h(239,1): warning C4102: 'SignIn': unreferenced label
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Add_Form.h(724,16): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Add_Form.h(760,16): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Add_Form.h(796,16): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Import_Form.h(4,9): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   MainForm.cpp
 D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Add_Form.h(3,9): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Add_Form.h(768,15): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Add_Form.h(801,15): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Add_Form.h(834,15): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Add_Form.h(724,16): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Add_Form.h(760,16): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Add_Form.h(796,16): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\Import_Form.h(4,9): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   Generating Code...
   Add_Form.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   PBL2.vcxproj -> D:\WorkSpace\PBL2_GUI\PBL2\x64\Release\PBL2.exe

@@ -36,6 +36,8 @@ private: System::Windows::Forms::Button^ btn_ExportToExcel;
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Label^ label1;
 
+
+
 public:
 
 
@@ -136,7 +138,7 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 			this->groupBox1->Controls->Add(this->btn_Show_Smartphone);
 			this->groupBox1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->groupBox1->Location = System::Drawing::Point(252, 117);
+			this->groupBox1->Location = System::Drawing::Point(287, 117);
 			this->groupBox1->Name = L"groupBox1";
 			this->groupBox1->Size = System::Drawing::Size(815, 106);
 			this->groupBox1->TabIndex = 2;
@@ -187,7 +189,7 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->btn_Back->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->btn_Back->Location = System::Drawing::Point(793, 624);
+			this->btn_Back->Location = System::Drawing::Point(785, 624);
 			this->btn_Back->Name = L"btn_Back";
 			this->btn_Back->Size = System::Drawing::Size(224, 37);
 			this->btn_Back->TabIndex = 3;
@@ -229,7 +231,7 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->btn_ExportToExcel->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->btn_ExportToExcel->Location = System::Drawing::Point(383, 624);
+			this->btn_ExportToExcel->Location = System::Drawing::Point(362, 624);
 			this->btn_ExportToExcel->Name = L"btn_ExportToExcel";
 			this->btn_ExportToExcel->Size = System::Drawing::Size(224, 37);
 			this->btn_ExportToExcel->TabIndex = 6;
@@ -252,7 +254,7 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 28.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(325, 19);
+			this->label1->Location = System::Drawing::Point(360, 18);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(704, 62);
 			this->label1->TabIndex = 0;
@@ -276,7 +278,8 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 			this->MaximizeBox = false;
 			this->Name = L"View_Form";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"Xem thông tin";
+			this->Text = L"View_Form";
+			this->Load += gcnew System::EventHandler(this, &View_Form::View_Form_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->groupBox1->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
@@ -289,11 +292,16 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 #pragma endregion
 	public:void CreateNewRow_LT()
 	{
+		string tmpPriceF = to_string(listLT[IndexCounterLT].getPriceF());
+		string tmpPriceE = to_string(listLT[IndexCounterLT].getPriceE());
+		string tmpAmount = to_string(listLT[IndexCounterLT].getAmount());
+		string tmpSales = to_string(listLT[IndexCounterLT].getSales());
+		string tmpRevenue = to_string(listLT[IndexCounterLT].getRevenue());
 		if (Laptop_Device->Rows->Count <= 0) {
 			Laptop_Device->Columns->Add("ID");
 			Laptop_Device->Columns->Add("Name");
 			Laptop_Device->Columns->Add("Brand");
-			Laptop_Device->Columns->Add("Color");
+			Laptop_Device->Columns->Add("Cost");
 			Laptop_Device->Columns->Add("Price");
 			Laptop_Device->Columns->Add("Quantity in stock");
 			Laptop_Device->Columns->Add("Sales");
@@ -302,26 +310,17 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 			Laptop_Device->Columns->Add("Input day");
 			Laptop_Device->Columns->Add("Graphics card");
 			Laptop_Device->Columns->Add("Weight");
-			string tmpPriceF = to_string(listLT[IndexCounterLT].getPriceF());
-			string tmpAmount = to_string(listLT[IndexCounterLT].getAmount());
-			string tmpSales = to_string(listLT[IndexCounterLT].getSales());
-			string tmpRevenue = to_string(listLT[IndexCounterLT].getRevenue());
-
+			
 			Laptop_Device->Rows->Add(gcnew String(listLT[IndexCounterLT].getID().c_str()), gcnew String(listLT[IndexCounterLT].getName().c_str()), gcnew String(listLT[IndexCounterLT].getBrand().c_str())
-				, gcnew String(listLT[IndexCounterLT].getColor().c_str()), gcnew String(tmpPriceF.c_str()), gcnew String(tmpAmount.c_str()), gcnew String(tmpSales.c_str())
+				, gcnew String(tmpPriceF.c_str()), gcnew String(tmpPriceE.c_str()), gcnew String(tmpAmount.c_str()), gcnew String(tmpSales.c_str())
 				, gcnew String(tmpRevenue.c_str()), gcnew String(listLT[IndexCounterLT].getStatus().c_str()), gcnew String(listLT[IndexCounterLT].getInputDatetmp().c_str()), gcnew String(listLT[IndexCounterLT].getCard().c_str()), gcnew String(listLT[IndexCounterLT].getWeight().c_str()));
 			IndexCounterLT++;
 			dataGridView2->DataSource = Laptop_Device;
 		}
 		else {
 			if (listLT[IndexCounterLT].getID() != "\0") {
-				string tmpPriceF = to_string(listLT[IndexCounterLT].getPriceF());
-				string tmpAmount = to_string(listLT[IndexCounterLT].getAmount());
-				string tmpSales = to_string(listLT[IndexCounterLT].getSales());
-				string tmpRevenue = to_string(listLT[IndexCounterLT].getRevenue());
-
 				Laptop_Device->Rows->Add(gcnew String(listLT[IndexCounterLT].getID().c_str()), gcnew String(listLT[IndexCounterLT].getName().c_str()), gcnew String(listLT[IndexCounterLT].getBrand().c_str())
-					, gcnew String(listLT[IndexCounterLT].getColor().c_str()), gcnew String(tmpPriceF.c_str()), gcnew String(tmpAmount.c_str()), gcnew String(tmpSales.c_str())
+					, gcnew String(tmpPriceF.c_str()), gcnew String(tmpPriceE.c_str()), gcnew String(tmpAmount.c_str()), gcnew String(tmpSales.c_str())
 					, gcnew String(tmpRevenue.c_str()), gcnew String(listLT[IndexCounterLT].getStatus().c_str()), gcnew String(listLT[IndexCounterLT].getInputDatetmp().c_str()), gcnew String(listLT[IndexCounterLT].getCard().c_str()), gcnew String(listLT[IndexCounterLT].getWeight().c_str()));
 				dataGridView2->DataSource = Laptop_Device;
 				IndexCounterLT++;
@@ -330,11 +329,16 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 	}
 	public:void CreateNewRow_SP()
 	{
+		string tmpPriceF = to_string(listSP[IndexCounterSP].getPriceF());
+		string tmpPriceE = to_string(listSP[IndexCounterSP].getPriceE());
+		string tmpAmount = to_string(listSP[IndexCounterSP].getAmount());
+		string tmpSales = to_string(listSP[IndexCounterSP].getSales());
+		string tmpRevenue = to_string(listSP[IndexCounterSP].getRevenue());
 		if (Smartphone_Device->Rows->Count <= 0) {
 			Smartphone_Device->Columns->Add("ID");
 			Smartphone_Device->Columns->Add("Name");
 			Smartphone_Device->Columns->Add("Brand");
-			Smartphone_Device->Columns->Add("Color");
+			Smartphone_Device->Columns->Add("Cost");
 			Smartphone_Device->Columns->Add("Price");
 			Smartphone_Device->Columns->Add("Quantity in stock");
 			Smartphone_Device->Columns->Add("Sales");
@@ -343,26 +347,17 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 			Smartphone_Device->Columns->Add("Input day");
 			Smartphone_Device->Columns->Add("RAM");
 			Smartphone_Device->Columns->Add("ROM");
-			string tmpPriceF = to_string(listSP[IndexCounterSP].getPriceF());
-			string tmpAmount = to_string(listSP[IndexCounterSP].getAmount());
-			string tmpSales = to_string(listSP[IndexCounterSP].getSales());
-			string tmpRevenue = to_string(listSP[IndexCounterSP].getRevenue());
 
 			Smartphone_Device->Rows->Add(gcnew String(listSP[IndexCounterSP].getID().c_str()), gcnew String(listSP[IndexCounterSP].getName().c_str()), gcnew String(listSP[IndexCounterSP].getBrand().c_str())
-				, gcnew String(listSP[IndexCounterSP].getColor().c_str()), gcnew String(tmpPriceF.c_str()), gcnew String(tmpAmount.c_str()), gcnew String(tmpSales.c_str())
+				, gcnew String(tmpPriceF.c_str()), gcnew String(tmpPriceE.c_str()), gcnew String(tmpAmount.c_str()), gcnew String(tmpSales.c_str())
 				, gcnew String(tmpRevenue.c_str()), gcnew String(listSP[IndexCounterSP].getStatus().c_str()), gcnew String(listSP[IndexCounterSP].getInputDatetmp().c_str()), gcnew String(listSP[IndexCounterSP].getRam().c_str()), gcnew String(listSP[IndexCounterSP].getRom().c_str()));
 			IndexCounterSP++;
 			dataGridView1->DataSource = Smartphone_Device;
 		}
 		else {
 			if (listSP[IndexCounterSP].getID() != "\0") {
-				string tmpPriceF = to_string(listSP[IndexCounterSP].getPriceF());
-				string tmpAmount = to_string(listSP[IndexCounterSP].getAmount());
-				string tmpSales = to_string(listSP[IndexCounterSP].getSales());
-				string tmpRevenue = to_string(listSP[IndexCounterSP].getRevenue());
-
 				Smartphone_Device->Rows->Add(gcnew String(listSP[IndexCounterSP].getID().c_str()), gcnew String(listSP[IndexCounterSP].getName().c_str()), gcnew String(listSP[IndexCounterSP].getBrand().c_str())
-					, gcnew String(listSP[IndexCounterSP].getColor().c_str()), gcnew String(tmpPriceF.c_str()), gcnew String(tmpAmount.c_str()), gcnew String(tmpSales.c_str())
+					, gcnew String(tmpPriceF.c_str()), gcnew String(tmpPriceE.c_str()), gcnew String(tmpAmount.c_str()), gcnew String(tmpSales.c_str())
 					, gcnew String(tmpRevenue.c_str()), gcnew String(listSP[IndexCounterSP].getStatus().c_str()), gcnew String(listSP[IndexCounterSP].getInputDatetmp().c_str()), gcnew String(listSP[IndexCounterSP].getRam().c_str()), gcnew String(listSP[IndexCounterSP].getRom().c_str()));
 				dataGridView1->DataSource = Smartphone_Device;
 				IndexCounterSP++;
@@ -372,11 +367,16 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 	}
 	public:void CreateNewRow_SW()
 	{
+		string tmpPriceF = to_string(listSW[IndexCounterSW].getPriceF());
+		string tmpPriceE = to_string(listSW[IndexCounterSW].getPriceE());
+		string tmpAmount = to_string(listSW[IndexCounterSW].getAmount());
+		string tmpSales = to_string(listSW[IndexCounterSW].getSales());
+		string tmpRevenue = to_string(listSW[IndexCounterSW].getRevenue());
 		if (Smartwatch_Device->Rows->Count <= 0) {
 			Smartwatch_Device->Columns->Add("ID");
 			Smartwatch_Device->Columns->Add("Name");
 			Smartwatch_Device->Columns->Add("Brand");
-			Smartwatch_Device->Columns->Add("Color");
+			Smartwatch_Device->Columns->Add("Cost");
 			Smartwatch_Device->Columns->Add("Price");
 			Smartwatch_Device->Columns->Add("Quantity in stock");
 			Smartwatch_Device->Columns->Add("Sales");
@@ -385,26 +385,17 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 			Smartwatch_Device->Columns->Add("Input day");
 			Smartwatch_Device->Columns->Add("Battery life");
 			Smartwatch_Device->Columns->Add("Size");
-			string tmpPriceF = to_string(listSW[IndexCounterSW].getPriceF());
-			string tmpAmount = to_string(listSW[IndexCounterSW].getAmount());
-			string tmpSales = to_string(listSW[IndexCounterSW].getSales());
-			string tmpRevenue = to_string(listSW[IndexCounterSW].getRevenue());
 
 			Smartwatch_Device->Rows->Add(gcnew String(listSW[IndexCounterSW].getID().c_str()), gcnew String(listSW[IndexCounterSW].getName().c_str()), gcnew String(listSW[IndexCounterSW].getBrand().c_str())
-				, gcnew String(listSW[IndexCounterSW].getColor().c_str()), gcnew String(tmpPriceF.c_str()), gcnew String(tmpAmount.c_str()), gcnew String(tmpSales.c_str())
+				, gcnew String(tmpPriceF.c_str()), gcnew String(tmpPriceE.c_str()), gcnew String(tmpAmount.c_str()), gcnew String(tmpSales.c_str())
 				, gcnew String(tmpRevenue.c_str()), gcnew String(listSW[IndexCounterSW].getStatus().c_str()), gcnew String(listSW[IndexCounterSW].getInputDatetmp().c_str()), gcnew String(listSW[IndexCounterSW].getBatteryTime().c_str()), gcnew String(listSW[IndexCounterSW].getSize().c_str()));
 			IndexCounterSW++;
 			dataGridView3->DataSource = Smartwatch_Device;
 		}
 		else {
 			if (listSW[IndexCounterSW].getID() != "\0") {
-				string tmpPriceF = to_string(listSW[IndexCounterSW].getPriceF());
-				string tmpAmount = to_string(listSW[IndexCounterSW].getAmount());
-				string tmpSales = to_string(listSW[IndexCounterSW].getSales());
-				string tmpRevenue = to_string(listSW[IndexCounterSW].getRevenue());
-
 				Smartwatch_Device->Rows->Add(gcnew String(listSW[IndexCounterSW].getID().c_str()), gcnew String(listSW[IndexCounterSW].getName().c_str()), gcnew String(listSW[IndexCounterSW].getBrand().c_str())
-					, gcnew String(listSW[IndexCounterSW].getColor().c_str()), gcnew String(tmpPriceF.c_str()), gcnew String(tmpAmount.c_str()), gcnew String(tmpSales.c_str())
+					, gcnew String(tmpPriceF.c_str()), gcnew String(tmpPriceE.c_str()), gcnew String(tmpAmount.c_str()), gcnew String(tmpSales.c_str())
 					, gcnew String(tmpRevenue.c_str()), gcnew String(listSW[IndexCounterSW].getStatus().c_str()), gcnew String(listSW[IndexCounterSW].getInputDatetmp().c_str()), gcnew String(listSW[IndexCounterSW].getBatteryTime().c_str()), gcnew String(listSW[IndexCounterSW].getSize().c_str()));
 				dataGridView3->DataSource = Smartwatch_Device;
 				IndexCounterSW++;
@@ -417,17 +408,16 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 		Main_Form->Show();
 	}
 	private: System::Void btn_Show_Laptop_Click(System::Object^ sender, System::EventArgs^ e) {
-		Load_Data_Of_Laptop();
 		dataGridView2->Show();
 		dataGridView1->Hide();
 		dataGridView3->Hide();
 		for (int i = 0; i < 100; i++)
 		{
 			CreateNewRow_LT();
+			
 		}
 	}
-	private: System::Void btn_Show_Smartphone_Click(System::Object^ sender, System::EventArgs^ e) {
-		Load_Data_Of_Smartphone();
+	private: System::Void btn_Show_Smartphone_Click(System::Object^ sender, System::EventArgs^ e) {		
 		dataGridView1->Show();
 		dataGridView2->Hide();
 		dataGridView3->Hide();
@@ -437,14 +427,13 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 		}
 	}
 private: System::Void btn_Show_SmartWatch_Click(System::Object^ sender, System::EventArgs^ e) {
-	Load_Data_Of_Smartwatch();
-	dataGridView3->Show();
-	dataGridView1->Hide();
-	dataGridView2->Hide();
-	for (int i = 0; i < 100; i++)
-	{
-		CreateNewRow_SW();
-	}
+		dataGridView3->Show();
+		dataGridView1->Hide();
+		dataGridView2->Hide();
+		for (int i = 0; i < 100; i++)
+		{
+			CreateNewRow_SW();
+		}
 }
 	private: System::Void btn_ExportToExcel_Click(System::Object^ sender, System::EventArgs^ e) {
 		/* Excel::Application^ excel = gcnew Excel::ApplicationClass();
@@ -495,5 +484,10 @@ private: System::Void btn_Show_SmartWatch_Click(System::Object^ sender, System::
 
 		//CopyFile("D:/WorkSpace/PBL2_GUI/PBL2/PBL2/db_laptop.csv", "D:D:/WorkSpace/PBL2_GUI/PBL2/PBL2Test/Test.csv", true)
 	}
+private: System::Void View_Form_Load(System::Object^ sender, System::EventArgs^ e) {
+	Load_Data_Of_Smartwatch();
+	Load_Data_Of_Smartphone();
+	Load_Data_Of_Laptop();
+}
 };
 }

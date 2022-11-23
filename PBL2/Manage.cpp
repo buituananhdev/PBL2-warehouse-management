@@ -7,26 +7,35 @@
 #include <algorithm>
 using namespace std;
 #define MAX 9999
+User list_User[100];
 Laptop listLT[MAX];
 SmartPhone listSP[MAX];
 SmartWatch listSW[MAX];
-vector<Product*> list;
-int length;
+int length = 0;
+void ToUpper(string& str) {
+	for (int i = 0; i <= str.size(); i++) {
+		if (str[i] >= 97 && str[i] <= 122)
+			str[i] = str[i] - 32;
+	}
+}
+int Search_Name_SP(string index) {
 
-void Manage::setUsername(string& nUser) {
-    this->username = nUser;
+	return 0;
 }
-void Manage::setPassword(string& nPass) {
-    this->password = nPass;
+void Remove_ID_SP(int index) {
+	for (int i = index; i < NumOfDV("db_smartphone.csv"); i++) {
+		listSP[i] = listSP[i + 1];
+	}
 }
-string Manage::getPassword() {
-    return this->password;
+void Remove_ID_LT(int index) {
+	for (int i = index; i < NumOfDV("db_laptop.csv"); i++) {
+		listLT[i] = listLT[i + 1];
+	}
 }
-string Manage::getUsername() {
-    return this->username;
-}
-void Manage::setLength(int nlength) {
-    length = nlength;
+void Remove_ID_SW(int index) {
+	for (int i = index; i < NumOfDV("db_smartwatch.csv"); i++) {
+		listSW[i] = listSW[i + 1];
+	}
 }
 int NumOfDV(string filename) {
 	ifstream filein;
@@ -56,20 +65,7 @@ void Save_Data_Laptop() {
 		{
 			break;
 		}
-		if (listLT[i].getID() != "\0")
-		{
-			/* fileout << listLT[i].getID() << ",";
-			fileout << listLT[i].getName() << ",";
-			fileout << listLT[i].getBrand() << ",";
-			fileout << listLT[i].getColor() << ",";
-			fileout << listLT[i].getPriceF() << ",";
-			fileout << listLT[i].getAmount() << ",";
-			fileout << listLT[i].getSales() << ",";
-			fileout << listLT[i].getRevenue() << ",";
-			fileout << listLT[i].getStatus() << ",";
-			fileout << listLT[i].getInputDatetmp() << ",";
-			fileout << listLT[i].getCard() << ",";
-			fileout << listLT[i].getWeight() << "\n";*/
+		if (listLT[i].getID() != "\0") {
 			listLT[i].WriteFILE(fileout);
 		}
 	}
@@ -87,18 +83,6 @@ void Save_Data_SmartWatch() {
 		}
 		if (listSW[i].getID() != "\0")
 		{
-			/* fileout << listSW[i].getID() << ",";
-			fileout << listSW[i].getName() << ",";
-			fileout << listSW[i].getBrand() << ",";
-			fileout << listSW[i].getColor() << ",";
-			fileout << listSW[i].getPriceF() << ",";
-			fileout << listSW[i].getAmount() << ",";
-			fileout << listSW[i].getSales() << ",";
-			fileout << listSW[i].getRevenue() << ",";
-			fileout << listSW[i].getStatus() << ",";
-			fileout << listSW[i].getInputDatetmp() << ",";
-			fileout << listSW[i].getBatteryTime() << ",";
-			fileout << listSW[i].getSize() << "\n";*/
 			listSW[i].WriteFILE(fileout);
 		}
 	}
@@ -114,21 +98,7 @@ void Save_Data_SmartPhone() {
 		{
 			break;
 		}
-		if (listSP[i].getID() != "\0")
-		{
-			/*fileout << listSP[i].getID() << ",";
-			fileout << listSP[i].getName() << ",";
-			fileout << listSP[i].getBrand() << ",";
-			fileout << listSP[i].getColor() << ",";
-			fileout << listSP[i].getPriceF() << ",";
-			//fileout << listSP[i].getPriceE() << ",";
-			fileout << listSP[i].getAmount() << ",";
-			fileout << listSP[i].getSales() << ",";
-			fileout << listSP[i].getRevenue() << ",";
-			fileout << listSP[i].getStatus() << ",";
-			fileout << listSP[i].getInputDatetmp() << ",";
-			fileout << listSP[i].getRam() << ",";
-			fileout << listSP[i].getRom() << "\n"; */
+		if (listSP[i].getID() != "\0") {
 			listSP[i].WriteFILE(fileout);
 		}
 	}

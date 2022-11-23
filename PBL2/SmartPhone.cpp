@@ -10,7 +10,6 @@ SmartPhone::SmartPhone() {
 	this->ID = "";
 	this->name = "";
 	this->brand = "";
-	this->color = "";
 	this->priceF = 0;
 	this->status = "";
 	this->amount = 0;
@@ -24,7 +23,6 @@ SmartPhone::SmartPhone(string ID, string name, string brand, string color, doubl
 	this->ID = ID;
 	this->name = name;
 	this->brand = brand;
-	this->color = color;
 	this->priceF = priceF;
 	this->status = status;
 	this->amount = amount;

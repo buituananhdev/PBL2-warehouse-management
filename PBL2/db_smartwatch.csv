@@ -1,10 +1,6 @@
-SW01,Apple Watch 7,Apple,Black,1.2e+06,0,0,0,Het hang,7-11-2022,1.5 ngày,40mm
-SW02,SAMSUNG Watch 4,Samsung,Blue,6e+06,0,0,0,Het hang,7-11-2022,4 ngày,44mm
-SW03,Apple Watch 5,Apple,White,3.5e+06,0,0,0,Het hang,7-11-2022,1 ngày,40mm
-SW04,Xiaomi Watch S1,Xiaomi,Black,4.815e+06,0,0,0,Het hang,7-11-2022,4 ngày,46mm
-SW05,OPPO Band,OPPO,Blue,780000,0,0,0,Het hang,7-11-2022,3 ngày,40mm
-SW06,Realme Watch 3,Realme,Black,1.99e+06,0,0,0,Het hang,7-11-2022,5 ngày,46mm
-r,r,r,r,0,0,0,0,Out of stock,23:23 9-11-2022,r,r
-df,sd,we,rt,0,0,0,0,Out of stock,23:24 9-11-2022,yu,1
-2,w,e,r,0,0,0,0,Out of stock,23:29 9-11-2022,1,1
-6,7,8,8,0,0,0,0,Out of stock,23:37 9-11-2022,8,8
+W01,Apple Watch 7,Apple,100,1.2e+06,0,0,0,Out of stock,23:37 9-11-2022,1.5 ngày,40mm
+W02,SAMSUNG Watch 4,Samsung,300,6e+06,0,0,0,Out of stock,23:37 9-11-2022,4 ngày,44mm
+W03,Apple Watch 5,Apple,200,3.5e+06,0,0,0,Out of stock,23:37 9-11-2022,1 ngày,40mm
+W04,Xiaomi Watch S1,Xiaomi,4000,4.815e+06,0,0,0,Out of stock,23:37 9-11-2022,4 ngày,46mm
+W05,OPPO Band,OPPO,100,780000,0,0,0,Out of stock,23:37 9-11-2022,3 ngày,40mm
+W06,Realme Watch 3,Realme,3000,1.99e+06,0,0,0,Out of stock,23:37 9-11-2022,5 ngày,46mm

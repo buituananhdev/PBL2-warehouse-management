@@ -51,8 +51,14 @@
     <ClCompile Include="Search_Form.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Date.cpp">
+    <ClCompile Include="Delete_Form.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Import_Form.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Invoice_Form.cpp">
+      <Filter>Header Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -92,7 +98,13 @@
     <ClInclude Include="Search_Form.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Date.h">
+    <ClInclude Include="Delete_Form.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Import_Form.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Invoice_Form.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -103,13 +115,10 @@
     <None Include="db_laptop.csv">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="db_smartphone.csv">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="db_smartwatch.csv">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="Test.xlsx">
+    <None Include="db_smartphone.csv">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
