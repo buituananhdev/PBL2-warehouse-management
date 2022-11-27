@@ -1,3 +1,4 @@
+#pragma once
 #include "Manage.h"
 #include "Product.h"
 #include <iostream>

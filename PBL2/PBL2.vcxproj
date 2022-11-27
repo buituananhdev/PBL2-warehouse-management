@@ -147,6 +147,7 @@
     </ClInclude>
     <ClInclude Include="Invoice.h" />
     <ClInclude Include="Laptop.h" />
+    <ClInclude Include="List.h" />
     <ClInclude Include="Login.h">
       <FileType>CppForm</FileType>
     </ClInclude>

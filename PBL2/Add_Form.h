@@ -22,9 +22,9 @@ namespace PBL2 {
 		   DataTable^ Smartphone_Device = gcnew DataTable();
 		   DataTable^ Laptop_Device = gcnew DataTable();
 		   DataTable^ Smartwatch_Device = gcnew DataTable();
-	public:int IndexCounterLT = NumOfDV("db_laptop.csv");
-	public:int IndexCounterSP = NumOfDV("db_smartphone.csv");
-	public:int IndexCounterSW = NumOfDV("db_smartwatch.csv");
+	public:int IndexCounterLT = NumOfDV("db_laptop.csv") + 1;
+	public:int IndexCounterSP = NumOfDV("db_smartphone.csv") + 1;
+	public:int IndexCounterSW = NumOfDV("db_smartwatch.csv") + 1;
 	public:
 		Form^ Main_Form;
 		Add_Form(Form^ tmpForm)
@@ -675,10 +675,8 @@ namespace PBL2 {
 	private: System::Void btn_Save_Click(System::Object^ sender, System::EventArgs^ e) {
 		int check = 1;
 		std::string tempStr1 = marshal_as<std::string>(txt_PriceF->Text);
-		//std::string tempStrID = marshal_as<std::string>(txt_ID->Text);
 		std::string tempStrName = marshal_as<std::string>(txt_Name->Text);
 		std::string tempStrBrand = marshal_as<std::string>(txt_Brand->Text);
-		//std::string tempStrColor = marshal_as<std::string>(txt_PriceE->Text);
 		std::string tempStrPriceF = marshal_as<std::string>(txt_PriceF->Text);
 		std::string tempStrPriceE = marshal_as<std::string>(txt_PriceE->Text);
 		std::string tempStrCard = marshal_as<std::string>(txt_Card->Text);
@@ -721,7 +719,7 @@ namespace PBL2 {
 				}
 				if (combo_box_txt_TypeofDV->Text == "Smart Phone")
 				{
-					int index = NumOfDV("db_smartphone.csv");
+					int index = NumOfDV("db_smartphone.csv") + 1;
 					string tempStrID = "SP0" + to_string(index);
 					listSP[index].setID(tempStrID);
 					listSP[index].setName(tempStrName);
@@ -757,7 +755,7 @@ namespace PBL2 {
 				}
 				else if (combo_box_txt_TypeofDV->Text == "Laptop")
 				{
-					int index = NumOfDV("db_laptop.csv");
+					int index = NumOfDV("db_laptop.csv") + 1;
 					string tempStrID = "LT0" + to_string(index);
 					listLT[index].setID(tempStrID);
 					listLT[index].setName(tempStrName);
@@ -793,7 +791,7 @@ namespace PBL2 {
 				}
 				else if (combo_box_txt_TypeofDV->Text == "Smart Watch")
 				{
-					int index = NumOfDV("db_laptop.csv");
+					int index = NumOfDV("db_laptop.csv") + 1;
 					string tempStrID = "SW0" + to_string(index);
 					listSW[index].setID(tempStrID);
 					listSW[index].setName(tempStrName);

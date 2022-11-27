@@ -65,7 +65,7 @@ namespace PBL2 {
 	private: System::Windows::Forms::PictureBox^ btn_Search;
 
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
-	private: System::Windows::Forms::Label^ label_ShowIndexSearch;
+
 	private: System::Windows::Forms::Button^ btn_Back;
 
 
@@ -89,7 +89,6 @@ namespace PBL2 {
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->btn_Search = (gcnew System::Windows::Forms::PictureBox());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->label_ShowIndexSearch = (gcnew System::Windows::Forms::Label());
 			this->btn_Back = (gcnew System::Windows::Forms::Button());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
@@ -170,17 +169,6 @@ namespace PBL2 {
 			this->dataGridView1->Size = System::Drawing::Size(1252, 247);
 			this->dataGridView1->TabIndex = 3;
 			// 
-			// label_ShowIndexSearch
-			// 
-			this->label_ShowIndexSearch->AutoSize = true;
-			this->label_ShowIndexSearch->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label_ShowIndexSearch->Location = System::Drawing::Point(12, 219);
-			this->label_ShowIndexSearch->Name = L"label_ShowIndexSearch";
-			this->label_ShowIndexSearch->Size = System::Drawing::Size(17, 25);
-			this->label_ShowIndexSearch->TabIndex = 4;
-			this->label_ShowIndexSearch->Text = L".";
-			// 
 			// btn_Back
 			// 
 			this->btn_Back->BackColor = System::Drawing::Color::PaleTurquoise;
@@ -239,7 +227,6 @@ namespace PBL2 {
 			this->Controls->Add(this->dataGridView2);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->btn_Back);
-			this->Controls->Add(this->label_ShowIndexSearch);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->panel1);
@@ -392,7 +379,7 @@ private: System::Void btn_Search_Click(System::Object^ sender, System::EventArgs
 		int check = 0;
 		while (true) {
 			for (int i = 0; i < NumOfDV("db_laptop.csv"); i++) {
-				if (listLT[i].getID() == index || to_string(listLT[i].getPriceE()) == index || to_string(listLT[i].getPriceF()) == index
+				if (listLT[i].getID() == index || to_string((int)listLT[i].getPriceE()) == index || to_string((int)listLT[i].getPriceF()) == index
 					|| listLT[i].getCard() == index || listLT[i].getWeight() == index) {
 					dataGridView2->Show();
 					dataGridView1->Hide();
@@ -404,9 +391,10 @@ private: System::Void btn_Search_Click(System::Object^ sender, System::EventArgs
 			}
 			if (check == 1) {
 				break;
+
 			}
 			for (int i = 0; i < NumOfDV("db_smartwatch.csv"); i++) {
-				if (listSW[i].getID() == index  || to_string(listSW[i].getPriceE()) == index || to_string(listSW[i].getPriceF()) == index
+				if (listSW[i].getID() == index  || to_string((int)listSW[i].getPriceE()) == index || to_string((int)listSW[i].getPriceF()) == index
 					|| listSW[i].getBatteryTime() == index || listSW[i].getSize() == index) {
 					dataGridView3->Show();
 					dataGridView1->Hide();
@@ -420,7 +408,7 @@ private: System::Void btn_Search_Click(System::Object^ sender, System::EventArgs
 				break;
 			}
 			for (int i = 0; i < NumOfDV("db_smartphone.csv"); i++) {
-				if (listSP[i].getID() == index || to_string(listSP[i].getPriceE()) == index || to_string(listSP[i].getPriceF()) == index
+				if (listSP[i].getID() == index || to_string((int)listSP[i].getPriceE()) == index || to_string((int)listSP[i].getPriceF()) == index
 					|| listSP[i].getRam() == index || listSP[i].getRom() == index) {
 					dataGridView1->Show();
 					dataGridView2->Hide();

@@ -141,21 +141,21 @@ namespace PBL2 {
 			this->btn_Save = (gcnew System::Windows::Forms::Button());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->label_Size = (gcnew System::Windows::Forms::Label());
-			this->txt_Size = (gcnew System::Windows::Forms::TextBox());
+			this->label_RAM = (gcnew System::Windows::Forms::Label());
 			this->txt_Card = (gcnew System::Windows::Forms::TextBox());
 			this->labe_Card = (gcnew System::Windows::Forms::Label());
-			this->label_Battery = (gcnew System::Windows::Forms::Label());
-			this->label_RAM = (gcnew System::Windows::Forms::Label());
 			this->txt_RAM = (gcnew System::Windows::Forms::TextBox());
-			this->label_ROM = (gcnew System::Windows::Forms::Label());
+			this->txt_Size = (gcnew System::Windows::Forms::TextBox());
+			this->label_Battery = (gcnew System::Windows::Forms::Label());
 			this->label_Weight = (gcnew System::Windows::Forms::Label());
-			this->txt_ROM = (gcnew System::Windows::Forms::TextBox());
 			this->txt_PriceF = (gcnew System::Windows::Forms::TextBox());
-			this->txt_Weight = (gcnew System::Windows::Forms::TextBox());
+			this->label_ROM = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->txt_Batterry = (gcnew System::Windows::Forms::TextBox());
 			this->txt_PriceE = (gcnew System::Windows::Forms::TextBox());
+			this->txt_ROM = (gcnew System::Windows::Forms::TextBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->txt_Weight = (gcnew System::Windows::Forms::TextBox());
 			this->txt_Brand = (gcnew System::Windows::Forms::TextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->txt_Name = (gcnew System::Windows::Forms::TextBox());
@@ -199,9 +199,9 @@ namespace PBL2 {
 			// 
 			this->btn_Clear->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_Clear->Location = System::Drawing::Point(1124, 256);
+			this->btn_Clear->Location = System::Drawing::Point(1124, 347);
 			this->btn_Clear->Name = L"btn_Clear";
-			this->btn_Clear->Size = System::Drawing::Size(89, 40);
+			this->btn_Clear->Size = System::Drawing::Size(116, 51);
 			this->btn_Clear->TabIndex = 8;
 			this->btn_Clear->Text = L"Clear";
 			this->btn_Clear->UseVisualStyleBackColor = true;
@@ -211,9 +211,9 @@ namespace PBL2 {
 			// 
 			this->btn_Back->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_Back->Location = System::Drawing::Point(1124, 319);
+			this->btn_Back->Location = System::Drawing::Point(1124, 269);
 			this->btn_Back->Name = L"btn_Back";
-			this->btn_Back->Size = System::Drawing::Size(89, 41);
+			this->btn_Back->Size = System::Drawing::Size(116, 51);
 			this->btn_Back->TabIndex = 6;
 			this->btn_Back->Text = L"Back";
 			this->btn_Back->UseVisualStyleBackColor = true;
@@ -223,9 +223,9 @@ namespace PBL2 {
 			// 
 			this->btn_Save->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_Save->Location = System::Drawing::Point(1124, 194);
+			this->btn_Save->Location = System::Drawing::Point(1124, 192);
 			this->btn_Save->Name = L"btn_Save";
-			this->btn_Save->Size = System::Drawing::Size(89, 41);
+			this->btn_Save->Size = System::Drawing::Size(116, 51);
 			this->btn_Save->TabIndex = 7;
 			this->btn_Save->Text = L"Save";
 			this->btn_Save->UseVisualStyleBackColor = true;
@@ -270,18 +270,20 @@ namespace PBL2 {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label_Size->Location = System::Drawing::Point(504, 104);
 			this->label_Size->Name = L"label_Size";
-			this->label_Size->Size = System::Drawing::Size(56, 31);
+			this->label_Size->Size = System::Drawing::Size(51, 30);
 			this->label_Size->TabIndex = 0;
 			this->label_Size->Text = L"Size";
 			// 
-			// txt_Size
+			// label_RAM
 			// 
-			this->txt_Size->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->txt_Size->Location = System::Drawing::Point(655, 104);
-			this->txt_Size->Name = L"txt_Size";
-			this->txt_Size->Size = System::Drawing::Size(207, 30);
-			this->txt_Size->TabIndex = 1;
+			this->label_RAM->AutoSize = true;
+			this->label_RAM->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 13.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label_RAM->Location = System::Drawing::Point(504, 102);
+			this->label_RAM->Name = L"label_RAM";
+			this->label_RAM->Size = System::Drawing::Size(60, 30);
+			this->label_RAM->TabIndex = 0;
+			this->label_RAM->Text = L"RAM";
 			// 
 			// txt_Card
 			// 
@@ -299,31 +301,9 @@ namespace PBL2 {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->labe_Card->Location = System::Drawing::Point(504, 104);
 			this->labe_Card->Name = L"labe_Card";
-			this->labe_Card->Size = System::Drawing::Size(64, 31);
+			this->labe_Card->Size = System::Drawing::Size(59, 30);
 			this->labe_Card->TabIndex = 0;
 			this->labe_Card->Text = L"Card";
-			// 
-			// label_Battery
-			// 
-			this->label_Battery->AutoSize = true;
-			this->label_Battery->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 13.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label_Battery->Location = System::Drawing::Point(504, 145);
-			this->label_Battery->Name = L"label_Battery";
-			this->label_Battery->Size = System::Drawing::Size(130, 31);
-			this->label_Battery->TabIndex = 0;
-			this->label_Battery->Text = L"Battery life";
-			// 
-			// label_RAM
-			// 
-			this->label_RAM->AutoSize = true;
-			this->label_RAM->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 13.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label_RAM->Location = System::Drawing::Point(504, 102);
-			this->label_RAM->Name = L"label_RAM";
-			this->label_RAM->Size = System::Drawing::Size(62, 31);
-			this->label_RAM->TabIndex = 0;
-			this->label_RAM->Text = L"RAM";
 			// 
 			// txt_RAM
 			// 
@@ -334,16 +314,25 @@ namespace PBL2 {
 			this->txt_RAM->Size = System::Drawing::Size(207, 30);
 			this->txt_RAM->TabIndex = 1;
 			// 
-			// label_ROM
+			// txt_Size
 			// 
-			this->label_ROM->AutoSize = true;
-			this->label_ROM->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 13.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+			this->txt_Size->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->txt_Size->Location = System::Drawing::Point(655, 104);
+			this->txt_Size->Name = L"txt_Size";
+			this->txt_Size->Size = System::Drawing::Size(207, 30);
+			this->txt_Size->TabIndex = 1;
+			// 
+			// label_Battery
+			// 
+			this->label_Battery->AutoSize = true;
+			this->label_Battery->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 13.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label_ROM->Location = System::Drawing::Point(504, 144);
-			this->label_ROM->Name = L"label_ROM";
-			this->label_ROM->Size = System::Drawing::Size(64, 31);
-			this->label_ROM->TabIndex = 0;
-			this->label_ROM->Text = L"ROM";
+			this->label_Battery->Location = System::Drawing::Point(504, 145);
+			this->label_Battery->Name = L"label_Battery";
+			this->label_Battery->Size = System::Drawing::Size(120, 30);
+			this->label_Battery->TabIndex = 0;
+			this->label_Battery->Text = L"Battery life";
 			// 
 			// label_Weight
 			// 
@@ -352,18 +341,9 @@ namespace PBL2 {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label_Weight->Location = System::Drawing::Point(504, 144);
 			this->label_Weight->Name = L"label_Weight";
-			this->label_Weight->Size = System::Drawing::Size(89, 31);
+			this->label_Weight->Size = System::Drawing::Size(84, 30);
 			this->label_Weight->TabIndex = 0;
 			this->label_Weight->Text = L"Weight";
-			// 
-			// txt_ROM
-			// 
-			this->txt_ROM->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->txt_ROM->Location = System::Drawing::Point(655, 145);
-			this->txt_ROM->Name = L"txt_ROM";
-			this->txt_ROM->Size = System::Drawing::Size(207, 30);
-			this->txt_ROM->TabIndex = 1;
 			// 
 			// txt_PriceF
 			// 
@@ -374,14 +354,16 @@ namespace PBL2 {
 			this->txt_PriceF->Size = System::Drawing::Size(207, 30);
 			this->txt_PriceF->TabIndex = 1;
 			// 
-			// txt_Weight
+			// label_ROM
 			// 
-			this->txt_Weight->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->txt_Weight->Location = System::Drawing::Point(655, 144);
-			this->txt_Weight->Name = L"txt_Weight";
-			this->txt_Weight->Size = System::Drawing::Size(207, 30);
-			this->txt_Weight->TabIndex = 1;
+			this->label_ROM->AutoSize = true;
+			this->label_ROM->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 13.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label_ROM->Location = System::Drawing::Point(504, 144);
+			this->label_ROM->Name = L"label_ROM";
+			this->label_ROM->Size = System::Drawing::Size(62, 30);
+			this->label_ROM->TabIndex = 0;
+			this->label_ROM->Text = L"ROM";
 			// 
 			// label8
 			// 
@@ -390,7 +372,7 @@ namespace PBL2 {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label8->Location = System::Drawing::Point(506, 61);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(66, 31);
+			this->label8->Size = System::Drawing::Size(61, 30);
 			this->label8->TabIndex = 0;
 			this->label8->Text = L"Price";
 			// 
@@ -412,6 +394,15 @@ namespace PBL2 {
 			this->txt_PriceE->Size = System::Drawing::Size(207, 30);
 			this->txt_PriceE->TabIndex = 1;
 			// 
+			// txt_ROM
+			// 
+			this->txt_ROM->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->txt_ROM->Location = System::Drawing::Point(655, 145);
+			this->txt_ROM->Name = L"txt_ROM";
+			this->txt_ROM->Size = System::Drawing::Size(207, 30);
+			this->txt_ROM->TabIndex = 1;
+			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
@@ -419,9 +410,18 @@ namespace PBL2 {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label6->Location = System::Drawing::Point(28, 191);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(60, 31);
+			this->label6->Size = System::Drawing::Size(56, 30);
 			this->label6->TabIndex = 0;
 			this->label6->Text = L"Cost";
+			// 
+			// txt_Weight
+			// 
+			this->txt_Weight->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->txt_Weight->Location = System::Drawing::Point(655, 144);
+			this->txt_Weight->Name = L"txt_Weight";
+			this->txt_Weight->Size = System::Drawing::Size(207, 30);
+			this->txt_Weight->TabIndex = 1;
 			// 
 			// txt_Brand
 			// 
@@ -439,7 +439,7 @@ namespace PBL2 {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label5->Location = System::Drawing::Point(28, 148);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(76, 31);
+			this->label5->Size = System::Drawing::Size(71, 30);
 			this->label5->TabIndex = 0;
 			this->label5->Text = L"Brand";
 			// 
@@ -459,7 +459,7 @@ namespace PBL2 {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label4->Location = System::Drawing::Point(28, 105);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(77, 31);
+			this->label4->Size = System::Drawing::Size(72, 30);
 			this->label4->TabIndex = 0;
 			this->label4->Text = L"Name";
 			// 
@@ -480,7 +480,7 @@ namespace PBL2 {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label2->Location = System::Drawing::Point(28, 61);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(124, 31);
+			this->label2->Size = System::Drawing::Size(117, 30);
 			this->label2->TabIndex = 0;
 			this->label2->Text = L"Product ID";
 			// 
@@ -504,7 +504,7 @@ namespace PBL2 {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label9->Location = System::Drawing::Point(51, 130);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(150, 31);
+			this->label9->Size = System::Drawing::Size(141, 30);
 			this->label9->TabIndex = 0;
 			this->label9->Text = L"Product Type";
 			// 

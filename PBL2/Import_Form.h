@@ -149,6 +149,13 @@ namespace PBL2 {
 
 
 
+
+
+
+
+
+
+
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -162,9 +169,9 @@ namespace PBL2 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle4 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle5 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle6 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle3 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
 			this->listBox2 = (gcnew System::Windows::Forms::ListBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -205,7 +212,7 @@ namespace PBL2 {
 				static_cast<System::Byte>(0)));
 			this->listBox1->FormattingEnabled = true;
 			this->listBox1->ItemHeight = 23;
-			this->listBox1->Location = System::Drawing::Point(86, 171);
+			this->listBox1->Location = System::Drawing::Point(90, 171);
 			this->listBox1->Name = L"listBox1";
 			this->listBox1->Size = System::Drawing::Size(313, 441);
 			this->listBox1->TabIndex = 1;
@@ -224,22 +231,22 @@ namespace PBL2 {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+			this->label2->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(83, 139);
+			this->label2->Location = System::Drawing::Point(85, 136);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(127, 23);
+			this->label2->Size = System::Drawing::Size(148, 28);
 			this->label2->TabIndex = 10;
 			this->label2->Text = L"List of products";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+			this->label3->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(801, 139);
+			this->label3->Location = System::Drawing::Point(801, 137);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(103, 23);
+			this->label3->Size = System::Drawing::Size(117, 28);
 			this->label3->TabIndex = 10;
 			this->label3->Text = L"Selected list";
 			// 
@@ -247,9 +254,9 @@ namespace PBL2 {
 			// 
 			this->btn_Select->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_Select->Location = System::Drawing::Point(533, 260);
+			this->btn_Select->Location = System::Drawing::Point(528, 258);
 			this->btn_Select->Name = L"btn_Select";
-			this->btn_Select->Size = System::Drawing::Size(142, 37);
+			this->btn_Select->Size = System::Drawing::Size(173, 44);
 			this->btn_Select->TabIndex = 11;
 			this->btn_Select->Text = L">>>>>";
 			this->btn_Select->UseVisualStyleBackColor = true;
@@ -259,9 +266,9 @@ namespace PBL2 {
 			// 
 			this->btn_UnSelect->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_UnSelect->Location = System::Drawing::Point(533, 327);
+			this->btn_UnSelect->Location = System::Drawing::Point(528, 326);
 			this->btn_UnSelect->Name = L"btn_UnSelect";
-			this->btn_UnSelect->Size = System::Drawing::Size(142, 37);
+			this->btn_UnSelect->Size = System::Drawing::Size(173, 43);
 			this->btn_UnSelect->TabIndex = 11;
 			this->btn_UnSelect->Text = L"<<<<<";
 			this->btn_UnSelect->UseVisualStyleBackColor = true;
@@ -271,9 +278,9 @@ namespace PBL2 {
 			// 
 			this->btn_Create->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_Create->Location = System::Drawing::Point(533, 455);
+			this->btn_Create->Location = System::Drawing::Point(528, 460);
 			this->btn_Create->Name = L"btn_Create";
-			this->btn_Create->Size = System::Drawing::Size(142, 47);
+			this->btn_Create->Size = System::Drawing::Size(173, 47);
 			this->btn_Create->TabIndex = 13;
 			this->btn_Create->Text = L"Create";
 			this->btn_Create->UseVisualStyleBackColor = true;
@@ -283,9 +290,9 @@ namespace PBL2 {
 			// 
 			this->btn_Refesh->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_Refesh->Location = System::Drawing::Point(533, 385);
+			this->btn_Refesh->Location = System::Drawing::Point(528, 390);
 			this->btn_Refesh->Name = L"btn_Refesh";
-			this->btn_Refesh->Size = System::Drawing::Size(142, 46);
+			this->btn_Refesh->Size = System::Drawing::Size(173, 46);
 			this->btn_Refesh->TabIndex = 15;
 			this->btn_Refesh->Text = L"Refesh";
 			this->btn_Refesh->UseVisualStyleBackColor = true;
@@ -316,9 +323,9 @@ namespace PBL2 {
 			// 
 			this->btn_Back1->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_Back1->Location = System::Drawing::Point(533, 525);
+			this->btn_Back1->Location = System::Drawing::Point(528, 530);
 			this->btn_Back1->Name = L"btn_Back1";
-			this->btn_Back1->Size = System::Drawing::Size(142, 47);
+			this->btn_Back1->Size = System::Drawing::Size(173, 47);
 			this->btn_Back1->TabIndex = 18;
 			this->btn_Back1->Text = L"Back";
 			this->btn_Back1->UseVisualStyleBackColor = true;
@@ -329,9 +336,9 @@ namespace PBL2 {
 			this->panel_Invoice->BackColor = System::Drawing::Color::White;
 			this->panel_Invoice->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->panel_Invoice->Controls->Add(this->groupBox1);
-			this->panel_Invoice->Location = System::Drawing::Point(0, 99);
+			this->panel_Invoice->Location = System::Drawing::Point(0, 100);
 			this->panel_Invoice->Name = L"panel_Invoice";
-			this->panel_Invoice->Size = System::Drawing::Size(1186, 604);
+			this->panel_Invoice->Size = System::Drawing::Size(1186, 609);
 			this->panel_Invoice->TabIndex = 19;
 			// 
 			// groupBox1
@@ -349,9 +356,9 @@ namespace PBL2 {
 			this->groupBox1->Controls->Add(this->dataGridView1);
 			this->groupBox1->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->groupBox1->Location = System::Drawing::Point(3, 3);
+			this->groupBox1->Location = System::Drawing::Point(-1, -1);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(1178, 595);
+			this->groupBox1->Size = System::Drawing::Size(1186, 609);
 			this->groupBox1->TabIndex = 13;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Invoice Information";
@@ -360,7 +367,7 @@ namespace PBL2 {
 			// 
 			this->btn_Back->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_Back->Location = System::Drawing::Point(818, 521);
+			this->btn_Back->Location = System::Drawing::Point(818, 542);
 			this->btn_Back->Name = L"btn_Back";
 			this->btn_Back->Size = System::Drawing::Size(122, 49);
 			this->btn_Back->TabIndex = 14;
@@ -393,7 +400,7 @@ namespace PBL2 {
 			// 
 			this->btn_Confirm->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_Confirm->Location = System::Drawing::Point(637, 521);
+			this->btn_Confirm->Location = System::Drawing::Point(637, 542);
 			this->btn_Confirm->Name = L"btn_Confirm";
 			this->btn_Confirm->Size = System::Drawing::Size(122, 49);
 			this->btn_Confirm->TabIndex = 14;
@@ -475,7 +482,7 @@ namespace PBL2 {
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(930, 324);
+			this->dataGridView1->Size = System::Drawing::Size(930, 368);
 			this->dataGridView1->TabIndex = 12;
 			this->dataGridView1->CellEndEdit += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Import_Form::dataGridView1_CellEndEdit_1);
 			// 
@@ -483,7 +490,7 @@ namespace PBL2 {
 			// 
 			this->col_Name->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
 			this->col_Name->DataPropertyName = L"Name";
-			this->col_Name->HeaderText = L"Name";
+			this->col_Name->HeaderText = L"Product Name";
 			this->col_Name->MinimumWidth = 6;
 			this->col_Name->Name = L"col_Name";
 			this->col_Name->ReadOnly = true;
@@ -491,11 +498,11 @@ namespace PBL2 {
 			// col_UnitPrice
 			// 
 			this->col_UnitPrice->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
-			dataGridViewCellStyle4->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			dataGridViewCellStyle4->Format = L"#,####";
-			dataGridViewCellStyle4->NullValue = L"0";
-			this->col_UnitPrice->DefaultCellStyle = dataGridViewCellStyle4;
+			dataGridViewCellStyle1->Format = L"#,####";
+			dataGridViewCellStyle1->NullValue = L"0";
+			this->col_UnitPrice->DefaultCellStyle = dataGridViewCellStyle1;
 			this->col_UnitPrice->HeaderText = L"Unit Price";
 			this->col_UnitPrice->MinimumWidth = 6;
 			this->col_UnitPrice->Name = L"col_UnitPrice";
@@ -504,10 +511,10 @@ namespace PBL2 {
 			// col_Amount
 			// 
 			this->col_Amount->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
-			dataGridViewCellStyle5->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			dataGridViewCellStyle5->NullValue = nullptr;
-			this->col_Amount->DefaultCellStyle = dataGridViewCellStyle5;
+			dataGridViewCellStyle2->NullValue = nullptr;
+			this->col_Amount->DefaultCellStyle = dataGridViewCellStyle2;
 			this->col_Amount->HeaderText = L"Amount";
 			this->col_Amount->MinimumWidth = 6;
 			this->col_Amount->Name = L"col_Amount";
@@ -515,11 +522,11 @@ namespace PBL2 {
 			// col_Total
 			// 
 			this->col_Total->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
-			dataGridViewCellStyle6->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+			dataGridViewCellStyle3->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			dataGridViewCellStyle6->Format = L"#,####";
-			dataGridViewCellStyle6->NullValue = L"0";
-			this->col_Total->DefaultCellStyle = dataGridViewCellStyle6;
+			dataGridViewCellStyle3->Format = L"#,####";
+			dataGridViewCellStyle3->NullValue = L"0";
+			this->col_Total->DefaultCellStyle = dataGridViewCellStyle3;
 			this->col_Total->HeaderText = L"Total";
 			this->col_Total->MinimumWidth = 6;
 			this->col_Total->Name = L"col_Total";
@@ -529,6 +536,7 @@ namespace PBL2 {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(7, 17);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(1186, 703);
 			this->Controls->Add(this->panel_Invoice);
 			this->Controls->Add(this->btn_Back1);
@@ -573,11 +581,6 @@ namespace PBL2 {
 		{
 			listBox1->Items->Add(gcnew String(listSW[i].getName().c_str()));
 		}
-		time_t now = time(0);
-		tm* ltm = localtime(&now);
-		string tmpDate = to_string(ltm->tm_hour) + ":" + to_string(ltm->tm_min) + " " + to_string(ltm->tm_mday) + "-" + to_string(1 + ltm->tm_mon) + "-" + to_string(1900 + ltm->tm_year);
-		txt_Date->Text = gcnew String(tmpDate.c_str());
-		txt_StaffName->Text = gcnew String(Staff_Name.c_str());
 	}
 private: System::Void btn_Select_Click(System::Object^ sender, System::EventArgs^ e) {
 	while (listBox1->SelectedItems->Count > 0) {
@@ -592,6 +595,13 @@ private: System::Void btn_UnSelect_Click(System::Object^ sender, System::EventAr
 	}
 }
 private: System::Void btn_Create_Click(System::Object^ sender, System::EventArgs^ e) {
+	time_t now = time(0);
+	tm* ltm = localtime(&now);
+	string tmpDate = to_string(ltm->tm_hour) + ":" + to_string(ltm->tm_min) + " " + to_string(ltm->tm_mday) + "-" + to_string(1 + ltm->tm_mon) + "-" + to_string(1900 + ltm->tm_year);
+	txt_Date->Text = gcnew String(tmpDate.c_str());
+	txt_StaffName->Text = gcnew String(Staff_Name.c_str());
+	srand((int)time(0));
+	txt_CodeBill->Text = "HD" + gcnew String(to_string(rand()).c_str());
 	panel_Invoice->Show();
 	dataGridView1->Rows->Clear();
 	int i;
@@ -623,10 +633,15 @@ private: System::Void btn_Create_Click(System::Object^ sender, System::EventArgs
 private: System::Void btn_Refesh_Click(System::Object^ sender, System::EventArgs^ e) {
 	listBox2->Items->Clear();
 	listBox1->Items->Clear();
-	int count = NumOfDV("db_laptop.csv") + NumOfDV("db_smartphone.csv") + NumOfDV("db_smartwatch.csv");
-	for (int i = 0; i < count; i++) {
+	for (int i = 0; i < NumOfDV("db_smartphone.csv"); i++) {
 		listBox1->Items->Add(gcnew String(listSP[i].getName().c_str()));
+	}
+	for (int i = 0; i < NumOfDV("db_laptop.csv"); i++)
+	{
 		listBox1->Items->Add(gcnew String(listLT[i].getName().c_str()));
+	}
+	for (int i = 0; i < NumOfDV("db_smartwatch.csv"); i++)
+	{
 		listBox1->Items->Add(gcnew String(listSW[i].getName().c_str()));
 	}
 }
@@ -653,46 +668,53 @@ private: System::Void dataGridView1_CellEndEdit_1(System::Object^ sender, System
 	dataGridView1->Rows[listBox2->Items->Count]->Cells[2]->Value = totalAmount;
 }
 private: System::Void btn_Confirm_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	for (int i = 0; i < dataGridView1->Rows->Count; i++)
-	{
-		string tmpStatus = "Stocking";
-		string tmpName = marshal_as<std::string>(System::Convert::ToString(dataGridView1->Rows[i]->Cells[0]->Value));
-		int tmpAmount = System::Convert::ToInt64(dataGridView1->Rows[i]->Cells[2]->Value);
-		if (tmpAmount > 0)
-		{
-			for (int j = 0; j < NumOfDV("db_smartphone.csv"); j++) {
-				if (listSP[j].getName() == tmpName)
-				{
-					listSP[j].UpdateAmount(tmpAmount);
-					listSP[j].setStatus(tmpStatus);
-				}
-			}
-			for (int j = 0; j < NumOfDV("db_laptop.csv"); j++) {
-				if (tmpName == listLT[j].getName())
-				{
-					listLT[j].UpdateAmount(tmpAmount);
-					listLT[j].setStatus(tmpStatus);
-				}
-			}
-			for (int j = 0; j < NumOfDV("db_smartwatch.csv"); j++) {
-				if (tmpName == listSW[j].getName())
-				{
-					listSW[j].UpdateAmount(tmpAmount);
-					listSW[j].setStatus(tmpStatus);
-				}
-			}
-		}
-		else
-		{
-			MessageBox::Show("Amount must be greater than 0! Please re-enter", "Error"
-				, MessageBoxButtons::OK, MessageBoxIcon::Error);
-		}
+	if (txt_CusName->Text == "") {
+		MessageBox::Show("Please enter customer name!", "Error"
+			, MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
-	Save_Data_Laptop();
-	Save_Data_SmartPhone();
-	Save_Data_SmartWatch();
-	MessageBox::Show("Done"
-		, "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	else
+	{
+		for (int i = 0; i < dataGridView1->Rows->Count; i++)
+		{
+			string tmpStatus = "Stocking";
+			string tmpName = marshal_as<std::string>(System::Convert::ToString(dataGridView1->Rows[i]->Cells[0]->Value));
+			int tmpAmount = System::Convert::ToInt64(dataGridView1->Rows[i]->Cells[2]->Value);
+			if (tmpAmount > 0)
+			{
+				for (int j = 0; j < NumOfDV("db_smartphone.csv"); j++) {
+					if (listSP[j].getName() == tmpName)
+					{
+						listSP[j].UpdateAmount(tmpAmount);
+						listSP[j].setStatus(tmpStatus);
+					}
+				}
+				for (int j = 0; j < NumOfDV("db_laptop.csv"); j++) {
+					if (tmpName == listLT[j].getName())
+					{
+						listLT[j].UpdateAmount(tmpAmount);
+						listLT[j].setStatus(tmpStatus);
+					}
+				}
+				for (int j = 0; j < NumOfDV("db_smartwatch.csv"); j++) {
+					if (tmpName == listSW[j].getName())
+					{
+						listSW[j].UpdateAmount(tmpAmount);
+						listSW[j].setStatus(tmpStatus);
+					}
+				}
+			}
+			else
+			{
+				MessageBox::Show("Amount must be greater than 0! Please re-enter", "Error"
+					, MessageBoxButtons::OK, MessageBoxIcon::Error);
+			}
+		}
+		Save_Data_Laptop();
+		Save_Data_SmartPhone();
+		Save_Data_SmartWatch();
+		MessageBox::Show("Done"
+			, "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	}
 }
 private: System::Void btn_Back_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	panel_Invoice->Hide();

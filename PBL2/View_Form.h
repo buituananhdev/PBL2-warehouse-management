@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include "Manage.h"
 #include <windows.h>
+
 #define Excel  Microsoft::Office::Interop::Excel
 namespace PBL2 {
 
@@ -152,6 +153,7 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 			// btn_Show_SmartWatch
 			// 
 			this->btn_Show_SmartWatch->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->btn_Show_SmartWatch->BackColor = System::Drawing::Color::Transparent;
 			this->btn_Show_SmartWatch->Font = (gcnew System::Drawing::Font(L"Times New Roman", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btn_Show_SmartWatch->Location = System::Drawing::Point(577, 37);
@@ -159,12 +161,13 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 			this->btn_Show_SmartWatch->Size = System::Drawing::Size(200, 45);
 			this->btn_Show_SmartWatch->TabIndex = 0;
 			this->btn_Show_SmartWatch->Text = L"Smart Watch";
-			this->btn_Show_SmartWatch->UseVisualStyleBackColor = true;
+			this->btn_Show_SmartWatch->UseVisualStyleBackColor = false;
 			this->btn_Show_SmartWatch->Click += gcnew System::EventHandler(this, &View_Form::btn_Show_SmartWatch_Click);
 			// 
 			// btn_Show_Laptop
 			// 
 			this->btn_Show_Laptop->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->btn_Show_Laptop->BackColor = System::Drawing::Color::Transparent;
 			this->btn_Show_Laptop->Font = (gcnew System::Drawing::Font(L"Times New Roman", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btn_Show_Laptop->Location = System::Drawing::Point(310, 37);
@@ -172,11 +175,12 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 			this->btn_Show_Laptop->Size = System::Drawing::Size(200, 45);
 			this->btn_Show_Laptop->TabIndex = 0;
 			this->btn_Show_Laptop->Text = L"Laptop";
-			this->btn_Show_Laptop->UseVisualStyleBackColor = true;
+			this->btn_Show_Laptop->UseVisualStyleBackColor = false;
 			this->btn_Show_Laptop->Click += gcnew System::EventHandler(this, &View_Form::btn_Show_Laptop_Click);
 			// 
 			// btn_Show_Smartphone
 			// 
+			this->btn_Show_Smartphone->BackColor = System::Drawing::Color::Transparent;
 			this->btn_Show_Smartphone->Font = (gcnew System::Drawing::Font(L"Times New Roman", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btn_Show_Smartphone->Location = System::Drawing::Point(47, 37);
@@ -184,7 +188,7 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 			this->btn_Show_Smartphone->Size = System::Drawing::Size(200, 45);
 			this->btn_Show_Smartphone->TabIndex = 0;
 			this->btn_Show_Smartphone->Text = L"Smart Phone";
-			this->btn_Show_Smartphone->UseVisualStyleBackColor = true;
+			this->btn_Show_Smartphone->UseVisualStyleBackColor = false;
 			this->btn_Show_Smartphone->Click += gcnew System::EventHandler(this, &View_Form::btn_Show_Smartphone_Click);
 			// 
 			// btn_Back
@@ -260,7 +264,7 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 28.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(359, 18);
+			this->label1->Location = System::Drawing::Point(383, 19);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(705, 62);
 			this->label1->TabIndex = 0;

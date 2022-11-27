@@ -4,7 +4,7 @@
 #include "Laptop.h"
 #include "SmartPhone.h"
 #include "SmartWatch.h"
-#include <vector>
+#include "List.h"
 #include <fstream>
 #define MAX 9999
 extern User list_User[100];
@@ -27,11 +27,3 @@ void Remove_ID_SP(int);
 void Remove_ID_SW(int);
 void Remove_ID_LT(int);
 int Search_Name_SP(string);
-/*
-template<typename T>
-void Remove(int index,string t) {
-	T L[MAX];
-	for (int i = index; i < NumOfDV(t); i++) {
-		L[i] = L[i + 1];
-	}
-} */
