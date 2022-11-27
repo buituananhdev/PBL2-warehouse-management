@@ -33,7 +33,7 @@ void Product::setID(string& nId) {
 	this->ID = nId;
 }
 string Product::getID() {
-	return ID;
+	return this->ID;
 }
 void Product::setName(string& nName) {
 	this->name = nName;

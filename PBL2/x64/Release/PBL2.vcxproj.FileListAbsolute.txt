@@ -11,3 +11,4 @@ D:\WorkSpace\PBL2_GUI\PBL2\PBL2\x64\Release\PBL2.Search_Form.resources
 D:\WorkSpace\PBL2_GUI\PBL2\PBL2\x64\Release\PBL2.vcxproj.CopyComplete
 D:\WorkSpace\PBL2_GUI\PBL2\PBL2\x64\Release\PBL2.Delete_Form.resources
 D:\WorkSpace\PBL2_GUI\PBL2\PBL2\x64\Release\PBL2.Import_Form.resources
+D:\WorkSpace\PBL2_GUI\PBL2\PBL2\x64\Release\PBL2.Export_Form.resources

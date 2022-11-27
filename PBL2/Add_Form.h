@@ -153,11 +153,11 @@ namespace PBL2 {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 28.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(434, 18);
+			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 28.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(437, 18);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(473, 62);
+			this->label1->Size = System::Drawing::Size(474, 62);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"ADD NEW PRODUCT";
 			// 
@@ -186,7 +186,7 @@ namespace PBL2 {
 			this->groupBox1->Controls->Add(this->label4);
 			this->groupBox1->Controls->Add(this->label7);
 			this->groupBox1->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 12.2F, System::Drawing::FontStyle::Bold));
-			this->groupBox1->Location = System::Drawing::Point(127, 131);
+			this->groupBox1->Location = System::Drawing::Point(138, 129);
 			this->groupBox1->Name = L"groupBox1";
 			this->groupBox1->Size = System::Drawing::Size(904, 256);
 			this->groupBox1->TabIndex = 1;
@@ -204,10 +204,11 @@ namespace PBL2 {
 			// label_Size
 			// 
 			this->label_Size->AutoSize = true;
-			this->label_Size->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 12.8F, System::Drawing::FontStyle::Bold));
-			this->label_Size->Location = System::Drawing::Point(486, 112);
+			this->label_Size->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 13.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label_Size->Location = System::Drawing::Point(484, 111);
 			this->label_Size->Name = L"label_Size";
-			this->label_Size->Size = System::Drawing::Size(53, 30);
+			this->label_Size->Size = System::Drawing::Size(51, 30);
 			this->label_Size->TabIndex = 0;
 			this->label_Size->Text = L"Size";
 			// 
@@ -222,10 +223,11 @@ namespace PBL2 {
 			// label_Battery
 			// 
 			this->label_Battery->AutoSize = true;
-			this->label_Battery->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 12.8F, System::Drawing::FontStyle::Bold));
+			this->label_Battery->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 13.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label_Battery->Location = System::Drawing::Point(486, 156);
 			this->label_Battery->Name = L"label_Battery";
-			this->label_Battery->Size = System::Drawing::Size(123, 30);
+			this->label_Battery->Size = System::Drawing::Size(120, 30);
 			this->label_Battery->TabIndex = 0;
 			this->label_Battery->Text = L"Battery life";
 			// 
@@ -289,7 +291,7 @@ namespace PBL2 {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->combo_box_txt_TypeofDV->FormattingEnabled = true;
 			this->combo_box_txt_TypeofDV->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Smart Phone", L"Laptop", L"Smart Watch" });
-			this->combo_box_txt_TypeofDV->Location = System::Drawing::Point(178, 63);
+			this->combo_box_txt_TypeofDV->Location = System::Drawing::Point(188, 62);
 			this->combo_box_txt_TypeofDV->Name = L"combo_box_txt_TypeofDV";
 			this->combo_box_txt_TypeofDV->Size = System::Drawing::Size(207, 31);
 			this->combo_box_txt_TypeofDV->TabIndex = 2;
@@ -324,17 +326,18 @@ namespace PBL2 {
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 12.8F, System::Drawing::FontStyle::Bold));
+			this->label8->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 13.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label8->Location = System::Drawing::Point(486, 61);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(62, 30);
+			this->label8->Size = System::Drawing::Size(61, 30);
 			this->label8->TabIndex = 0;
 			this->label8->Text = L"Price";
 			// 
 			// txt_PriceF
 			// 
 			this->txt_PriceF->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.8F));
-			this->txt_PriceF->Location = System::Drawing::Point(178, 202);
+			this->txt_PriceF->Location = System::Drawing::Point(188, 201);
 			this->txt_PriceF->Name = L"txt_PriceF";
 			this->txt_PriceF->Size = System::Drawing::Size(207, 31);
 			this->txt_PriceF->TabIndex = 1;
@@ -342,17 +345,18 @@ namespace PBL2 {
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 12.8F, System::Drawing::FontStyle::Bold));
+			this->label6->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 13.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label6->Location = System::Drawing::Point(28, 199);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(57, 30);
+			this->label6->Size = System::Drawing::Size(56, 30);
 			this->label6->TabIndex = 0;
 			this->label6->Text = L"Cost";
 			// 
 			// txt_Brand
 			// 
 			this->txt_Brand->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.8F));
-			this->txt_Brand->Location = System::Drawing::Point(178, 159);
+			this->txt_Brand->Location = System::Drawing::Point(188, 158);
 			this->txt_Brand->Name = L"txt_Brand";
 			this->txt_Brand->Size = System::Drawing::Size(207, 31);
 			this->txt_Brand->TabIndex = 1;
@@ -360,7 +364,8 @@ namespace PBL2 {
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 12.8F, System::Drawing::FontStyle::Bold));
+			this->label5->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 13.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label5->Location = System::Drawing::Point(28, 156);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(71, 30);
@@ -370,7 +375,7 @@ namespace PBL2 {
 			// txt_Name
 			// 
 			this->txt_Name->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.8F));
-			this->txt_Name->Location = System::Drawing::Point(178, 111);
+			this->txt_Name->Location = System::Drawing::Point(188, 110);
 			this->txt_Name->Name = L"txt_Name";
 			this->txt_Name->Size = System::Drawing::Size(207, 31);
 			this->txt_Name->TabIndex = 1;
@@ -378,7 +383,8 @@ namespace PBL2 {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 12.8F, System::Drawing::FontStyle::Bold));
+			this->label4->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 13.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label4->Location = System::Drawing::Point(28, 111);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(72, 30);
@@ -388,10 +394,11 @@ namespace PBL2 {
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 12.8F, System::Drawing::FontStyle::Bold));
+			this->label7->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 13.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label7->Location = System::Drawing::Point(28, 61);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(144, 30);
+			this->label7->Size = System::Drawing::Size(141, 30);
 			this->label7->TabIndex = 0;
 			this->label7->Text = L"Product Type";
 			// 
@@ -399,7 +406,7 @@ namespace PBL2 {
 			// 
 			this->btn_Save->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_Save->Location = System::Drawing::Point(1051, 186);
+			this->btn_Save->Location = System::Drawing::Point(1109, 179);
 			this->btn_Save->Name = L"btn_Save";
 			this->btn_Save->Size = System::Drawing::Size(109, 41);
 			this->btn_Save->TabIndex = 2;
@@ -411,7 +418,7 @@ namespace PBL2 {
 			// 
 			this->btn_Back->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_Back->Location = System::Drawing::Point(1051, 307);
+			this->btn_Back->Location = System::Drawing::Point(1109, 300);
 			this->btn_Back->Name = L"btn_Back";
 			this->btn_Back->Size = System::Drawing::Size(109, 41);
 			this->btn_Back->TabIndex = 2;
@@ -421,7 +428,7 @@ namespace PBL2 {
 			// 
 			// panel1
 			// 
-			this->panel1->BackColor = System::Drawing::Color::PeachPuff;
+			this->panel1->BackColor = System::Drawing::Color::PaleTurquoise;
 			this->panel1->Controls->Add(this->label1);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel1->Location = System::Drawing::Point(0, 0);
@@ -433,7 +440,7 @@ namespace PBL2 {
 			// 
 			this->btn_Clear->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_Clear->Location = System::Drawing::Point(1051, 247);
+			this->btn_Clear->Location = System::Drawing::Point(1109, 240);
 			this->btn_Clear->Name = L"btn_Clear";
 			this->btn_Clear->Size = System::Drawing::Size(109, 40);
 			this->btn_Clear->TabIndex = 4;
@@ -443,38 +450,48 @@ namespace PBL2 {
 			// 
 			// dataGridView1
 			// 
+			this->dataGridView1->BackgroundColor = System::Drawing::Color::White;
+			this->dataGridView1->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(21, 415);
+			this->dataGridView1->GridColor = System::Drawing::Color::White;
+			this->dataGridView1->Location = System::Drawing::Point(20, 441);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(1245, 244);
+			this->dataGridView1->Size = System::Drawing::Size(1252, 185);
 			this->dataGridView1->TabIndex = 5;
 			// 
 			// dataGridView2
 			// 
+			this->dataGridView2->BackgroundColor = System::Drawing::Color::White;
+			this->dataGridView2->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView2->Location = System::Drawing::Point(20, 415);
+			this->dataGridView2->GridColor = System::Drawing::Color::White;
+			this->dataGridView2->Location = System::Drawing::Point(20, 441);
 			this->dataGridView2->Name = L"dataGridView2";
 			this->dataGridView2->RowHeadersWidth = 51;
 			this->dataGridView2->RowTemplate->Height = 24;
-			this->dataGridView2->Size = System::Drawing::Size(1246, 244);
+			this->dataGridView2->Size = System::Drawing::Size(1252, 185);
 			this->dataGridView2->TabIndex = 6;
 			// 
 			// dataGridView3
 			// 
+			this->dataGridView3->BackgroundColor = System::Drawing::Color::White;
+			this->dataGridView3->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dataGridView3->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView3->Location = System::Drawing::Point(20, 415);
+			this->dataGridView3->GridColor = System::Drawing::Color::White;
+			this->dataGridView3->Location = System::Drawing::Point(20, 441);
 			this->dataGridView3->Name = L"dataGridView3";
 			this->dataGridView3->RowHeadersWidth = 51;
 			this->dataGridView3->RowTemplate->Height = 24;
-			this->dataGridView3->Size = System::Drawing::Size(1246, 244);
+			this->dataGridView3->Size = System::Drawing::Size(1252, 185);
 			this->dataGridView3->TabIndex = 7;
 			// 
 			// Add_Form
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(7, 17);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(1289, 683);
 			this->Controls->Add(this->dataGridView3);
 			this->Controls->Add(this->groupBox1);

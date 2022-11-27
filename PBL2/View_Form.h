@@ -38,6 +38,9 @@ private: System::Windows::Forms::Button^ btn_ExportToExcel;
 
 
 
+
+
+
 public:
 
 
@@ -120,13 +123,14 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 			this->dataGridView1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
+			this->dataGridView1->BackgroundColor = System::Drawing::Color::White;
 			this->dataGridView1->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(27, 242);
+			this->dataGridView1->Location = System::Drawing::Point(25, 258);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(1241, 376);
+			this->dataGridView1->Size = System::Drawing::Size(1252, 341);
 			this->dataGridView1->TabIndex = 1;
 			// 
 			// groupBox1
@@ -138,9 +142,9 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 			this->groupBox1->Controls->Add(this->btn_Show_Smartphone);
 			this->groupBox1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->groupBox1->Location = System::Drawing::Point(287, 117);
+			this->groupBox1->Location = System::Drawing::Point(273, 117);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(815, 106);
+			this->groupBox1->Size = System::Drawing::Size(815, 102);
 			this->groupBox1->TabIndex = 2;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Select the type of product you want to see information about";
@@ -189,7 +193,7 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->btn_Back->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->btn_Back->Location = System::Drawing::Point(785, 624);
+			this->btn_Back->Location = System::Drawing::Point(830, 624);
 			this->btn_Back->Name = L"btn_Back";
 			this->btn_Back->Size = System::Drawing::Size(224, 37);
 			this->btn_Back->TabIndex = 3;
@@ -202,13 +206,14 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 			this->dataGridView2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
+			this->dataGridView2->BackgroundColor = System::Drawing::Color::White;
 			this->dataGridView2->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView2->Location = System::Drawing::Point(27, 242);
+			this->dataGridView2->Location = System::Drawing::Point(25, 258);
 			this->dataGridView2->Name = L"dataGridView2";
 			this->dataGridView2->RowHeadersWidth = 51;
 			this->dataGridView2->RowTemplate->Height = 24;
-			this->dataGridView2->Size = System::Drawing::Size(1241, 376);
+			this->dataGridView2->Size = System::Drawing::Size(1252, 341);
 			this->dataGridView2->TabIndex = 4;
 			// 
 			// dataGridView3
@@ -216,13 +221,14 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 			this->dataGridView3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
+			this->dataGridView3->BackgroundColor = System::Drawing::Color::White;
 			this->dataGridView3->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dataGridView3->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView3->Location = System::Drawing::Point(27, 242);
+			this->dataGridView3->Location = System::Drawing::Point(25, 258);
 			this->dataGridView3->Name = L"dataGridView3";
 			this->dataGridView3->RowHeadersWidth = 51;
 			this->dataGridView3->RowTemplate->Height = 24;
-			this->dataGridView3->Size = System::Drawing::Size(1241, 376);
+			this->dataGridView3->Size = System::Drawing::Size(1252, 341);
 			this->dataGridView3->TabIndex = 5;
 			// 
 			// btn_ExportToExcel
@@ -231,7 +237,7 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->btn_ExportToExcel->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->btn_ExportToExcel->Location = System::Drawing::Point(362, 624);
+			this->btn_ExportToExcel->Location = System::Drawing::Point(328, 624);
 			this->btn_ExportToExcel->Name = L"btn_ExportToExcel";
 			this->btn_ExportToExcel->Size = System::Drawing::Size(224, 37);
 			this->btn_ExportToExcel->TabIndex = 6;
@@ -241,7 +247,7 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 			// 
 			// panel1
 			// 
-			this->panel1->BackColor = System::Drawing::Color::PeachPuff;
+			this->panel1->BackColor = System::Drawing::Color::PaleTurquoise;
 			this->panel1->Controls->Add(this->label1);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel1->Location = System::Drawing::Point(0, 0);
@@ -252,11 +258,11 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 28.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(360, 18);
+			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 28.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(359, 18);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(704, 62);
+			this->label1->Size = System::Drawing::Size(705, 62);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"VIEW INFORMATION PRODUCT";
 			// 
@@ -264,6 +270,7 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(7, 17);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(1299, 673);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->btn_ExportToExcel);
@@ -485,9 +492,12 @@ private: System::Void btn_Show_SmartWatch_Click(System::Object^ sender, System::
 		//CopyFile("D:/WorkSpace/PBL2_GUI/PBL2/PBL2/db_laptop.csv", "D:D:/WorkSpace/PBL2_GUI/PBL2/PBL2Test/Test.csv", true)
 	}
 private: System::Void View_Form_Load(System::Object^ sender, System::EventArgs^ e) {
+	dataGridView1->ReadOnly;
 	Load_Data_Of_Smartwatch();
 	Load_Data_Of_Smartphone();
 	Load_Data_Of_Laptop();
+}
+private: System::Void pic_Back_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

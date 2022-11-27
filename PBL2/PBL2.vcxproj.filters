@@ -55,10 +55,13 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Import_Form.cpp">
-      <Filter>Header Files</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Invoice_Form.cpp">
-      <Filter>Header Files</Filter>
+    <ClCompile Include="Invoice.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Export_Form.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -104,7 +107,10 @@
     <ClInclude Include="Import_Form.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Invoice_Form.h">
+    <ClInclude Include="Invoice.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Export_Form.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

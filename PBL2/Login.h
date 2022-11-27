@@ -34,22 +34,13 @@ namespace PBL2 {
 					break;
 				}
 				getline(data_user, temp, ',');
+				list_User[i].setName(temp);
+				getline(data_user, temp, ',');
 				list_User[i].setUsername(temp);
 				getline(data_user, temp, '\n');
 				list_User[i].setPassword(temp);
 			}
 			data_user.close();
-		}
-		void Save_Data_Of_User()
-		{
-			ofstream user;
-			user.open("User.txt", ios::app);
-			for (int i = 0; i < 100; i++)
-			{
-				user << list_User[i].getUsername() << ",";
-				user << list_User[i].getPassword() << "\n" << endl;
-			}
-			user.close();
 		}
 	private: System::Windows::Forms::Panel^ panel3;
 	private: System::Windows::Forms::Label^ label1;
@@ -122,12 +113,12 @@ namespace PBL2 {
 			// 
 			// btn_Login
 			// 
-			this->btn_Login->BackColor = System::Drawing::Color::PeachPuff;
+			this->btn_Login->BackColor = System::Drawing::Color::PaleTurquoise;
 			this->btn_Login->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->btn_Login->Location = System::Drawing::Point(519, 515);
 			this->btn_Login->Name = L"btn_Login";
-			this->btn_Login->Size = System::Drawing::Size(185, 47);
+			this->btn_Login->Size = System::Drawing::Size(185, 49);
 			this->btn_Login->TabIndex = 0;
 			this->btn_Login->Text = L"LogIn";
 			this->btn_Login->UseVisualStyleBackColor = false;
@@ -155,13 +146,13 @@ namespace PBL2 {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->txt_Username->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->txt_Username->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->txt_Username->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->txt_Username->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 13.8F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->txt_Username->Location = System::Drawing::Point(11, 14);
 			this->txt_Username->Name = L"txt_Username";
 			this->txt_Username->Size = System::Drawing::Size(321, 31);
 			this->txt_Username->TabIndex = 1;
-			this->txt_Username->Text = L"Your Name";
+			this->txt_Username->Text = L"Username";
 			this->txt_Username->Click += gcnew System::EventHandler(this, &Login::txt_Username_Click);
 			// 
 			// panel1
@@ -184,7 +175,7 @@ namespace PBL2 {
 			// 
 			// panel3
 			// 
-			this->panel3->BackColor = System::Drawing::Color::PeachPuff;
+			this->panel3->BackColor = System::Drawing::Color::PaleTurquoise;
 			this->panel3->Controls->Add(this->label1);
 			this->panel3->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel3->Location = System::Drawing::Point(0, 0);
@@ -249,14 +240,14 @@ namespace PBL2 {
 			else if (list_User[i].getUsername() == tempStr && list_User[i].getPassword() == tempStr2)
 			{
 				found++;
-				MessageBox::Show("Login as " + gcnew String(list_User[i].getUsername().c_str())
+				MessageBox::Show("Login as " + gcnew String(list_User[i].getName().c_str())
 					, "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
 				this->Hide();
 				MainForm^ MainForm_Form = gcnew MainForm(this);
 				MainForm_Form->Show();
-				txt_Username->Text = "Your Name";
+				txt_Username->Text = "Username";
 				txt_Password->Text = "PassWord";
-				//_Username = list_User[i].getUsername();
+				Staff_Name = list_User[i].getName();
 				break;
 			}
 		}
@@ -267,7 +258,7 @@ namespace PBL2 {
 		}
 	}
 	private: System::Void txt_Username_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (txt_Username->Text == "Your Name") {
+		if (txt_Username->Text == "Username") {
 			txt_Username->Text = "";
 		}
 	}

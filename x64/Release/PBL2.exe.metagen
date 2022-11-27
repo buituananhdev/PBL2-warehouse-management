@@ -1,5 +1,6 @@
   PBL2.Add_Form.resources - Embedded, ContainedInManifestFile, 
   PBL2.Delete_Form.resources - Embedded, ContainedInManifestFile, 
+  PBL2.Export_Form.resources - Embedded, ContainedInManifestFile, 
   PBL2.Import_Form.resources - Embedded, ContainedInManifestFile, 
   PBL2.Login.resources - Embedded, ContainedInManifestFile, 
   PBL2.MainForm.resources - Embedded, ContainedInManifestFile, 
@@ -52,9 +53,12 @@ Class PBL2.Delete_Form: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     CreateNewRow_LT(Int32): PrivateScope, Public, HideBySig
     CreateNewRow_SP(Int32): PrivateScope, Public, HideBySig
     CreateNewRow_SW(Int32): PrivateScope, Public, HideBySig
-Class PBL2.Invoice_Form: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+Class PBL2.Export_Form: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.Form Main_Form : Public
 Class PBL2.Import_Form: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -82,8 +86,14 @@ Class PBL2.Search_Form: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
-    System.Data.DataTable Search_Device : Public
+    System.Data.DataTable Smartphone_Device : Public
+    System.Data.DataTable Laptop_Device : Public
+    System.Data.DataTable Smartwatch_Device : Public
     System.Windows.Forms.Form Main_Form : Public
+  Methods:
+    CreateNewRow_LT(Int32): PrivateScope, Public, HideBySig
+    CreateNewRow_SP(Int32): PrivateScope, Public, HideBySig
+    CreateNewRow_SW(Int32): PrivateScope, Public, HideBySig
 Class PBL2.Update_Form: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

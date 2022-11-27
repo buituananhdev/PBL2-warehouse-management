@@ -6,6 +6,7 @@
 #include "Update_Form.h"
 #include "Delete_Form.h"
 #include "Import_Form.h"
+#include "Export_Form.h"
 namespace PBL2 {
 
 	using namespace System;
@@ -69,6 +70,7 @@ namespace PBL2 {
 	private: System::Windows::Forms::Button^ btn_View;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
 
 
 
@@ -120,6 +122,7 @@ namespace PBL2 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MainForm::typeid));
 			this->btn_Logout = (gcnew System::Windows::Forms::Button());
 			this->btn_Export = (gcnew System::Windows::Forms::Button());
 			this->btn_Import = (gcnew System::Windows::Forms::Button());
@@ -130,11 +133,14 @@ namespace PBL2 {
 			this->btn_View = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// btn_Logout
 			// 
+			this->btn_Logout->BackColor = System::Drawing::Color::MintCream;
 			this->btn_Logout->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btn_Logout->Location = System::Drawing::Point(45, 513);
@@ -142,11 +148,12 @@ namespace PBL2 {
 			this->btn_Logout->Size = System::Drawing::Size(170, 57);
 			this->btn_Logout->TabIndex = 0;
 			this->btn_Logout->Text = L"Log out";
-			this->btn_Logout->UseVisualStyleBackColor = true;
+			this->btn_Logout->UseVisualStyleBackColor = false;
 			this->btn_Logout->Click += gcnew System::EventHandler(this, &MainForm::btn_Logout_Click);
 			// 
 			// btn_Export
 			// 
+			this->btn_Export->BackColor = System::Drawing::Color::MintCream;
 			this->btn_Export->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btn_Export->Location = System::Drawing::Point(45, 450);
@@ -154,10 +161,12 @@ namespace PBL2 {
 			this->btn_Export->Size = System::Drawing::Size(170, 57);
 			this->btn_Export->TabIndex = 0;
 			this->btn_Export->Text = L"Export Goods";
-			this->btn_Export->UseVisualStyleBackColor = true;
+			this->btn_Export->UseVisualStyleBackColor = false;
+			this->btn_Export->Click += gcnew System::EventHandler(this, &MainForm::btn_Export_Click);
 			// 
 			// btn_Import
 			// 
+			this->btn_Import->BackColor = System::Drawing::Color::MintCream;
 			this->btn_Import->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btn_Import->Location = System::Drawing::Point(45, 387);
@@ -165,11 +174,12 @@ namespace PBL2 {
 			this->btn_Import->Size = System::Drawing::Size(170, 57);
 			this->btn_Import->TabIndex = 0;
 			this->btn_Import->Text = L"Import Goods";
-			this->btn_Import->UseVisualStyleBackColor = true;
+			this->btn_Import->UseVisualStyleBackColor = false;
 			this->btn_Import->Click += gcnew System::EventHandler(this, &MainForm::btn_Import_Click);
 			// 
 			// btn_Search
 			// 
+			this->btn_Search->BackColor = System::Drawing::Color::MintCream;
 			this->btn_Search->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btn_Search->Location = System::Drawing::Point(45, 324);
@@ -177,11 +187,12 @@ namespace PBL2 {
 			this->btn_Search->Size = System::Drawing::Size(170, 57);
 			this->btn_Search->TabIndex = 0;
 			this->btn_Search->Text = L"Search";
-			this->btn_Search->UseVisualStyleBackColor = true;
+			this->btn_Search->UseVisualStyleBackColor = false;
 			this->btn_Search->Click += gcnew System::EventHandler(this, &MainForm::btn_Search_Click);
 			// 
 			// btn_Delete
 			// 
+			this->btn_Delete->BackColor = System::Drawing::Color::MintCream;
 			this->btn_Delete->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btn_Delete->Location = System::Drawing::Point(45, 260);
@@ -189,11 +200,12 @@ namespace PBL2 {
 			this->btn_Delete->Size = System::Drawing::Size(170, 57);
 			this->btn_Delete->TabIndex = 0;
 			this->btn_Delete->Text = L"Delete";
-			this->btn_Delete->UseVisualStyleBackColor = true;
+			this->btn_Delete->UseVisualStyleBackColor = false;
 			this->btn_Delete->Click += gcnew System::EventHandler(this, &MainForm::btn_Delete_Click);
 			// 
 			// btn_Update
 			// 
+			this->btn_Update->BackColor = System::Drawing::Color::MintCream;
 			this->btn_Update->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btn_Update->Location = System::Drawing::Point(45, 197);
@@ -201,11 +213,12 @@ namespace PBL2 {
 			this->btn_Update->Size = System::Drawing::Size(170, 57);
 			this->btn_Update->TabIndex = 0;
 			this->btn_Update->Text = L"Update ";
-			this->btn_Update->UseVisualStyleBackColor = true;
+			this->btn_Update->UseVisualStyleBackColor = false;
 			this->btn_Update->Click += gcnew System::EventHandler(this, &MainForm::btn_Update_Click);
 			// 
 			// btn_Add
 			// 
+			this->btn_Add->BackColor = System::Drawing::Color::MintCream;
 			this->btn_Add->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btn_Add->Location = System::Drawing::Point(45, 133);
@@ -213,11 +226,12 @@ namespace PBL2 {
 			this->btn_Add->Size = System::Drawing::Size(170, 57);
 			this->btn_Add->TabIndex = 0;
 			this->btn_Add->Text = L"Add New Product";
-			this->btn_Add->UseVisualStyleBackColor = true;
+			this->btn_Add->UseVisualStyleBackColor = false;
 			this->btn_Add->Click += gcnew System::EventHandler(this, &MainForm::btn_Add_Click);
 			// 
 			// btn_View
 			// 
+			this->btn_View->BackColor = System::Drawing::Color::MintCream;
 			this->btn_View->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btn_View->Location = System::Drawing::Point(45, 69);
@@ -225,7 +239,7 @@ namespace PBL2 {
 			this->btn_View->Size = System::Drawing::Size(170, 57);
 			this->btn_View->TabIndex = 0;
 			this->btn_View->Text = L"View Information";
-			this->btn_View->UseVisualStyleBackColor = true;
+			this->btn_View->UseVisualStyleBackColor = false;
 			this->btn_View->Click += gcnew System::EventHandler(this, &MainForm::btn_View_Click);
 			// 
 			// label1
@@ -233,7 +247,7 @@ namespace PBL2 {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(44, 10);
+			this->label1->Location = System::Drawing::Point(53, 13);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(171, 41);
 			this->label1->TabIndex = 1;
@@ -241,7 +255,8 @@ namespace PBL2 {
 			// 
 			// panel1
 			// 
-			this->panel1->BackColor = System::Drawing::Color::PeachPuff;
+			this->panel1->BackColor = System::Drawing::Color::PaleTurquoise;
+			this->panel1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->panel1->Controls->Add(this->label1);
 			this->panel1->Controls->Add(this->btn_Logout);
 			this->panel1->Controls->Add(this->btn_Export);
@@ -257,11 +272,24 @@ namespace PBL2 {
 			this->panel1->Size = System::Drawing::Size(266, 673);
 			this->panel1->TabIndex = 1;
 			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(265, 0);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(921, 673);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox1->TabIndex = 2;
+			this->pictureBox1->TabStop = false;
+			// 
 			// MainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(7, 17);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(1186, 673);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->panel1);
 			this->Font = (gcnew System::Drawing::Font(L"Segoe UI", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -273,6 +301,7 @@ namespace PBL2 {
 			this->Load += gcnew System::EventHandler(this, &MainForm::MainForm_Load);
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -284,7 +313,7 @@ private: System::Void btn_View_Click(System::Object^ sender, System::EventArgs^ 
 }
 private: System::Void btn_Logout_Click(System::Object^ sender, System::EventArgs^ e) {
 	MessageBox::Show("You will log out!"
-		, "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		, "Success", MessageBoxButtons::YesNo, MessageBoxIcon::Information);
 	this->Hide();
 	Main_Form->Show();
 }
@@ -316,6 +345,11 @@ private: System::Void btn_Delete_Click(System::Object^ sender, System::EventArgs
 private: System::Void btn_Import_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
 	Import_Form^ tmpView_Form = gcnew Import_Form(this);
+	tmpView_Form->Show();
+}
+private: System::Void btn_Export_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	Export_Form^ tmpView_Form = gcnew Export_Form(this);
 	tmpView_Form->Show();
 }
 };

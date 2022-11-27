@@ -7,6 +7,7 @@
 #include <algorithm>
 using namespace std;
 #define MAX 9999
+string Staff_Name;
 User list_User[100];
 Laptop listLT[MAX];
 SmartPhone listSP[MAX];
@@ -36,7 +37,7 @@ void Remove_ID_SW(int index) {
 	for (int i = index; i < NumOfDV("db_smartwatch.csv"); i++) {
 		listSW[i] = listSW[i + 1];
 	}
-}
+} 
 int NumOfDV(string filename) {
 	ifstream filein;
 	char c;

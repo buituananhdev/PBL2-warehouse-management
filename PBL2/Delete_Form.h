@@ -106,7 +106,7 @@ namespace PBL2 {
 			// 
 			// panel1
 			// 
-			this->panel1->BackColor = System::Drawing::Color::PeachPuff;
+			this->panel1->BackColor = System::Drawing::Color::PaleTurquoise;
 			this->panel1->Controls->Add(this->label1);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel1->Location = System::Drawing::Point(0, 0);
@@ -117,17 +117,18 @@ namespace PBL2 {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 28.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(450, 18);
+			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 28.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(455, 19);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(440, 62);
+			this->label1->Size = System::Drawing::Size(439, 62);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"REMOVE PRODUCT";
 			// 
 			// panel2
 			// 
 			this->panel2->BackColor = System::Drawing::Color::White;
+			this->panel2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->panel2->Controls->Add(this->btn_Search);
 			this->panel2->Controls->Add(this->txt_Index_Delete);
 			this->panel2->Location = System::Drawing::Point(382, 147);
@@ -137,9 +138,8 @@ namespace PBL2 {
 			// 
 			// btn_Search
 			// 
-			this->btn_Search->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
 			this->btn_Search->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_Search.Image")));
-			this->btn_Search->Location = System::Drawing::Point(506, 0);
+			this->btn_Search->Location = System::Drawing::Point(506, -1);
 			this->btn_Search->Name = L"btn_Search";
 			this->btn_Search->Size = System::Drawing::Size(47, 46);
 			this->btn_Search->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
@@ -150,7 +150,7 @@ namespace PBL2 {
 			// txt_Index_Delete
 			// 
 			this->txt_Index_Delete->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->txt_Index_Delete->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txt_Index_Delete->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->txt_Index_Delete->Location = System::Drawing::Point(8, 7);
 			this->txt_Index_Delete->Name = L"txt_Index_Delete";
@@ -161,18 +161,20 @@ namespace PBL2 {
 			// 
 			// dataGridView1
 			// 
+			this->dataGridView1->BackgroundColor = System::Drawing::Color::White;
+			this->dataGridView1->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(39, 255);
+			this->dataGridView1->Location = System::Drawing::Point(19, 255);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(1220, 300);
+			this->dataGridView1->Size = System::Drawing::Size(1252, 300);
 			this->dataGridView1->TabIndex = 2;
 			// 
 			// btn_Back
 			// 
 			this->btn_Back->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 11.8F, System::Drawing::FontStyle::Bold));
-			this->btn_Back->Location = System::Drawing::Point(814, 595);
+			this->btn_Back->Location = System::Drawing::Point(1056, 595);
 			this->btn_Back->Name = L"btn_Back";
 			this->btn_Back->Size = System::Drawing::Size(134, 41);
 			this->btn_Back->TabIndex = 3;
@@ -183,7 +185,7 @@ namespace PBL2 {
 			// btn_Delete
 			// 
 			this->btn_Delete->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 11.8F, System::Drawing::FontStyle::Bold));
-			this->btn_Delete->Location = System::Drawing::Point(451, 595);
+			this->btn_Delete->Location = System::Drawing::Point(873, 595);
 			this->btn_Delete->Name = L"btn_Delete";
 			this->btn_Delete->Size = System::Drawing::Size(134, 41);
 			this->btn_Delete->TabIndex = 3;
@@ -193,22 +195,26 @@ namespace PBL2 {
 			// 
 			// dataGridView2
 			// 
+			this->dataGridView2->BackgroundColor = System::Drawing::Color::White;
+			this->dataGridView2->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView2->Location = System::Drawing::Point(39, 255);
+			this->dataGridView2->Location = System::Drawing::Point(19, 255);
 			this->dataGridView2->Name = L"dataGridView2";
 			this->dataGridView2->RowHeadersWidth = 51;
 			this->dataGridView2->RowTemplate->Height = 24;
-			this->dataGridView2->Size = System::Drawing::Size(1220, 300);
+			this->dataGridView2->Size = System::Drawing::Size(1252, 300);
 			this->dataGridView2->TabIndex = 4;
 			// 
 			// dataGridView3
 			// 
+			this->dataGridView3->BackgroundColor = System::Drawing::Color::White;
+			this->dataGridView3->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dataGridView3->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView3->Location = System::Drawing::Point(39, 255);
+			this->dataGridView3->Location = System::Drawing::Point(19, 255);
 			this->dataGridView3->Name = L"dataGridView3";
 			this->dataGridView3->RowHeadersWidth = 51;
 			this->dataGridView3->RowTemplate->Height = 24;
-			this->dataGridView3->Size = System::Drawing::Size(1220, 300);
+			this->dataGridView3->Size = System::Drawing::Size(1252, 300);
 			this->dataGridView3->TabIndex = 5;
 			// 
 			// label_Infor
@@ -225,6 +231,7 @@ namespace PBL2 {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(7, 17);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(1289, 673);
 			this->Controls->Add(this->label_Infor);
 			this->Controls->Add(this->dataGridView3);
@@ -382,6 +389,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	else {
 		if (CheckTypeDelete == 1)
 		{
+			//Remove<SmartPhone>(index,"db_smartphone.csv");
 			Remove_ID_SP(indexDelete);
 			Save_Data_SmartPhone();
 		}

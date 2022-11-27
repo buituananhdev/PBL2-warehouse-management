@@ -117,8 +117,9 @@
   <ItemGroup>
     <ClCompile Include="Add_Form.cpp" />
     <ClCompile Include="Delete_Form.cpp" />
+    <ClCompile Include="Export_Form.cpp" />
     <ClCompile Include="Import_Form.cpp" />
-    <ClCompile Include="Invoice_Form.cpp" />
+    <ClCompile Include="Invoice.cpp" />
     <ClCompile Include="Laptop.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="MainForm.cpp" />
@@ -138,12 +139,13 @@
     <ClInclude Include="Delete_Form.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Export_Form.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Import_Form.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Invoice_Form.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
+    <ClInclude Include="Invoice.h" />
     <ClInclude Include="Laptop.h" />
     <ClInclude Include="Login.h">
       <FileType>CppForm</FileType>
@@ -188,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Delete_Form.resx">
       <DependentUpon>Delete_Form.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Export_Form.resx">
+      <DependentUpon>Export_Form.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Import_Form.resx">
       <DependentUpon>Import_Form.h</DependentUpon>
