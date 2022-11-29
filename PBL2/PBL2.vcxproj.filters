@@ -130,5 +130,9 @@
     <None Include="db_smartphone.csv">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="db_invoice.csv">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

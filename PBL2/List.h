@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <assert.h>
 using namespace std;
 template<typename T> class List;
 template<typename T>
@@ -113,6 +114,7 @@ void List<T>::InsertLast(T value)
 template<typename T>
 void List<T>::Remove(int index)
 {
+    assert(index >= 0 && index <= this->length);
     if (this->length == 1)
     {
         Erase();
@@ -127,4 +129,7 @@ void List<T>::Remove(int index)
     {
         data[i - 1] = (*this)[i];
     }
+    delete[] this->data;
+    this->data = data;
+    --this->length;
 }

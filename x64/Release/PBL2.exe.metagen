@@ -30,14 +30,11 @@ Class PBL2.Add_Form: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
-    Int32 IndexCounterLT : Public
-    Int32 IndexCounterSP : Public
-    Int32 IndexCounterSW : Public
     System.Windows.Forms.Form Main_Form : Public
   Methods:
-    CreateNewRow_LT(): PrivateScope, Public, HideBySig
-    CreateNewRow_SP(): PrivateScope, Public, HideBySig
-    CreateNewRow_SW(): PrivateScope, Public, HideBySig
+    CreateNewRow_LT(Int32): PrivateScope, Public, HideBySig
+    CreateNewRow_SP(Int32): PrivateScope, Public, HideBySig
+    CreateNewRow_SW(Int32): PrivateScope, Public, HideBySig
 Class PBL2.Delete_Form: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

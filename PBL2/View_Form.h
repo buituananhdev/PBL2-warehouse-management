@@ -1,7 +1,6 @@
 ﻿#pragma once
 #include "Manage.h"
 #include <windows.h>
-
 #define Excel  Microsoft::Office::Interop::Excel
 namespace PBL2 {
 
@@ -36,6 +35,11 @@ private: System::Windows::Forms::DataGridView^ dataGridView3;
 private: System::Windows::Forms::Button^ btn_ExportToExcel;
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::PictureBox^ pictureBox3;
+	private: System::Windows::Forms::PictureBox^ pictureBox2;
+	private: System::Windows::Forms::PictureBox^ pictureBox4;
+
 
 
 
@@ -101,8 +105,12 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(View_Form::typeid));
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->btn_Show_SmartWatch = (gcnew System::Windows::Forms::Button());
 			this->btn_Show_Laptop = (gcnew System::Windows::Forms::Button());
 			this->btn_Show_Smartphone = (gcnew System::Windows::Forms::Button());
@@ -112,11 +120,16 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 			this->btn_ExportToExcel = (gcnew System::Windows::Forms::Button());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->groupBox1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->BeginInit();
 			this->panel1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// dataGridView1
@@ -131,63 +144,103 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(1252, 341);
+			this->dataGridView1->Size = System::Drawing::Size(1252, 330);
 			this->dataGridView1->TabIndex = 1;
 			// 
 			// groupBox1
 			// 
 			this->groupBox1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
+			this->groupBox1->Controls->Add(this->pictureBox2);
+			this->groupBox1->Controls->Add(this->pictureBox3);
+			this->groupBox1->Controls->Add(this->pictureBox1);
 			this->groupBox1->Controls->Add(this->btn_Show_SmartWatch);
 			this->groupBox1->Controls->Add(this->btn_Show_Laptop);
 			this->groupBox1->Controls->Add(this->btn_Show_Smartphone);
-			this->groupBox1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->groupBox1->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->groupBox1->Location = System::Drawing::Point(273, 117);
+			this->groupBox1->Location = System::Drawing::Point(244, 121);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(815, 102);
+			this->groupBox1->Size = System::Drawing::Size(908, 114);
 			this->groupBox1->TabIndex = 2;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Select the type of product you want to see information about";
 			// 
+			// pictureBox2
+			// 
+			this->pictureBox2->BackColor = System::Drawing::SystemColors::Control;
+			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
+			this->pictureBox2->Location = System::Drawing::Point(367, 43);
+			this->pictureBox2->Name = L"pictureBox2";
+			this->pictureBox2->Size = System::Drawing::Size(39, 37);
+			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox2->TabIndex = 9;
+			this->pictureBox2->TabStop = false;
+			this->pictureBox2->Click += gcnew System::EventHandler(this, &View_Form::pictureBox2_Click);
+			// 
+			// pictureBox3
+			// 
+			this->pictureBox3->BackColor = System::Drawing::SystemColors::Control;
+			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
+			this->pictureBox3->Location = System::Drawing::Point(677, 42);
+			this->pictureBox3->Name = L"pictureBox3";
+			this->pictureBox3->Size = System::Drawing::Size(44, 39);
+			this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox3->TabIndex = 9;
+			this->pictureBox3->TabStop = false;
+			this->pictureBox3->Click += gcnew System::EventHandler(this, &View_Form::pictureBox3_Click);
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::SystemColors::Control;
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(56, 44);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(39, 35);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox1->TabIndex = 9;
+			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &View_Form::pictureBox1_Click);
+			// 
 			// btn_Show_SmartWatch
 			// 
-			this->btn_Show_SmartWatch->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->btn_Show_SmartWatch->BackColor = System::Drawing::Color::Transparent;
-			this->btn_Show_SmartWatch->Font = (gcnew System::Drawing::Font(L"Times New Roman", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btn_Show_SmartWatch->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->btn_Show_SmartWatch->BackColor = System::Drawing::SystemColors::Control;
+			this->btn_Show_SmartWatch->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_Show_SmartWatch->Location = System::Drawing::Point(577, 37);
+			this->btn_Show_SmartWatch->Location = System::Drawing::Point(670, 37);
 			this->btn_Show_SmartWatch->Name = L"btn_Show_SmartWatch";
-			this->btn_Show_SmartWatch->Size = System::Drawing::Size(200, 45);
+			this->btn_Show_SmartWatch->Size = System::Drawing::Size(205, 49);
 			this->btn_Show_SmartWatch->TabIndex = 0;
-			this->btn_Show_SmartWatch->Text = L"Smart Watch";
+			this->btn_Show_SmartWatch->Text = L"        Smart Watch";
 			this->btn_Show_SmartWatch->UseVisualStyleBackColor = false;
 			this->btn_Show_SmartWatch->Click += gcnew System::EventHandler(this, &View_Form::btn_Show_SmartWatch_Click);
 			// 
 			// btn_Show_Laptop
 			// 
-			this->btn_Show_Laptop->Anchor = System::Windows::Forms::AnchorStyles::Top;
-			this->btn_Show_Laptop->BackColor = System::Drawing::Color::Transparent;
-			this->btn_Show_Laptop->Font = (gcnew System::Drawing::Font(L"Times New Roman", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btn_Show_Laptop->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->btn_Show_Laptop->BackColor = System::Drawing::SystemColors::Control;
+			this->btn_Show_Laptop->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_Show_Laptop->Location = System::Drawing::Point(310, 37);
+			this->btn_Show_Laptop->Location = System::Drawing::Point(357, 37);
 			this->btn_Show_Laptop->Name = L"btn_Show_Laptop";
-			this->btn_Show_Laptop->Size = System::Drawing::Size(200, 45);
+			this->btn_Show_Laptop->Size = System::Drawing::Size(205, 49);
 			this->btn_Show_Laptop->TabIndex = 0;
-			this->btn_Show_Laptop->Text = L"Laptop";
+			this->btn_Show_Laptop->Text = L"       Laptop";
 			this->btn_Show_Laptop->UseVisualStyleBackColor = false;
 			this->btn_Show_Laptop->Click += gcnew System::EventHandler(this, &View_Form::btn_Show_Laptop_Click);
 			// 
 			// btn_Show_Smartphone
 			// 
-			this->btn_Show_Smartphone->BackColor = System::Drawing::Color::Transparent;
-			this->btn_Show_Smartphone->Font = (gcnew System::Drawing::Font(L"Times New Roman", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btn_Show_Smartphone->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->btn_Show_Smartphone->BackColor = System::Drawing::SystemColors::Control;
+			this->btn_Show_Smartphone->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btn_Show_Smartphone->Location = System::Drawing::Point(47, 37);
 			this->btn_Show_Smartphone->Name = L"btn_Show_Smartphone";
-			this->btn_Show_Smartphone->Size = System::Drawing::Size(200, 45);
+			this->btn_Show_Smartphone->Size = System::Drawing::Size(205, 49);
 			this->btn_Show_Smartphone->TabIndex = 0;
-			this->btn_Show_Smartphone->Text = L"Smart Phone";
+			this->btn_Show_Smartphone->Text = L"       Smart Phone";
 			this->btn_Show_Smartphone->UseVisualStyleBackColor = false;
 			this->btn_Show_Smartphone->Click += gcnew System::EventHandler(this, &View_Form::btn_Show_Smartphone_Click);
 			// 
@@ -195,14 +248,15 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 			// 
 			this->btn_Back->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->btn_Back->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->btn_Back->Location = System::Drawing::Point(830, 624);
+			this->btn_Back->BackColor = System::Drawing::SystemColors::Control;
+			this->btn_Back->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_Back->Location = System::Drawing::Point(940, 615);
 			this->btn_Back->Name = L"btn_Back";
-			this->btn_Back->Size = System::Drawing::Size(224, 37);
+			this->btn_Back->Size = System::Drawing::Size(164, 46);
 			this->btn_Back->TabIndex = 3;
-			this->btn_Back->Text = L"Back";
-			this->btn_Back->UseVisualStyleBackColor = true;
+			this->btn_Back->Text = L"       Back";
+			this->btn_Back->UseVisualStyleBackColor = false;
 			this->btn_Back->Click += gcnew System::EventHandler(this, &View_Form::btn_Back_Click);
 			// 
 			// dataGridView2
@@ -217,7 +271,7 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 			this->dataGridView2->Name = L"dataGridView2";
 			this->dataGridView2->RowHeadersWidth = 51;
 			this->dataGridView2->RowTemplate->Height = 24;
-			this->dataGridView2->Size = System::Drawing::Size(1252, 341);
+			this->dataGridView2->Size = System::Drawing::Size(1252, 330);
 			this->dataGridView2->TabIndex = 4;
 			// 
 			// dataGridView3
@@ -232,7 +286,7 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 			this->dataGridView3->Name = L"dataGridView3";
 			this->dataGridView3->RowHeadersWidth = 51;
 			this->dataGridView3->RowTemplate->Height = 24;
-			this->dataGridView3->Size = System::Drawing::Size(1252, 341);
+			this->dataGridView3->Size = System::Drawing::Size(1252, 330);
 			this->dataGridView3->TabIndex = 5;
 			// 
 			// btn_ExportToExcel
@@ -270,6 +324,18 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"VIEW INFORMATION PRODUCT";
 			// 
+			// pictureBox4
+			// 
+			this->pictureBox4->BackColor = System::Drawing::SystemColors::Control;
+			this->pictureBox4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.Image")));
+			this->pictureBox4->Location = System::Drawing::Point(949, 619);
+			this->pictureBox4->Name = L"pictureBox4";
+			this->pictureBox4->Size = System::Drawing::Size(41, 39);
+			this->pictureBox4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox4->TabIndex = 9;
+			this->pictureBox4->TabStop = false;
+			this->pictureBox4->Click += gcnew System::EventHandler(this, &View_Form::pictureBox4_Click);
+			// 
 			// View_Form
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(7, 17);
@@ -277,6 +343,7 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(1299, 673);
 			this->Controls->Add(this->panel1);
+			this->Controls->Add(this->pictureBox4);
 			this->Controls->Add(this->btn_ExportToExcel);
 			this->Controls->Add(this->dataGridView3);
 			this->Controls->Add(this->dataGridView2);
@@ -293,10 +360,14 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 			this->Load += gcnew System::EventHandler(this, &View_Form::View_Form_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->groupBox1->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->EndInit();
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -494,14 +565,24 @@ private: System::Void btn_Show_SmartWatch_Click(System::Object^ sender, System::
 		//Copy the file to a new folder and rename it.
 
 		//CopyFile("D:/WorkSpace/PBL2_GUI/PBL2/PBL2/db_laptop.csv", "D:D:/WorkSpace/PBL2_GUI/PBL2/PBL2Test/Test.csv", true)
+		
 	}
 private: System::Void View_Form_Load(System::Object^ sender, System::EventArgs^ e) {
-	dataGridView1->ReadOnly;
 	Load_Data_Of_Smartwatch();
 	Load_Data_Of_Smartphone();
 	Load_Data_Of_Laptop();
 }
-private: System::Void pic_Back_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+	btn_Show_Smartphone_Click(sender, e);
+}
+private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
+	btn_Show_Laptop_Click(sender, e);
+}
+private: System::Void pictureBox3_Click(System::Object^ sender, System::EventArgs^ e) {
+	btn_Show_SmartWatch_Click(sender, e);
+}
+private: System::Void pictureBox4_Click(System::Object^ sender, System::EventArgs^ e) {
+	btn_Back_Click(sender, e);
 }
 };
 }

@@ -24,6 +24,7 @@ namespace PBL2 {
 
 	private: System::Windows::Forms::DataGridView^ dataGridView2;
 	private: System::Windows::Forms::DataGridView^ dataGridView3;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
 
 
 	public:
@@ -93,12 +94,14 @@ namespace PBL2 {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
 			this->dataGridView3 = (gcnew System::Windows::Forms::DataGridView());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btn_Search))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// panel1
@@ -171,14 +174,14 @@ namespace PBL2 {
 			// 
 			// btn_Back
 			// 
-			this->btn_Back->BackColor = System::Drawing::Color::PaleTurquoise;
+			this->btn_Back->BackColor = System::Drawing::SystemColors::Control;
 			this->btn_Back->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->btn_Back->Location = System::Drawing::Point(1010, 600);
 			this->btn_Back->Name = L"btn_Back";
-			this->btn_Back->Size = System::Drawing::Size(156, 50);
+			this->btn_Back->Size = System::Drawing::Size(168, 56);
 			this->btn_Back->TabIndex = 5;
-			this->btn_Back->Text = L"Back";
+			this->btn_Back->Text = L"      Back";
 			this->btn_Back->UseVisualStyleBackColor = false;
 			this->btn_Back->Click += gcnew System::EventHandler(this, &Search_Form::button1_Click);
 			// 
@@ -217,12 +220,24 @@ namespace PBL2 {
 			this->dataGridView3->Size = System::Drawing::Size(1252, 247);
 			this->dataGridView3->TabIndex = 9;
 			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::SystemColors::Control;
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(1020, 605);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(45, 46);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox1->TabIndex = 10;
+			this->pictureBox1->TabStop = false;
+			// 
 			// Search_Form
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(7, 17);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(1289, 673);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->dataGridView3);
 			this->Controls->Add(this->dataGridView2);
 			this->Controls->Add(this->label2);
@@ -245,6 +260,7 @@ namespace PBL2 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -386,7 +402,6 @@ private: System::Void btn_Search_Click(System::Object^ sender, System::EventArgs
 					dataGridView3->Hide();
 					CreateNewRow_LT(i);
 					check = 1;
-					break;
 				}
 			}
 			if (check == 1) {
@@ -401,7 +416,6 @@ private: System::Void btn_Search_Click(System::Object^ sender, System::EventArgs
 					dataGridView2->Hide();
 					CreateNewRow_SW(i);
 					check = 1;
-					break;
 				}
 			}
 			if (check == 1) {
@@ -415,7 +429,6 @@ private: System::Void btn_Search_Click(System::Object^ sender, System::EventArgs
 					dataGridView3->Hide();
 					CreateNewRow_SP(i);
 					check = 1;
-					break;
 				}
 			}
 			if (check == 1) {

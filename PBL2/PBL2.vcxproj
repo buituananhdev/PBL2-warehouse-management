@@ -170,10 +170,12 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <None Include="db_invoice.csv" />
     <None Include="db_laptop.csv" />
     <None Include="db_smartphone.csv" />
     <None Include="db_smartwatch.csv" />
     <None Include="db_user.csv" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Office.Interop.Excel">

@@ -39,6 +39,10 @@ namespace PBL2 {
 		DataTable^ Smartwatch_Device = gcnew DataTable();
 	public:int IndexCounterLT = 0;
 	public:int IndexCounterSP = 0;
+	private: System::Windows::Forms::PictureBox^ pictureBox3;
+	public:
+	private: System::Windows::Forms::PictureBox^ pictureBox2;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	public:int IndexCounterSW = 0;
 	protected:
 		/// <summary>
@@ -134,6 +138,7 @@ namespace PBL2 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Update_Form::typeid));
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->btn_Clear = (gcnew System::Windows::Forms::Button());
@@ -167,11 +172,17 @@ namespace PBL2 {
 			this->combobox_Type_Device = (gcnew System::Windows::Forms::ComboBox());
 			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
 			this->dataGridView3 = (gcnew System::Windows::Forms::DataGridView());
+			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel1->SuspendLayout();
 			this->groupBox1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// panel1
@@ -197,38 +208,41 @@ namespace PBL2 {
 			// 
 			// btn_Clear
 			// 
+			this->btn_Clear->BackColor = System::Drawing::SystemColors::Control;
 			this->btn_Clear->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_Clear->Location = System::Drawing::Point(1124, 347);
+			this->btn_Clear->Location = System::Drawing::Point(1109, 271);
 			this->btn_Clear->Name = L"btn_Clear";
-			this->btn_Clear->Size = System::Drawing::Size(116, 51);
+			this->btn_Clear->Size = System::Drawing::Size(153, 51);
 			this->btn_Clear->TabIndex = 8;
-			this->btn_Clear->Text = L"Clear";
-			this->btn_Clear->UseVisualStyleBackColor = true;
+			this->btn_Clear->Text = L"      Clear";
+			this->btn_Clear->UseVisualStyleBackColor = false;
 			this->btn_Clear->Click += gcnew System::EventHandler(this, &Update_Form::btn_Clear_Click);
 			// 
 			// btn_Back
 			// 
+			this->btn_Back->BackColor = System::Drawing::SystemColors::Control;
 			this->btn_Back->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_Back->Location = System::Drawing::Point(1124, 269);
+			this->btn_Back->Location = System::Drawing::Point(1109, 342);
 			this->btn_Back->Name = L"btn_Back";
-			this->btn_Back->Size = System::Drawing::Size(116, 51);
+			this->btn_Back->Size = System::Drawing::Size(153, 51);
 			this->btn_Back->TabIndex = 6;
-			this->btn_Back->Text = L"Back";
-			this->btn_Back->UseVisualStyleBackColor = true;
+			this->btn_Back->Text = L"      Back";
+			this->btn_Back->UseVisualStyleBackColor = false;
 			this->btn_Back->Click += gcnew System::EventHandler(this, &Update_Form::btn_Back_Click);
 			// 
 			// btn_Save
 			// 
+			this->btn_Save->BackColor = System::Drawing::SystemColors::Control;
 			this->btn_Save->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_Save->Location = System::Drawing::Point(1124, 192);
+			this->btn_Save->Location = System::Drawing::Point(1109, 193);
 			this->btn_Save->Name = L"btn_Save";
-			this->btn_Save->Size = System::Drawing::Size(116, 51);
+			this->btn_Save->Size = System::Drawing::Size(153, 51);
 			this->btn_Save->TabIndex = 7;
-			this->btn_Save->Text = L"Save";
-			this->btn_Save->UseVisualStyleBackColor = true;
+			this->btn_Save->Text = L"     Save";
+			this->btn_Save->UseVisualStyleBackColor = false;
 			this->btn_Save->Click += gcnew System::EventHandler(this, &Update_Form::btn_Save_Click);
 			// 
 			// groupBox1
@@ -256,7 +270,7 @@ namespace PBL2 {
 			this->groupBox1->Controls->Add(this->txt_ID);
 			this->groupBox1->Controls->Add(this->label2);
 			this->groupBox1->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 12.2F, System::Drawing::FontStyle::Bold));
-			this->groupBox1->Location = System::Drawing::Point(138, 174);
+			this->groupBox1->Location = System::Drawing::Point(125, 166);
 			this->groupBox1->Name = L"groupBox1";
 			this->groupBox1->Size = System::Drawing::Size(932, 243);
 			this->groupBox1->TabIndex = 5;
@@ -287,11 +301,11 @@ namespace PBL2 {
 			// 
 			// txt_Card
 			// 
-			this->txt_Card->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txt_Card->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->txt_Card->Location = System::Drawing::Point(655, 104);
 			this->txt_Card->Name = L"txt_Card";
-			this->txt_Card->Size = System::Drawing::Size(207, 30);
+			this->txt_Card->Size = System::Drawing::Size(207, 34);
 			this->txt_Card->TabIndex = 1;
 			// 
 			// labe_Card
@@ -307,20 +321,20 @@ namespace PBL2 {
 			// 
 			// txt_RAM
 			// 
-			this->txt_RAM->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txt_RAM->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->txt_RAM->Location = System::Drawing::Point(655, 105);
 			this->txt_RAM->Name = L"txt_RAM";
-			this->txt_RAM->Size = System::Drawing::Size(207, 30);
+			this->txt_RAM->Size = System::Drawing::Size(207, 34);
 			this->txt_RAM->TabIndex = 1;
 			// 
 			// txt_Size
 			// 
-			this->txt_Size->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txt_Size->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->txt_Size->Location = System::Drawing::Point(655, 104);
 			this->txt_Size->Name = L"txt_Size";
-			this->txt_Size->Size = System::Drawing::Size(207, 30);
+			this->txt_Size->Size = System::Drawing::Size(207, 34);
 			this->txt_Size->TabIndex = 1;
 			// 
 			// label_Battery
@@ -347,11 +361,11 @@ namespace PBL2 {
 			// 
 			// txt_PriceF
 			// 
-			this->txt_PriceF->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txt_PriceF->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->txt_PriceF->Location = System::Drawing::Point(655, 61);
 			this->txt_PriceF->Name = L"txt_PriceF";
-			this->txt_PriceF->Size = System::Drawing::Size(207, 30);
+			this->txt_PriceF->Size = System::Drawing::Size(207, 34);
 			this->txt_PriceF->TabIndex = 1;
 			// 
 			// label_ROM
@@ -378,29 +392,29 @@ namespace PBL2 {
 			// 
 			// txt_Batterry
 			// 
-			this->txt_Batterry->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txt_Batterry->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->txt_Batterry->Location = System::Drawing::Point(655, 144);
 			this->txt_Batterry->Name = L"txt_Batterry";
-			this->txt_Batterry->Size = System::Drawing::Size(207, 30);
+			this->txt_Batterry->Size = System::Drawing::Size(207, 34);
 			this->txt_Batterry->TabIndex = 1;
 			// 
 			// txt_PriceE
 			// 
-			this->txt_PriceE->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txt_PriceE->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->txt_PriceE->Location = System::Drawing::Point(156, 194);
 			this->txt_PriceE->Name = L"txt_PriceE";
-			this->txt_PriceE->Size = System::Drawing::Size(207, 30);
+			this->txt_PriceE->Size = System::Drawing::Size(207, 34);
 			this->txt_PriceE->TabIndex = 1;
 			// 
 			// txt_ROM
 			// 
-			this->txt_ROM->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txt_ROM->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->txt_ROM->Location = System::Drawing::Point(655, 145);
 			this->txt_ROM->Name = L"txt_ROM";
-			this->txt_ROM->Size = System::Drawing::Size(207, 30);
+			this->txt_ROM->Size = System::Drawing::Size(207, 34);
 			this->txt_ROM->TabIndex = 1;
 			// 
 			// label6
@@ -416,20 +430,20 @@ namespace PBL2 {
 			// 
 			// txt_Weight
 			// 
-			this->txt_Weight->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txt_Weight->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->txt_Weight->Location = System::Drawing::Point(655, 144);
 			this->txt_Weight->Name = L"txt_Weight";
-			this->txt_Weight->Size = System::Drawing::Size(207, 30);
+			this->txt_Weight->Size = System::Drawing::Size(207, 34);
 			this->txt_Weight->TabIndex = 1;
 			// 
 			// txt_Brand
 			// 
-			this->txt_Brand->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txt_Brand->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->txt_Brand->Location = System::Drawing::Point(156, 147);
 			this->txt_Brand->Name = L"txt_Brand";
-			this->txt_Brand->Size = System::Drawing::Size(207, 30);
+			this->txt_Brand->Size = System::Drawing::Size(207, 34);
 			this->txt_Brand->TabIndex = 1;
 			// 
 			// label5
@@ -445,11 +459,11 @@ namespace PBL2 {
 			// 
 			// txt_Name
 			// 
-			this->txt_Name->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txt_Name->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->txt_Name->Location = System::Drawing::Point(156, 104);
 			this->txt_Name->Name = L"txt_Name";
-			this->txt_Name->Size = System::Drawing::Size(207, 30);
+			this->txt_Name->Size = System::Drawing::Size(207, 34);
 			this->txt_Name->TabIndex = 1;
 			// 
 			// label4
@@ -465,12 +479,12 @@ namespace PBL2 {
 			// 
 			// txt_ID
 			// 
-			this->txt_ID->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txt_ID->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->txt_ID->Location = System::Drawing::Point(156, 61);
 			this->txt_ID->Name = L"txt_ID";
 			this->txt_ID->ReadOnly = true;
-			this->txt_ID->Size = System::Drawing::Size(207, 30);
+			this->txt_ID->Size = System::Drawing::Size(207, 34);
 			this->txt_ID->TabIndex = 1;
 			// 
 			// label2
@@ -489,7 +503,7 @@ namespace PBL2 {
 			this->dataGridView1->BackgroundColor = System::Drawing::Color::White;
 			this->dataGridView1->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(20, 431);
+			this->dataGridView1->Location = System::Drawing::Point(20, 447);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
@@ -502,7 +516,7 @@ namespace PBL2 {
 			this->label9->AutoSize = true;
 			this->label9->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 13.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label9->Location = System::Drawing::Point(51, 130);
+			this->label9->Location = System::Drawing::Point(50, 118);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(141, 30);
 			this->label9->TabIndex = 0;
@@ -514,7 +528,7 @@ namespace PBL2 {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->combobox_Type_Device->FormattingEnabled = true;
 			this->combobox_Type_Device->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Smart Phone", L"Laptop", L"Smart Watch" });
-			this->combobox_Type_Device->Location = System::Drawing::Point(216, 130);
+			this->combobox_Type_Device->Location = System::Drawing::Point(215, 118);
 			this->combobox_Type_Device->Name = L"combobox_Type_Device";
 			this->combobox_Type_Device->Size = System::Drawing::Size(180, 31);
 			this->combobox_Type_Device->TabIndex = 2;
@@ -525,7 +539,7 @@ namespace PBL2 {
 			this->dataGridView2->BackgroundColor = System::Drawing::Color::White;
 			this->dataGridView2->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView2->Location = System::Drawing::Point(20, 431);
+			this->dataGridView2->Location = System::Drawing::Point(20, 447);
 			this->dataGridView2->Name = L"dataGridView2";
 			this->dataGridView2->RowHeadersWidth = 51;
 			this->dataGridView2->RowTemplate->Height = 24;
@@ -538,7 +552,7 @@ namespace PBL2 {
 			this->dataGridView3->BackgroundColor = System::Drawing::Color::White;
 			this->dataGridView3->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dataGridView3->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView3->Location = System::Drawing::Point(20, 431);
+			this->dataGridView3->Location = System::Drawing::Point(19, 435);
 			this->dataGridView3->Name = L"dataGridView3";
 			this->dataGridView3->RowHeadersWidth = 51;
 			this->dataGridView3->RowTemplate->Height = 24;
@@ -546,12 +560,48 @@ namespace PBL2 {
 			this->dataGridView3->TabIndex = 11;
 			this->dataGridView3->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Update_Form::dataGridView3_CellContentClick);
 			// 
+			// pictureBox3
+			// 
+			this->pictureBox3->BackColor = System::Drawing::SystemColors::Control;
+			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
+			this->pictureBox3->Location = System::Drawing::Point(1115, 349);
+			this->pictureBox3->Name = L"pictureBox3";
+			this->pictureBox3->Size = System::Drawing::Size(45, 38);
+			this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox3->TabIndex = 15;
+			this->pictureBox3->TabStop = false;
+			// 
+			// pictureBox2
+			// 
+			this->pictureBox2->BackColor = System::Drawing::SystemColors::Control;
+			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
+			this->pictureBox2->Location = System::Drawing::Point(1116, 278);
+			this->pictureBox2->Name = L"pictureBox2";
+			this->pictureBox2->Size = System::Drawing::Size(44, 38);
+			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox2->TabIndex = 16;
+			this->pictureBox2->TabStop = false;
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::SystemColors::Control;
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(1115, 199);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(45, 38);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox1->TabIndex = 17;
+			this->pictureBox1->TabStop = false;
+			// 
 			// Update_Form
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(7, 17);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(1289, 673);
+			this->Controls->Add(this->pictureBox3);
+			this->Controls->Add(this->pictureBox2);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->dataGridView3);
 			this->Controls->Add(this->dataGridView2);
 			this->Controls->Add(this->dataGridView1);
@@ -577,6 +627,9 @@ namespace PBL2 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

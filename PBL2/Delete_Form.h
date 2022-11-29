@@ -29,6 +29,9 @@ namespace PBL2 {
 	private: System::Windows::Forms::PictureBox^ btn_Search;
 	private: System::Windows::Forms::Label^ label_Infor;
 
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::PictureBox^ pictureBox2;
+
 	public:
 
 		   Form^ Main_Form;
@@ -96,12 +99,16 @@ namespace PBL2 {
 			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
 			this->dataGridView3 = (gcnew System::Windows::Forms::DataGridView());
 			this->label_Infor = (gcnew System::Windows::Forms::Label());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btn_Search))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// panel1
@@ -173,24 +180,27 @@ namespace PBL2 {
 			// 
 			// btn_Back
 			// 
-			this->btn_Back->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 11.8F, System::Drawing::FontStyle::Bold));
-			this->btn_Back->Location = System::Drawing::Point(1056, 595);
+			this->btn_Back->BackColor = System::Drawing::SystemColors::Control;
+			this->btn_Back->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_Back->Location = System::Drawing::Point(1055, 582);
 			this->btn_Back->Name = L"btn_Back";
-			this->btn_Back->Size = System::Drawing::Size(134, 41);
+			this->btn_Back->Size = System::Drawing::Size(158, 51);
 			this->btn_Back->TabIndex = 3;
-			this->btn_Back->Text = L"Back";
-			this->btn_Back->UseVisualStyleBackColor = true;
+			this->btn_Back->Text = L"      Back";
+			this->btn_Back->UseVisualStyleBackColor = false;
 			this->btn_Back->Click += gcnew System::EventHandler(this, &Delete_Form::btn_Back_Click);
 			// 
 			// btn_Delete
 			// 
+			this->btn_Delete->BackColor = System::Drawing::SystemColors::Control;
 			this->btn_Delete->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 11.8F, System::Drawing::FontStyle::Bold));
-			this->btn_Delete->Location = System::Drawing::Point(873, 595);
+			this->btn_Delete->Location = System::Drawing::Point(841, 582);
 			this->btn_Delete->Name = L"btn_Delete";
-			this->btn_Delete->Size = System::Drawing::Size(134, 41);
+			this->btn_Delete->Size = System::Drawing::Size(162, 51);
 			this->btn_Delete->TabIndex = 3;
-			this->btn_Delete->Text = L"Remove";
-			this->btn_Delete->UseVisualStyleBackColor = true;
+			this->btn_Delete->Text = L"      Remove";
+			this->btn_Delete->UseVisualStyleBackColor = false;
 			this->btn_Delete->Click += gcnew System::EventHandler(this, &Delete_Form::button1_Click);
 			// 
 			// dataGridView2
@@ -214,7 +224,7 @@ namespace PBL2 {
 			this->dataGridView3->Name = L"dataGridView3";
 			this->dataGridView3->RowHeadersWidth = 51;
 			this->dataGridView3->RowTemplate->Height = 24;
-			this->dataGridView3->Size = System::Drawing::Size(1252, 300);
+			this->dataGridView3->Size = System::Drawing::Size(1252, 285);
 			this->dataGridView3->TabIndex = 5;
 			// 
 			// label_Infor
@@ -227,12 +237,38 @@ namespace PBL2 {
 			this->label_Infor->Size = System::Drawing::Size(0, 23);
 			this->label_Infor->TabIndex = 6;
 			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::SystemColors::Control;
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(1066, 589);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(41, 39);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox1->TabIndex = 9;
+			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &Delete_Form::pictureBox1_Click);
+			// 
+			// pictureBox2
+			// 
+			this->pictureBox2->BackColor = System::Drawing::SystemColors::Control;
+			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
+			this->pictureBox2->Location = System::Drawing::Point(851, 590);
+			this->pictureBox2->Name = L"pictureBox2";
+			this->pictureBox2->Size = System::Drawing::Size(42, 36);
+			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox2->TabIndex = 10;
+			this->pictureBox2->TabStop = false;
+			this->pictureBox2->Click += gcnew System::EventHandler(this, &Delete_Form::pictureBox2_Click);
+			// 
 			// Delete_Form
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(7, 17);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(1289, 673);
+			this->Controls->Add(this->pictureBox2);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->label_Infor);
 			this->Controls->Add(this->dataGridView3);
 			this->Controls->Add(this->dataGridView2);
@@ -256,6 +292,8 @@ namespace PBL2 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -389,16 +427,15 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	else {
 		if (CheckTypeDelete == 1)
 		{
-			//Remove<SmartPhone>(index,"db_smartphone.csv");
-			Remove_ID_SP(indexDelete);
+			listSP.Remove(indexDelete);
 			Save_Data_SmartPhone();
 		}
 		else if (CheckTypeDelete == 2) {
-			Remove_ID_LT(indexDelete);
+			listLT.Remove(indexDelete);
 			Save_Data_Laptop();
 		}
 		else if (CheckTypeDelete == 3) {
-			Remove_ID_SW(indexDelete);
+			listSW.Remove(indexDelete);
 			Save_Data_SmartWatch();
 		}
 		MessageBox::Show("Remove Successfully", "Success", MessageBoxButtons::OK
@@ -467,6 +504,12 @@ private: System::Void txt_Index_Delete_Click(System::Object^ sender, System::Eve
 	if (txt_Index_Delete->Text == "Enter the ID of the product you want to remove") {
 		txt_Index_Delete->Text = "";
 	}
+}
+private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
+	button1_Click(sender, e);
+}
+private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+	btn_Back_Click(sender, e);
 }
 };
 }

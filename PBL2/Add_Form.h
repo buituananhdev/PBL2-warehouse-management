@@ -22,9 +22,9 @@ namespace PBL2 {
 		   DataTable^ Smartphone_Device = gcnew DataTable();
 		   DataTable^ Laptop_Device = gcnew DataTable();
 		   DataTable^ Smartwatch_Device = gcnew DataTable();
-	public:int IndexCounterLT = NumOfDV("db_laptop.csv") + 1;
-	public:int IndexCounterSP = NumOfDV("db_smartphone.csv") + 1;
-	public:int IndexCounterSW = NumOfDV("db_smartwatch.csv") + 1;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::PictureBox^ pictureBox2;
+	private: System::Windows::Forms::PictureBox^ pictureBox3;
 	public:
 		Form^ Main_Form;
 		Add_Form(Form^ tmpForm)
@@ -112,6 +112,7 @@ namespace PBL2 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Add_Form::typeid));
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->txt_Size = (gcnew System::Windows::Forms::TextBox());
@@ -143,11 +144,17 @@ namespace PBL2 {
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
 			this->dataGridView3 = (gcnew System::Windows::Forms::DataGridView());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->groupBox1->SuspendLayout();
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// label1
@@ -195,10 +202,11 @@ namespace PBL2 {
 			// 
 			// txt_Size
 			// 
-			this->txt_Size->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.8F));
+			this->txt_Size->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->txt_Size->Location = System::Drawing::Point(640, 110);
 			this->txt_Size->Name = L"txt_Size";
-			this->txt_Size->Size = System::Drawing::Size(207, 31);
+			this->txt_Size->Size = System::Drawing::Size(207, 34);
 			this->txt_Size->TabIndex = 1;
 			// 
 			// label_Size
@@ -214,10 +222,11 @@ namespace PBL2 {
 			// 
 			// txt_Card
 			// 
-			this->txt_Card->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.8F));
+			this->txt_Card->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->txt_Card->Location = System::Drawing::Point(640, 110);
 			this->txt_Card->Name = L"txt_Card";
-			this->txt_Card->Size = System::Drawing::Size(207, 31);
+			this->txt_Card->Size = System::Drawing::Size(207, 34);
 			this->txt_Card->TabIndex = 1;
 			// 
 			// label_Battery
@@ -243,10 +252,11 @@ namespace PBL2 {
 			// 
 			// txt_Batterry
 			// 
-			this->txt_Batterry->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.8F));
+			this->txt_Batterry->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->txt_Batterry->Location = System::Drawing::Point(640, 157);
 			this->txt_Batterry->Name = L"txt_Batterry";
-			this->txt_Batterry->Size = System::Drawing::Size(207, 31);
+			this->txt_Batterry->Size = System::Drawing::Size(207, 34);
 			this->txt_Batterry->TabIndex = 1;
 			// 
 			// label_RAM
@@ -271,29 +281,31 @@ namespace PBL2 {
 			// 
 			// txt_Weight
 			// 
-			this->txt_Weight->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.8F));
+			this->txt_Weight->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->txt_Weight->Location = System::Drawing::Point(640, 157);
 			this->txt_Weight->Name = L"txt_Weight";
-			this->txt_Weight->Size = System::Drawing::Size(207, 31);
+			this->txt_Weight->Size = System::Drawing::Size(207, 34);
 			this->txt_Weight->TabIndex = 1;
 			// 
 			// txt_RAM
 			// 
-			this->txt_RAM->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.8F));
+			this->txt_RAM->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->txt_RAM->Location = System::Drawing::Point(640, 110);
 			this->txt_RAM->Name = L"txt_RAM";
-			this->txt_RAM->Size = System::Drawing::Size(207, 31);
+			this->txt_RAM->Size = System::Drawing::Size(207, 34);
 			this->txt_RAM->TabIndex = 1;
 			// 
 			// combo_box_txt_TypeofDV
 			// 
-			this->combo_box_txt_TypeofDV->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->combo_box_txt_TypeofDV->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->combo_box_txt_TypeofDV->FormattingEnabled = true;
 			this->combo_box_txt_TypeofDV->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Smart Phone", L"Laptop", L"Smart Watch" });
 			this->combo_box_txt_TypeofDV->Location = System::Drawing::Point(188, 62);
 			this->combo_box_txt_TypeofDV->Name = L"combo_box_txt_TypeofDV";
-			this->combo_box_txt_TypeofDV->Size = System::Drawing::Size(207, 31);
+			this->combo_box_txt_TypeofDV->Size = System::Drawing::Size(207, 36);
 			this->combo_box_txt_TypeofDV->TabIndex = 2;
 			this->combo_box_txt_TypeofDV->SelectedIndexChanged += gcnew System::EventHandler(this, &Add_Form::combo_box_txt_TypeofDV_SelectedIndexChanged);
 			// 
@@ -309,18 +321,20 @@ namespace PBL2 {
 			// 
 			// txt_ROM
 			// 
-			this->txt_ROM->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.8F));
+			this->txt_ROM->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->txt_ROM->Location = System::Drawing::Point(640, 157);
 			this->txt_ROM->Name = L"txt_ROM";
-			this->txt_ROM->Size = System::Drawing::Size(207, 31);
+			this->txt_ROM->Size = System::Drawing::Size(207, 34);
 			this->txt_ROM->TabIndex = 1;
 			// 
 			// txt_PriceE
 			// 
-			this->txt_PriceE->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.8F));
+			this->txt_PriceE->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->txt_PriceE->Location = System::Drawing::Point(640, 63);
 			this->txt_PriceE->Name = L"txt_PriceE";
-			this->txt_PriceE->Size = System::Drawing::Size(207, 31);
+			this->txt_PriceE->Size = System::Drawing::Size(207, 34);
 			this->txt_PriceE->TabIndex = 1;
 			// 
 			// label8
@@ -336,10 +350,11 @@ namespace PBL2 {
 			// 
 			// txt_PriceF
 			// 
-			this->txt_PriceF->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.8F));
+			this->txt_PriceF->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->txt_PriceF->Location = System::Drawing::Point(188, 201);
 			this->txt_PriceF->Name = L"txt_PriceF";
-			this->txt_PriceF->Size = System::Drawing::Size(207, 31);
+			this->txt_PriceF->Size = System::Drawing::Size(207, 34);
 			this->txt_PriceF->TabIndex = 1;
 			// 
 			// label6
@@ -355,10 +370,11 @@ namespace PBL2 {
 			// 
 			// txt_Brand
 			// 
-			this->txt_Brand->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.8F));
+			this->txt_Brand->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->txt_Brand->Location = System::Drawing::Point(188, 158);
 			this->txt_Brand->Name = L"txt_Brand";
-			this->txt_Brand->Size = System::Drawing::Size(207, 31);
+			this->txt_Brand->Size = System::Drawing::Size(207, 34);
 			this->txt_Brand->TabIndex = 1;
 			// 
 			// label5
@@ -374,10 +390,11 @@ namespace PBL2 {
 			// 
 			// txt_Name
 			// 
-			this->txt_Name->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.8F));
+			this->txt_Name->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->txt_Name->Location = System::Drawing::Point(188, 110);
 			this->txt_Name->Name = L"txt_Name";
-			this->txt_Name->Size = System::Drawing::Size(207, 31);
+			this->txt_Name->Size = System::Drawing::Size(207, 34);
 			this->txt_Name->TabIndex = 1;
 			// 
 			// label4
@@ -404,26 +421,28 @@ namespace PBL2 {
 			// 
 			// btn_Save
 			// 
-			this->btn_Save->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btn_Save->BackColor = System::Drawing::SystemColors::Control;
+			this->btn_Save->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_Save->Location = System::Drawing::Point(1109, 179);
+			this->btn_Save->Location = System::Drawing::Point(1091, 164);
 			this->btn_Save->Name = L"btn_Save";
-			this->btn_Save->Size = System::Drawing::Size(109, 41);
+			this->btn_Save->Size = System::Drawing::Size(153, 51);
 			this->btn_Save->TabIndex = 2;
-			this->btn_Save->Text = L"Save";
-			this->btn_Save->UseVisualStyleBackColor = true;
+			this->btn_Save->Text = L"      Save";
+			this->btn_Save->UseVisualStyleBackColor = false;
 			this->btn_Save->Click += gcnew System::EventHandler(this, &Add_Form::btn_Save_Click);
 			// 
 			// btn_Back
 			// 
+			this->btn_Back->BackColor = System::Drawing::SystemColors::Control;
 			this->btn_Back->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_Back->Location = System::Drawing::Point(1109, 300);
+			this->btn_Back->Location = System::Drawing::Point(1091, 309);
 			this->btn_Back->Name = L"btn_Back";
-			this->btn_Back->Size = System::Drawing::Size(109, 41);
+			this->btn_Back->Size = System::Drawing::Size(153, 49);
 			this->btn_Back->TabIndex = 2;
-			this->btn_Back->Text = L"Back";
-			this->btn_Back->UseVisualStyleBackColor = true;
+			this->btn_Back->Text = L"      Back";
+			this->btn_Back->UseVisualStyleBackColor = false;
 			this->btn_Back->Click += gcnew System::EventHandler(this, &Add_Form::btn_Back_Click);
 			// 
 			// panel1
@@ -438,14 +457,15 @@ namespace PBL2 {
 			// 
 			// btn_Clear
 			// 
+			this->btn_Clear->BackColor = System::Drawing::SystemColors::Control;
 			this->btn_Clear->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_Clear->Location = System::Drawing::Point(1109, 240);
+			this->btn_Clear->Location = System::Drawing::Point(1091, 236);
 			this->btn_Clear->Name = L"btn_Clear";
-			this->btn_Clear->Size = System::Drawing::Size(109, 40);
+			this->btn_Clear->Size = System::Drawing::Size(153, 51);
 			this->btn_Clear->TabIndex = 4;
-			this->btn_Clear->Text = L"Clear";
-			this->btn_Clear->UseVisualStyleBackColor = true;
+			this->btn_Clear->Text = L"      Clear";
+			this->btn_Clear->UseVisualStyleBackColor = false;
 			this->btn_Clear->Click += gcnew System::EventHandler(this, &Add_Form::btn_Clear_Click);
 			// 
 			// dataGridView1
@@ -487,12 +507,51 @@ namespace PBL2 {
 			this->dataGridView3->Size = System::Drawing::Size(1252, 185);
 			this->dataGridView3->TabIndex = 7;
 			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::SystemColors::Control;
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(1100, 171);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(45, 38);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox1->TabIndex = 8;
+			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &Add_Form::pictureBox1_Click);
+			// 
+			// pictureBox2
+			// 
+			this->pictureBox2->BackColor = System::Drawing::SystemColors::Control;
+			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
+			this->pictureBox2->Location = System::Drawing::Point(1101, 243);
+			this->pictureBox2->Name = L"pictureBox2";
+			this->pictureBox2->Size = System::Drawing::Size(44, 38);
+			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox2->TabIndex = 8;
+			this->pictureBox2->TabStop = false;
+			this->pictureBox2->Click += gcnew System::EventHandler(this, &Add_Form::pictureBox2_Click);
+			// 
+			// pictureBox3
+			// 
+			this->pictureBox3->BackColor = System::Drawing::SystemColors::Control;
+			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
+			this->pictureBox3->Location = System::Drawing::Point(1100, 315);
+			this->pictureBox3->Name = L"pictureBox3";
+			this->pictureBox3->Size = System::Drawing::Size(45, 38);
+			this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox3->TabIndex = 8;
+			this->pictureBox3->TabStop = false;
+			this->pictureBox3->Click += gcnew System::EventHandler(this, &Add_Form::pictureBox3_Click);
+			// 
 			// Add_Form
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(7, 17);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(1289, 683);
+			this->Controls->Add(this->pictureBox3);
+			this->Controls->Add(this->pictureBox2);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->dataGridView3);
 			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->dataGridView2);
@@ -516,11 +575,14 @@ namespace PBL2 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-	public:void CreateNewRow_LT()
+	public:void CreateNewRow_LT(int IndexCounterLT)
 	{
 		string tmpPriceF = to_string(listLT[IndexCounterLT].getPriceF());
 		string tmpPriceE = to_string(listLT[IndexCounterLT].getPriceE());
@@ -557,7 +619,7 @@ namespace PBL2 {
 			}
 		}
 	}
-	public:void CreateNewRow_SP()
+	public:void CreateNewRow_SP(int IndexCounterSP)
 	{
 		string tmpPriceF = to_string(listSP[IndexCounterSP].getPriceF());
 		string tmpPriceE = to_string(listSP[IndexCounterSP].getPriceE());
@@ -595,7 +657,7 @@ namespace PBL2 {
 		}
 
 	}
-	public:void CreateNewRow_SW()
+	public:void CreateNewRow_SW(int IndexCounterSW)
 	{
 		string tmpPriceF = to_string(listSW[IndexCounterSW].getPriceF());
 		string tmpPriceE = to_string(listSW[IndexCounterSW].getPriceE());
@@ -719,110 +781,107 @@ namespace PBL2 {
 				}
 				if (combo_box_txt_TypeofDV->Text == "Smart Phone")
 				{
-					int index = NumOfDV("db_smartphone.csv") + 1;
-					string tempStrID = "SP0" + to_string(index);
-					listSP[index].setID(tempStrID);
-					listSP[index].setName(tempStrName);
-					listSP[index].setBrand(tempStrBrand);
+					SmartPhone tmp;
+					string tempStrID = "SP0" + to_string(NumOfDV("db_smartphone.csv") + 1);
+					tmp.setID(tempStrID);
+					tmp.setName(tempStrName);
+					tmp.setBrand(tempStrBrand);
 					double tmpPriceE = stod(tempStrPriceE);
-					listSP[index].setPriceE(tmpPriceE);
+					tmp.setPriceE(tmpPriceE);
 					double tempPriceF = stod(tempStrPriceF);
-					listSP[index].setPriceF(tempPriceF);
+					tmp.setPriceF(tempPriceF);
 					int tmpInt = 0;
 					double tmpDouble = 0;
-					listSP[index].setAmount(tmpInt);
-					listSP[index].setSales(tmpInt);
-					listSP[index].setRevenue(tmpDouble);
+					tmp.setAmount(tmpInt);
+					tmp.setSales(tmpInt);
+					tmp.setRevenue(tmpDouble);
 					string tmpStatus = "Out of stock";
-					listSP[index].setStatus(tmpStatus);
+					tmp.setStatus(tmpStatus);
 					time_t now = time(0);
 					tm* ltm = localtime(&now);
 					string tmpInDate = to_string(ltm->tm_hour) + ":" + to_string(ltm->tm_min) + " " + to_string(ltm->tm_mday) + "-" + to_string(1 + ltm->tm_mon) + "-" + to_string(1900 + ltm->tm_year);
-					listSP[index].setInputDatetmp(tmpInDate);
-					listSP[index].setRam(tempStrRAM);
-					listSP[index].setRom(tempStrROM);
+					tmp.setInputDatetmp(tmpInDate);
+					tmp.setRam(tempStrRAM);
+					tmp.setRom(tempStrROM);
+					listSP.InsertLast(tmp);
 					MessageBox::Show("Item Updated Successfully", "Success", MessageBoxButtons::OK
 						, MessageBoxIcon::Information);
 					Save_Data_SmartPhone();
+					Load_Data_Of_Smartphone();
+					CreateNewRow_SP(NumOfDV("db_smartphone.csv") - 1);
 					dataGridView1->Show();
 					dataGridView2->Hide();
 					dataGridView3->Hide();
-					for (int i = 0; i < 100; i++)
-					{
-						CreateNewRow_SP();
-					}
 					break;
 				}
 				else if (combo_box_txt_TypeofDV->Text == "Laptop")
 				{
-					int index = NumOfDV("db_laptop.csv") + 1;
-					string tempStrID = "LT0" + to_string(index);
-					listLT[index].setID(tempStrID);
-					listLT[index].setName(tempStrName);
-					listLT[index].setBrand(tempStrBrand);
+					Laptop tmp;
+					string tempStrID = "LT0" + to_string(NumOfDV("db_laptop.csv") + 1);
+					tmp.setID(tempStrID);
+					tmp.setName(tempStrName);
+					tmp.setBrand(tempStrBrand);
 					double tmpPriceE = stod(tempStrPriceE);
-					listLT[index].setPriceE(tmpPriceE);
+					tmp.setPriceE(tmpPriceE);
 					double tempPriceF = stod(tempStrPriceF);
-					listLT[index].setPriceF(tempPriceF);
+					tmp.setPriceF(tempPriceF);
 					int tmpInt = 0;
 					double tmpDouble = 0;
-					listLT[index].setAmount(tmpInt);
-					listLT[index].setSales(tmpInt);
-					listLT[index].setRevenue(tmpDouble);
+					tmp.setAmount(tmpInt);
+					tmp.setSales(tmpInt);
+					tmp.setRevenue(tmpDouble);
 					string tmpStatus = "Out of stock";
-					listLT[index].setStatus(tmpStatus);
+					tmp.setStatus(tmpStatus);
 					time_t now = time(0);
 					tm* ltm = localtime(&now);
 					string tmpInDate = to_string(ltm->tm_hour) + ":" + to_string(ltm->tm_min) + " " + to_string(ltm->tm_mday) + "-" + to_string(1 + ltm->tm_mon) + "-" + to_string(1900 + ltm->tm_year);
-					listLT[index].setInputDatetmp(tmpInDate);
-					listLT[index].setCard(tempStrCard);
-					listLT[index].setWeight(tempStrWeight);
+					tmp.setInputDatetmp(tmpInDate);
+					tmp.setCard(tempStrCard);
+					tmp.setWeight(tempStrWeight);
+					listLT.InsertLast(tmp);
 					MessageBox::Show("Item Updated Successfully", "Success", MessageBoxButtons::OK
 						, MessageBoxIcon::Information);
 					Save_Data_Laptop();
+					Load_Data_Of_Laptop();
+					CreateNewRow_LT(NumOfDV("db_laptop.csv") - 1);
 					dataGridView2->Show();
 					dataGridView1->Hide();
 					dataGridView3->Hide();
-					for (int i = 0; i < 100; i++)
-					{
-						CreateNewRow_LT();
-					}
 					break;
 				}
 				else if (combo_box_txt_TypeofDV->Text == "Smart Watch")
 				{
-					int index = NumOfDV("db_laptop.csv") + 1;
-					string tempStrID = "SW0" + to_string(index);
-					listSW[index].setID(tempStrID);
-					listSW[index].setName(tempStrName);
-					listSW[index].setBrand(tempStrBrand);
+					SmartWatch tmp;
+					string tempStrID = "SW0" + to_string(NumOfDV("db_laptop.csv") + 1);
+					tmp.setID(tempStrID);
+					tmp.setName(tempStrName);
+					tmp.setBrand(tempStrBrand);
 					double tmpPriceE = stod(tempStrPriceE);
-					listSW[index].setPriceE(tmpPriceE);
+					tmp.setPriceE(tmpPriceE);
 					double tempPriceF = stod(tempStrPriceF);
-					listSW[index].setPriceF(tempPriceF);
+					tmp.setPriceF(tempPriceF);
 					int tmpInt = 0;
 					double tmpDouble = 0;
-					listSW[index].setAmount(tmpInt);
-					listSW[index].setSales(tmpInt);
-					listSW[index].setRevenue(tmpDouble);
+					tmp.setAmount(tmpInt);
+					tmp.setSales(tmpInt);
+					tmp.setRevenue(tmpDouble);
 					string tmpStatus = "Out of stock";
-					listSW[index].setStatus(tmpStatus);
+					tmp.setStatus(tmpStatus);
 					time_t now = time(0);
 					tm* ltm = localtime(&now);
 					string tmpInDate = to_string(ltm->tm_hour) + ":" + to_string(ltm->tm_min) + " " + to_string(ltm->tm_mday) + "-" + to_string(1 + ltm->tm_mon) + "-" + to_string(1900 + ltm->tm_year);
-					listSW[index].setInputDatetmp(tmpInDate);
-					listSW[index].setBatteryTime(tempStrBattery);
-					listSW[index].setSize(tempStrSize);
+					tmp.setInputDatetmp(tmpInDate);
+					tmp.setBatteryTime(tempStrBattery);
+					tmp.setSize(tempStrSize);
+					listSW.InsertLast(tmp);
 					MessageBox::Show("Item Updated Successfully", "Success", MessageBoxButtons::OK
 						, MessageBoxIcon::Information);
 					Save_Data_SmartWatch();
+					Load_Data_Of_Smartwatch();
+					CreateNewRow_SW(NumOfDV("db_smartwatch.csv") - 1);
 					dataGridView3->Show();
 					dataGridView1->Hide();
 					dataGridView2->Hide();
-					for (int i = 0; i < 100; i++)
-					{
-						CreateNewRow_SW();
-					}
 					break;
 				}
 				else
@@ -848,5 +907,14 @@ namespace PBL2 {
 		txt_Size->Text = "";
 		txt_Batterry->Text = "";
 	}
-	};
+	private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+		btn_Save_Click(sender, e);
+	}
+private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
+	btn_Clear_Click(sender, e);
+}
+private: System::Void pictureBox3_Click(System::Object^ sender, System::EventArgs^ e) {
+	btn_Back_Click(sender, e);
+}
+};
 }
